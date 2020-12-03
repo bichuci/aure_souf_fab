@@ -42,6 +42,11 @@ class Adresse
      */
     private $brasserie;
 
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, mappedBy="adresse_id", cascade={"persist", "remove"})
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -107,6 +112,24 @@ class Adresse
         // set the owning side of the relation if necessary
         if ($brasserie->getAdresse() !== $this) {
             $brasserie->setAdresse($this);
+        }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newAdresse_id = null === $user ? null : $this;
+        if ($user->getAdresseId() !== $newAdresse_id) {
+            $user->setAdresseId($newAdresse_id);
         }
 
         return $this;

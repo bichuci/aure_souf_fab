@@ -61,9 +61,20 @@ class Biere
      */
     private $users;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=NoteUser::class, inversedBy="biere_id")
+     */
+    private $noteUser;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CommentaireUser::class, mappedBy="biere_id")
+     */
+    private $commentaireUsers;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->commentaireUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -177,6 +188,48 @@ class Biere
     {
         if ($this->users->removeElement($user)) {
             $user->removeBiereFavorite($this);
+        }
+
+        return $this;
+    }
+
+    public function getNoteUser(): ?NoteUser
+    {
+        return $this->noteUser;
+    }
+
+    public function setNoteUser(?NoteUser $noteUser): self
+    {
+        $this->noteUser = $noteUser;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommentaireUser[]
+     */
+    public function getCommentaireUsers(): Collection
+    {
+        return $this->commentaireUsers;
+    }
+
+    public function addCommentaireUser(CommentaireUser $commentaireUser): self
+    {
+        if (!$this->commentaireUsers->contains($commentaireUser)) {
+            $this->commentaireUsers[] = $commentaireUser;
+            $commentaireUser->setBiereId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaireUser(CommentaireUser $commentaireUser): self
+    {
+        if ($this->commentaireUsers->removeElement($commentaireUser)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaireUser->getBiereId() === $this) {
+                $commentaireUser->setBiereId(null);
+            }
         }
 
         return $this;

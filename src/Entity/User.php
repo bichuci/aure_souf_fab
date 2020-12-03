@@ -6,11 +6,12 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -18,6 +19,22 @@ class User
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     */
+    private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -32,22 +49,17 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $mail;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\OneToOne(targetEntity=adresse::class, inversedBy="user", cascade={"persist", "remove"})
      */
-    private $password;
+    private $adresse_id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="date")
      */
-    private $birthday;
+    private $date_naissance;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -60,56 +72,103 @@ class User
     private $bio;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $siteweb;
-
-    /**
-     * @ORM\OneToOne(targetEntity=Brasserie::class, mappedBy="brasseur", cascade={"persist", "remove"})
-     */
-    private $brasserie;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=Biere::class, inversedBy="users")
+     * @ORM\ManyToMany(targetEntity=Biere::class)
      */
     private $biere_favorite;
 
     /**
-     * @ORM\ManyToMany(targetEntity=biere::class)
+     * @ORM\OneToMany(targetEntity=NoteUser::class, mappedBy="user_id")
      */
-    private $commentaire_id;
+    private $noteUsers;
 
     /**
-     * @ORM\ManyToMany(targetEntity=biere::class)
+     * @ORM\OneToMany(targetEntity=CommentaireUser::class, mappedBy="user_id")
      */
-    private $note_id;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $bg_image;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $profil_image;
-
-    /**
-     * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
-     */
-    private $adresse_id;
+    private $commentaireUsers;
 
     public function __construct()
     {
         $this->biere_favorite = new ArrayCollection();
-        $this->commentaire_id = new ArrayCollection();
-        $this->note_id = new ArrayCollection();
+        $this->noteUsers = new ArrayCollection();
+        $this->commentaireUsers = new ArrayCollection();
     }
-
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getNom(): ?string
@@ -136,23 +195,6 @@ class User
         return $this;
     }
 
-    public function getMail(): ?string
-    {
-        return $this->mail;
-    }
-
-    public function setMail(string $mail): self
-    {
-        $this->mail = $mail;
-
-        return $this;
-    }
-
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
-
     public function setUsername(string $username): self
     {
         $this->username = $username;
@@ -160,26 +202,26 @@ class User
         return $this;
     }
 
-    public function getPassword(): ?string
+    public function getAdresseId(): ?adresse
     {
-        return $this->password;
+        return $this->adresse_id;
     }
 
-    public function setPassword(string $password): self
+    public function setAdresseId(?adresse $adresse_id): self
     {
-        $this->password = $password;
+        $this->adresse_id = $adresse_id;
 
         return $this;
     }
 
-    public function getBirthday(): ?string
+    public function getDateNaissance(): ?\DateTimeInterface
     {
-        return $this->birthday;
+        return $this->date_naissance;
     }
 
-    public function setBirthday(string $birthday): self
+    public function setDateNaissance(\DateTimeInterface $date_naissance): self
     {
-        $this->birthday = $birthday;
+        $this->date_naissance = $date_naissance;
 
         return $this;
     }
@@ -189,7 +231,7 @@ class User
         return $this->telephone;
     }
 
-    public function setTelephone(int $telephone): self
+    public function setTelephone(?int $telephone): self
     {
         $this->telephone = $telephone;
 
@@ -204,36 +246,6 @@ class User
     public function setBio(?string $bio): self
     {
         $this->bio = $bio;
-
-        return $this;
-    }
-
-    public function getSiteweb(): ?string
-    {
-        return $this->siteweb;
-    }
-
-    public function setSiteweb(?string $siteweb): self
-    {
-        $this->siteweb = $siteweb;
-
-        return $this;
-    }
-
-    public function getBrasserie(): ?Brasserie
-    {
-        return $this->brasserie;
-    }
-
-    public function setBrasserie(?Brasserie $brasserie): self
-    {
-        $this->brasserie = $brasserie;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newBrasseur = null === $brasserie ? null : $this;
-        if ($brasserie->getBrasseur() !== $newBrasseur) {
-            $brasserie->setBrasseur($newBrasseur);
-        }
 
         return $this;
     }
@@ -263,87 +275,62 @@ class User
     }
 
     /**
-     * @return Collection|biere[]
+     * @return Collection|NoteUser[]
      */
-    public function getCommentaireId(): Collection
+    public function getNoteUsers(): Collection
     {
-        return $this->commentaire_id;
+        return $this->noteUsers;
     }
 
-    public function addCommentaireId(biere $commentaireId): self
+    public function addNoteUser(NoteUser $noteUser): self
     {
-        if (!$this->commentaire_id->contains($commentaireId)) {
-            $this->commentaire_id[] = $commentaireId;
+        if (!$this->noteUsers->contains($noteUser)) {
+            $this->noteUsers[] = $noteUser;
+            $noteUser->setUserId($this);
         }
 
         return $this;
     }
 
-    public function removeCommentaireId(biere $commentaireId): self
+    public function removeNoteUser(NoteUser $noteUser): self
     {
-        $this->commentaire_id->removeElement($commentaireId);
+        if ($this->noteUsers->removeElement($noteUser)) {
+            // set the owning side to null (unless already changed)
+            if ($noteUser->getUserId() === $this) {
+                $noteUser->setUserId(null);
+            }
+        }
 
         return $this;
     }
 
     /**
-     * @return Collection|biere[]
+     * @return Collection|CommentaireUser[]
      */
-    public function getNoteId(): Collection
+    public function getCommentaireUsers(): Collection
     {
-        return $this->note_id;
+        return $this->commentaireUsers;
     }
 
-    public function addNoteId(biere $noteId): self
+    public function addCommentaireUser(CommentaireUser $commentaireUser): self
     {
-        if (!$this->note_id->contains($noteId)) {
-            $this->note_id[] = $noteId;
+        if (!$this->commentaireUsers->contains($commentaireUser)) {
+            $this->commentaireUsers[] = $commentaireUser;
+            $commentaireUser->setUserId($this);
         }
 
         return $this;
     }
 
-    public function removeNoteId(biere $noteId): self
+    public function removeCommentaireUser(CommentaireUser $commentaireUser): self
     {
-        $this->note_id->removeElement($noteId);
+        if ($this->commentaireUsers->removeElement($commentaireUser)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaireUser->getUserId() === $this) {
+                $commentaireUser->setUserId(null);
+            }
+        }
 
         return $this;
     }
-
-    public function getBgImage(): ?string
-    {
-        return $this->bg_image;
-    }
-
-    public function setBgImage(?string $bg_image): self
-    {
-        $this->bg_image = $bg_image;
-
-        return $this;
-    }
-
-    public function getProfilImage(): ?string
-    {
-        return $this->profil_image;
-    }
-
-    public function setProfilImage(?string $profil_image): self
-    {
-        $this->profil_image = $profil_image;
-
-        return $this;
-    }
-
-    public function getAdresseId(): ?Adresse
-    {
-        return $this->adresse_id;
-    }
-
-    public function setAdresseId(?Adresse $adresse_id): self
-    {
-        $this->adresse_id = $adresse_id;
-
-        return $this;
-    }
-
 }
