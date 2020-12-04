@@ -18,7 +18,7 @@ class CommentaireUser
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=biere::class, inversedBy="commentaireUsers")
+     * @ORM\ManyToOne(targetEntity=Biere::class, inversedBy="commentaireUsers")
      */
     private $biere_id;
 

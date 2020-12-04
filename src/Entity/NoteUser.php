@@ -20,7 +20,7 @@ class NoteUser
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=biere::class, mappedBy="noteUser")
+     * @ORM\OneToMany(targetEntity=Biere::class, mappedBy="noteUser")
      */
     private $biere_id;
 

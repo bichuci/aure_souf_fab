@@ -35,7 +35,7 @@ class Biere
     private $date_creation;
 
     /**
-     * @ORM\ManyToOne(targetEntity=brasserie::class, inversedBy="bieres")
+     * @ORM\ManyToOne(targetEntity=Brasserie::class, inversedBy="bieres")
      * @ORM\JoinColumn(nullable=false)
      */
     private $brasserie_id;
