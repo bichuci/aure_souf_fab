@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('/css/profil.css') }}>
+    <style>
+        .card-header {
+            background-image:{{ profil.user.bg_image ?? " "}}
+        }
+    </style>
+{% endblock %}
+{% block javascripts%}
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://kit.fontawesome.com/4119f93ec8.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+        <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="main-breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="javascript:void(1)">Home</a></li>
+          <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Profile Settings</li>
+        </ol>
+      </nav>
+      <!-- /Breadcrumb -->
+    </div>
+    <div class="container">
+        <div class="card text-center card-top ombre">
+            <div class="card-header bg-imge">
+              <img src="{{ asset(profil.user.profil_image ?? '/images/images.png') }}" alt="Profile">
+            </div>
+                {{ form_start(form) }}
+                {{ form_label(form)}}
+            <div class="image-upload d-flex">
+                {{ form_widget(form) }}
+            </div>
+                {{ form_end(form) }}
+
+            <div class="card-body">
+              <h5 class="card-title">{{ profil.user.username }}</h5>
+              <p class="card-text">{{ profil.user.bio ?? " " }}</p>
+              <a href="#" class="btn btn-primary">Envoyer un message</a>
+              <a href="#" class="btn btn-primary">settings</a>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between main">
+          <div class="col-lg-4">
+            <div class="feedback ombre">
+              <div class="panel">
+                <div class="card-header">
+                  <span class="panel-icon">
+                    <i class="fa fa-star"></i>
+                  </span>
+                  <span class="panel-title"> User Popularity</span>
+                </div>
+                <div class="panel-body pn">
+                  <table class="table mbn tc-icon-1 tc-med-2 tc-bold-last">
+                    <thead>
+                      <tr class="hidden">
+                        <th class="mw30">#</th>
+                        <th>Type</th>
+                        <th>nombres</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                            <i class="far fa-comments"></i>
+                        </td>
+                        <td>Commenaitre</td>
+                        <td>
+                            {{ profil.commentaire|length }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <i class="far fa-grin-stars"></i>
+                        </td>
+                        <td>Vote</td>
+                        <td>
+                            {{ profil.note|length }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <i class="fas fa-beer"></i>
+                        </td>
+                        <td>Biere consomée</td>
+                        <td>
+                          350</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="card card-gauche ombre">
+                <div class="card-header">
+                  A propos de moi
+                </div>
+                <ul class="list-group list-group-flush ">
+                  <li class="list-group-item"><i class="fas fa-user-clock"></i> date de naissance : {{ profil.user.dateNaissance|date('d/m/y') }}</li>
+                  <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Localisation : {{ profil.user.adresseId.ville}} </li>
+                  <li class="list-group-item"><i class="fas fa-at"></i> e-mail : {{ profil.user.email }}</li>
+                  <li class="list-group-item"><i class="fas fa-phone"></i> Numero de telephone : {{ profil.user.telephone ?? " "}} </li>
+                  <li class="list-group-item"><i class="fas fa-crown"></i> Biére favorite : {% for biere in profil.biere  %}{{ biere ?? " " }}{% endfor %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card col-lg-8 ombre activiter" >
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-glass-cheers"></i> Activiter recente <i class="fas fa-glass-cheers"></i></h5>
+              <ul class="timeline">
+				<li>
+					<a href="#" >Note pour X biére</a>
+					<p class="float-right">Date</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+				</li>
+				<li>
+					<a href="#">A commenter a X Biére</a>
+					<p class="float-right">Date</p>
+					<p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+				</li>
+				<li>
+					<a href="#">A noter X bare</a>
+					<p class="float-right">Date</p>
+					<p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+                </li>
+                <li>
+					<a href="#">Etait a X bare</a>
+					<p class="float-right">Date</p>
+					<p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+				</li>
+			</ul>
+
+            </div>
+          </div>
+        </div>
+{% endblock %}

@@ -52,7 +52,7 @@ class User implements UserInterface
     private $username;
 
     /**
-     * @ORM\OneToOne(targetEntity=Adresse::class, inversedBy="user", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
      */
     private $adresse_id;
 
@@ -86,6 +86,16 @@ class User implements UserInterface
      */
     private $commentaireUsers;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $profil_image;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $bg_image;
+
     public function __construct()
     {
         $this->biere_favorite = new ArrayCollection();
@@ -117,7 +127,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string) $this->username;
     }
 
     /**
@@ -330,6 +340,30 @@ class User implements UserInterface
                 $commentaireUser->setUserId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getProfilImage(): ?string
+    {
+        return $this->profil_image;
+    }
+
+    public function setProfilImage(?string $profil_image): self
+    {
+        $this->profil_image = $profil_image;
+
+        return $this;
+    }
+
+    public function getBgImage(): ?string
+    {
+        return $this->bg_image;
+    }
+
+    public function setBgImage(?string $bg_image): self
+    {
+        $this->bg_image = $bg_image;
 
         return $this;
     }

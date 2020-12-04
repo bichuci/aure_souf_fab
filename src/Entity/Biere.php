@@ -51,7 +51,7 @@ class Biere
     private $commentaire;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="bieres")
+     * @ORM\ManyToOne(targetEntity=Categorie::class )
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie_id;

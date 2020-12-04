@@ -36,6 +36,23 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+    public function findOneJoinAdresse($id)
+    {
+
+        return $this->createQueryBuilder('u')
+            ->select(['u as user','a','n.note as note','c.commentaire as commentaire','b.nom as biere'])
+            ->andWhere('u.id = :val')
+            ->setParameter('val', $id)
+            ->leftJoin('u.adresse_id', 'a')
+            ->leftJoin('u.commentaireUsers', 'c')
+            ->leftJoin('u.noteUsers', 'n')
+            ->leftJoin('u.biere_favorite', 'b')
+            ->getQuery()
+            ->getOneOrNullResult();
+
+    }
+//
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

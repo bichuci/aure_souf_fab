@@ -1,0 +1,131 @@
+body {
+    background-color: #e2e8f0;
+}
+
+.card-header img {
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    bottom: -60px;
+    max-width: 150px;
+    max-height: 150px;
+}
+.image-upload>input {
+    display: none;
+  }
+.image-upload i{
+    font-size: 3em;
+    color:#007bff;
+    padding-right: 8px;
+}
+
+.image-upload{
+    margin-left: 10px;
+}
+
+.card-header {
+    background-image: url(https://picsum.photos/200/300);
+    background-size: cover;
+    font-weight: bold;
+    text-shadow: white 0px 0px 10px;
+}
+
+.card-body {
+    padding-top: 15px;
+}
+
+.feedback {
+    background-color: #fff;
+}
+
+.card-top {
+    margin-bottom: 50px;
+}
+
+.card-gauche {
+    height: 309px;
+}
+
+.col-lg-4 {
+    padding-left: 0px
+}
+
+.col-lg-8 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ombre {
+    box-shadow: -12px 12px rgba(0,0,0,.15);
+    transition: all .4s ease;
+}
+
+.ombre:hover{
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+    box-shadow: -6px 6px rgba(0,0,0,.25);
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+.activiter{
+    border:dashed 5px #F28E1C;
+}
+
+.activiter i{
+    color: #F28E1C;
+}
+
+.activiter .card-title {
+    text-align: center;
+    color: #007bff;
+}
+@media screen and (max-width:992px){
+    .feedback {
+        box-sizing: content-box;
+    }
+}
+
+@media screen and (max-width:768px){
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .card-gauche {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:465px){
+    .image-upload p{
+        opacity: 0;
+    }
+}

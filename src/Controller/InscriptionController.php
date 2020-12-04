@@ -8,19 +8,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class InscriptionController extends AbstractController
 {
     /**
      * @Route("/inscription", name="inscription_index")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
-        $form = $this->createForm(UserType::class, new User());
+        $user = new User();
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $user = $form->getData();
+
+            $password = $encoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($password);
+            $user->setRoles($user->getRoles());
+
+
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
