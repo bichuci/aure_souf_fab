@@ -35,7 +35,7 @@ class Biere
     private $date_creation;
 
     /**
-     * @ORM\ManyToOne(targetEntity=brasserie::class, inversedBy="bieres")
+     * @ORM\ManyToOne(targetEntity=Brasserie::class, inversedBy="bieres")
      * @ORM\JoinColumn(nullable=false)
      */
     private $brasserie_id;
@@ -46,7 +46,7 @@ class Biere
     private $note;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $commentaire;
 

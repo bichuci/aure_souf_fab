@@ -52,7 +52,7 @@ class User implements UserInterface
     private $username;
 
     /**
-     * @ORM\OneToOne(targetEntity=adresse::class, inversedBy="user", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Adresse::class, inversedBy="user", cascade={"persist", "remove"})
      */
     private $adresse_id;
 
