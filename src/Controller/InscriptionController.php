@@ -25,7 +25,6 @@ class InscriptionController extends AbstractController
 
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-            $user->setRoles($user->getRoles());
 
 
 

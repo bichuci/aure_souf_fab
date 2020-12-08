@@ -4,14 +4,39 @@
 {% block stylesheets %}
     <link rel="stylesheet" href={{ asset('/css/profil.css') }}>
     <style>
-        .card-header {
-            background-image:{{ profil.user.bg_image ?? " "}}
+        .label-file {
+            cursor: pointer;
+            color: #00b1ca;
+            font-weight: bold;
         }
+        .label-file:hover {
+            color: #25a5c4;
+        }
+
+        .input-file {
+               display: none;
+           }
+        .dropdown form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .card-header {
+            background-image: url({{asset(profil.user.BgImage)|replace({"\\":"/"}) }}) !important;
+        }
+
     </style>
 {% endblock %}
 {% block javascripts%}
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4119f93ec8.js" crossorigin="anonymous"></script>
+    <script>
+    </script>
+
 {% endblock %}
 
 {% block body %}
@@ -28,15 +53,27 @@
     <div class="container">
         <div class="card text-center card-top ombre">
             <div class="card-header bg-imge">
-              <img src="{{ asset(profil.user.profil_image ?? '/images/images.png') }}" alt="Profile">
+              <img src="{{ asset(profil.user.BgImage ?? '/images/images.png') }}" alt="Profile">
             </div>
-                {{ form_start(form) }}
-                {{ form_label(form)}}
             <div class="image-upload d-flex">
-                {{ form_widget(form) }}
-            </div>
-                {{ form_end(form) }}
+                <div class="dropdown pt-2">
+                <button class="btn btn-outline_primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-image"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <button class="btn btn-primary" type="submit">Envoyez !</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
 
+            </div>
             <div class="card-body">
               <h5 class="card-title">{{ profil.user.username }}</h5>
               <p class="card-text">{{ profil.user.bio ?? " " }}</p>
@@ -136,3 +173,4 @@
           </div>
         </div>
 {% endblock %}
+

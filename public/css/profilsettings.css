@@ -1,5 +1,24 @@
 body {background-color: #e2e8f0; color: #1a202c; }
 
+.menu .card-header {
+    height: 40%;
+}
+.imageprofil{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#usersettings_profil_image {
+    display: none;
+}
+
+.menu {
+    width: 100%;
+}
+
 .nav-link {
     color: #4a5568;
 }
@@ -25,6 +44,8 @@ body {background-color: #e2e8f0; color: #1a202c; }
 }
 
 
+
+
 .menu .card-title {
     text-align: center;
 }
@@ -41,11 +62,16 @@ body {background-color: #e2e8f0; color: #1a202c; }
     margin-right: 15px;
 
 }
+.image-upload>input {
+    display: none;
+}
 
 @media screen and (min-width:768px){
     .main {
-        height: 610px;
+        height: 850px;
     }
+
+
     
 }
 

@@ -51,6 +51,29 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getOneOrNullResult();
 
     }
+    public function UpdateBgimage($id,$path){
+
+        return $this->createQueryBuilder('u')
+            ->update()
+            ->set('u.bg_image',':path')
+            ->where('u.id = :id')
+            ->setParameter('id', $id)
+            ->setParameter('path', $path)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+    }
+    public function profilsettings($id)
+    {
+        return $this->createQueryBuilder('u')
+            ->select(['u as user','a','b as biere'])
+            ->andWhere('u.id = :val')
+            ->setParameter('val', $id)
+            ->leftJoin('u.adresse_id', 'a')
+            ->leftJoin('u.biere_favorite', 'b')
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 //
 
     // /**

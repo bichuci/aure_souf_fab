@@ -13,11 +13,7 @@ body {
 .image-upload>input {
     display: none;
   }
-.image-upload i{
-    font-size: 3em;
-    color:#007bff;
-    padding-right: 8px;
-}
+
 
 .image-upload{
     margin-left: 10px;
