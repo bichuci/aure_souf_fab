@@ -34,26 +34,9 @@ class UsersettingsType extends AbstractType
                         'message' => 'merci de saisir une adresse email'
                     ])
                 ],
-                'required' => True,
+                'required' => false,
 
             ])
-            ->add('password', RepeatedType::class, array(
-                'type' => PasswordType::class,
-                'first_options' => array('label' => 'Mot de passe', 'attr' => [
-                    'class' => 'form-control',
-                ]),
-                'second_options' => array('label' => 'Repetez votre mot de passe', 'attr' => [
-                    'class' => 'form-control',
-                ]),
-                "error_bubbling" => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir un mot de passe'
-                    ])
-                ],
-                'required' => True,
-
-            ))
             ->add('nom', TextType::class, [
                 'label' => 'Votre nom',
                 'attr' => [
@@ -65,7 +48,7 @@ class UsersettingsType extends AbstractType
                         'message' => 'merci de saisir un nom'
                     ])
                 ],
-                'required' => True,
+                'required' => false,
             ])
             ->add('prenom', TextType::class, [
                 'label' => 'Votre prenom',
@@ -78,7 +61,7 @@ class UsersettingsType extends AbstractType
                         'message' => 'merci de saisir un prenom'
                     ])
                 ],
-                'required' => True,
+                'required' => false,
             ])
             ->add('username', TextType::class, [
                 'label' => "Nom d'utilisateur",
@@ -91,7 +74,7 @@ class UsersettingsType extends AbstractType
                         'message' => "merci de saisir un nom d'utilisateur"
                     ])
                 ],
-                'required' => True,
+                'required' => false,
             ])
             ->add('date_naissance',DateType::class, [
                 'widget' => 'single_text',
@@ -104,7 +87,7 @@ class UsersettingsType extends AbstractType
                         'message' => 'merci de saisir une date de naissance'
                     ])
                 ],
-                'required' => True,
+                'required' => false,
 
             ])
             ->add('telephone', TelType::class, [
@@ -123,28 +106,7 @@ class UsersettingsType extends AbstractType
                     'style' => 'overflow: hidden; overflow-wrap: break-word; resize: none; height: 62px;'
                 ],
                 "error_bubbling" => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => "merci de ne pas laisser le champ vide"
-                    ])
-                ],
                 'required' => false,
-            ])
-            ->add('profil_image', FileType::class,[
-                "error_bubbling" => true,
-                "constraints" => [
-                    new Image([
-                        "maxSize" => "2M",
-                        "mimeTypes" => "image/*"
-                    ])
-                ],
-                "attr" => [
-                    'class' => 'form-control input-file text-center',
-                    "id" => 'image_up'
-                ],
-                "mapped" => false,
-
-
             ])
             ->add('adresse_id', AdresseType::class, [
                 'label' => 'Adresse',

@@ -26,11 +26,13 @@
                         <div class="text-center imageprofil">
                             <img src="{{ asset(profil.user.ProfilImage ?? '/images/images.png') }}" class="mx-auto img-fluid img-circle d-block" alt="avatar">
                             <h6 class="mt-2">Upload a different photo</h6>
+                            {{ form_start(formimg) }}
                             <label class="custom-file">
                                 <i class="fas fa-image"></i>
-                                {{ form_widget(form.profil_image) }}
+                                {{ form_widget(formimg.profil_image) }}
                             </label>
                             <button class="btn btn-primary" type="submit">Envoyez !</button>
+                            {{ form_end(formimg) }}
                         </div>
                     </div>
                     <div class="card-body">
@@ -59,10 +61,12 @@
                         <div class="col-lg-4 order-lg-1 text-center imageprofil">
                             <img src="{{ asset(profil.user.ProfilImage ?? '/images/images.png') }}" class="mx-auto img-fluid img-circle d-block" alt="avatar">
                             <h6 class="mt-2">Upload a different photo</h6>
+                            {{ form_start(formimg2) }}
                             <label class="custom-file">
-                                <input type="file" id="file" class="custom-file-input">
-                                <span class="custom-file-control">Choose file</span>
+                                <i class="fas fa-image"></i>
+                                {{ form_widget(formimg2.profil_image) }}
                             </label>
+                            {{ form_end(formimg2) }}
                         </div>
                         <ul class="nav nav-tabs card-header-tabs nav-gap" role="tablist">
                             <li class="nav-item">
@@ -83,8 +87,7 @@
                         <div class="tab-pane active" id="profile">
                             <h6>Information du profile</h6>
                             <hr>
-                            {{ form_start(form) }}
-                            <form>
+                                {{ form_start(form) }}
                                 <div class="form-group">
                                     {{ form_label(form.nom) }}
                                     {{ form_widget(form.nom, {'attr': {'value': profil.user.nom}}) }}
@@ -99,7 +102,6 @@
                                 <div class="form-group">
                                     {{ form_label(form.date_naissance) }}
                                     {{ form_widget(form.date_naissance, {'attr' : {'value': profil.user.dateNaissance|date('Y-m-d')}}) }}
-                                    <small id="usernameHelp" class="form-text text-muted">Après avoir changé votre nom d'utilisateur, votre ancien nom d'utilisateur devient disponible pour toute autre personne.</small>
                                 </div>
                                 <div class="form-group">
                                     {{ form_label(form.bio) }}
@@ -120,13 +122,11 @@
                                 <div class="form-group small text-muted">
                                     Tous les champs de cette page sont facultatifs et peuvent être supprimés à tout moment.En les remplissant, vous nous autorisez à partager ces données partout où votre profil d'utilisateur apparaît.
                                 </div>
-                                <button type="button" class="btn btn-primary">Valider</button>
-                            </form>
+                                <button class="btn btn-primary" type="submit">Envoyez !</button>
                         </div>
                         <div class="tab-pane" id="account">
                             <h6>Information complémentaire</h6>
                             <hr>
-                            <form>
                                 <div class="form-group">
                                     {{ form_label(form.adresse_id.cp) }}
                                     {{ form_widget(form.adresse_id.cp, {'attr': {'value': profil.user.AdresseId.cp}} ) }}
@@ -155,26 +155,28 @@
                                     {{ form_widget(form.biere_favorite, {'attr': {'value': profil.user.BiereFavorite|join(',')}})}}
                                 </div>
 
-                                <button type="button" class="btn btn-primary">Valider</button>
-                            </form>
+                                <button class="btn btn-primary" type="submit">Envoyez !</button>
+                                {{ form_end(form) }}
                         </div>
                         <div class="tab-pane" id="security">
                             <h6>Securiter</h6>
                             <hr>
-                            <form>
+                            <form method="post">
+                                {{ form_start(formdp) }}
                                 <div class="form-group">
                                     <label class="d-block">Changer de mot de passe</label>
-                                    <input type="text" class="form-control" placeholder="Ancien mot de passe">
-                                    {{ form_widget(form.password) }}
+                                    <input type="text" class="form-control" placeholder="Ancien mot de passe" name="old_password">
+                                    {{ form_label(formdp.password) }}
+                                    {{ form_widget(formdp.password) }}
                                 </div>
-                                <button type="button" class="btn btn-primary">Valider</button>
-                                {{ form_end(form) }}
+                                <button class="btn btn-primary" type="submit">Envoyez !</button>
+                                {{ form_end(formdp) }}
                                     <hr>
                                     <div class="form-group">
                                         <label class="d-block text-danger">Supprimer le compte</label>
                                         <p class="text-muted font-size-sm">Une fois que vous supprimez votre compte, il n'y a plus de retour en arrière. Soyez certain.</p>
                                     </div>
-                                    <button class="btn btn-danger" type="button">Supprimer le compte</button>
+                                    <button class="btn btn-primary" type="submit">Envoyez !</button>
                             </form>
                         </div>
                         <div class="tab-pane" id="notification">

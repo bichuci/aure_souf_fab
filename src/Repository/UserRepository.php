@@ -74,7 +74,55 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getQuery()
             ->getOneOrNullResult();
     }
-//
+    public function UpdateProfilimage($id,$path){
+
+        return $this->createQueryBuilder('u')
+            ->update()
+            ->set('u.profil_image',':path')
+            ->where('u.id = :id')
+            ->setParameter('id', $id)
+            ->setParameter('path', $path)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+    }
+
+    public function UpdateProfilInfo(array $user, $id){
+        return $this->createQueryBuilder('u')
+            ->update()
+            ->where('u.id = :id')
+            ->setParameter('id', $id)
+            ->set('u.nom', ':nom')
+            ->set('u.prenom', ':prenom')
+            ->set('u.email', ':email')
+            ->set('u.username', ':username')
+            ->set('u.date_naissance', ':date_naissance')
+            ->set('u.telephone', ':telephone')
+            ->set('u.bio', ':bio')
+            ->setParameter('nom', $user['nom'])
+            ->setParameter('prenom', $user['prenom'])
+            ->setParameter('email', $user['email'])
+            ->setParameter('username', $user['username'])
+            ->setParameter('date_naissance', $user['date_naissance'])
+            ->setParameter('telephone', $user['telephone'])
+            ->setParameter('bio', $user['bio'])
+            ->getQuery()
+            ->getOneOrNullResult();
+
+;
+
+    }
+
+
+
+//            ->set('u.cp',':cp')
+//            ->set('u.ville',':ville')
+//            ->set('u.rue',':rue')
+//            ->set('u.pays',':pays')
+//            ->setParameter('u.cp', $user->getAdresseId()->getCp())
+//            ->setParameter('u.ville',$user->getAdresseId()->getVille())
+//            ->setParameter('u.rue', $user->getAdresseId()->getRue())
+//            ->setParameter('u.pays',$user->getAdresseId()->getPays())
 
     // /**
     //  * @return User[] Returns an array of User objects

@@ -19,6 +19,24 @@ class AdresseRepository extends ServiceEntityRepository
         parent::__construct($registry, Adresse::class);
     }
 
+
+    public function UpdateProfilAdresse(array $adresse, $id)
+    {
+        return $this->createQueryBuilder('a')
+            ->update()
+            ->where('a.id = :id')
+            ->setParameter('id', $id)
+            ->set('a.cp', ':cp')
+            ->set('a.ville', ':ville')
+            ->set('a.rue', ':rue')
+            ->set('a.pays', ':pays')
+            ->setParameter('cp', $adresse['cp'])
+            ->setParameter('ville', $adresse['ville'])
+            ->setParameter('rue', $adresse['rue'])
+            ->setParameter('pays', $adresse['pays'])
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
     // /**
     //  * @return Adresse[] Returns an array of Adresse objects
     //  */
