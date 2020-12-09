@@ -45,6 +45,11 @@
                             <a class="nav-link" href="#">Edition</a>
                         </li>
                     </ul>
+                    {%  if is_granted('IS_AUTHENTICATED_FUllY') %}
+                    <a class="nav-link text-info" href="{{ path('app_logout') }}" id="navbarDropdownconnect" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Déconnexion
+                    </a>
+                    {% else %}
                     <div id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown">
@@ -63,7 +68,7 @@
                                             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Connexion</button>
                                         </div>
                                         <div>
-                                            <a href="#" id="inscription" class="text-center text-info">Pas encore inscrit</a>
+                                            <a href="{{ path('app_register') }}" id="inscription" class="text-center text-info">Pas encore inscrit</a>
                                         </div>
                                     </form>
                                 </div>
@@ -71,6 +76,7 @@
                         </ul>
                     </div>
                 </div>
+                {% endif %}
                 <form class="form-inline my-2 my-lg-1">
                     <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
                     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Recherche</button>
@@ -78,9 +84,7 @@
             </nav>
         </header>
 
-        <main style="height:calc(100vh - 60px)">
             {% block body %}{% endblock %}
-        </main>
 
         <footer class="bg-dark mt-5" style="color:white;">
             <section>
