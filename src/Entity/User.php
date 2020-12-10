@@ -54,11 +54,7 @@ class User implements UserInterface
     private $username;
 
     /**
-<<<<<<< HEAD
      * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
-=======
-     * @ORM\OneToOne(targetEntity=Adresse::class, inversedBy="user", cascade={"persist", "remove"})
->>>>>>> aurelien
      */
     private $adresse_id;
 
@@ -93,24 +89,24 @@ class User implements UserInterface
     private $commentaireUsers;
 
     /**
-<<<<<<< HEAD
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $profil_image;
-=======
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
->>>>>>> aurelien
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-<<<<<<< HEAD
+
     private $bg_image;
-=======
+
     private $reset_token;
->>>>>>> aurelien
+
 
     public function __construct()
     {
@@ -360,7 +356,7 @@ class User implements UserInterface
         return $this;
     }
 
-<<<<<<< HEAD
+
     public function getProfilImage(): ?string
     {
         return $this->profil_image;
@@ -369,7 +365,7 @@ class User implements UserInterface
     public function setProfilImage(?string $profil_image): self
     {
         $this->profil_image = $profil_image;
-=======
+    }
     public function isVerified(): bool
     {
         return $this->isVerified;
@@ -378,12 +374,11 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
->>>>>>> aurelien
+
 
         return $this;
     }
 
-<<<<<<< HEAD
     public function getBgImage(): ?string
     {
         return $this->bg_image;
@@ -392,7 +387,7 @@ class User implements UserInterface
     public function setBgImage(?string $bg_image): self
     {
         $this->bg_image = $bg_image;
-=======
+    }
     public function getResetToken(): ?string
     {
         return $this->reset_token;
@@ -401,7 +396,6 @@ class User implements UserInterface
     public function setResetToken(?string $reset_token): self
     {
         $this->reset_token = $reset_token;
->>>>>>> aurelien
 
         return $this;
     }
