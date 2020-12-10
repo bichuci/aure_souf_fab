@@ -34,7 +34,7 @@ class UsersettingsType extends AbstractType
                         'message' => 'merci de saisir une adresse email'
                     ])
                 ],
-                'required' => false,
+                'required' => true,
 
             ])
             ->add('nom', TextType::class, [

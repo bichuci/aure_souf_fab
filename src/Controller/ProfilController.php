@@ -113,13 +113,11 @@ class ProfilController extends AbstractController
         }
 
         if($form->isSubmitted() && $form->isValid()){
-            $user = $form->getData();
             $tabinfo = ['nom','prenom','email','username','date_naissance','telephone','bio'];
             $tabinfo = array_flip($tabinfo);
             $tabadresse = ['cp', 'ville', 'rue','pays'];
             $tabadresse = array_flip($tabadresse);
             $keysinfo= array_keys($tabinfo);
-            $keyadresse = array_keys($tabadresse);
 
 
             for( $i = 0; $i<count($tabinfo);$i++){
