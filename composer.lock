@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
     "content-hash": "911dbe6fdb72f2f176495d29a0cbce19",
-=======
-    "content-hash": "27498ec641cc3294f058256ec86e46b8",
->>>>>>> aurelien
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -6287,8 +6283,6 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> aurelien
             "time": "2020-09-01T07:13:28+00:00"
         },
         {

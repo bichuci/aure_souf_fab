@@ -24,12 +24,12 @@ class AdresseType extends AbstractType
                     'placeholder' => "Entrez votre code postal"
                 ],
                 "error_bubbling" => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir un code postale'
-                    ])
-                ],
-                'required' => True,
+//                'constraints' => [
+//                    new NotBlank([
+//                        'message' => 'merci de saisir un code postale'
+//                    ])
+//                ],
+                'required' => false,
 
             ])
             ->add('ville', TextType::class,[
@@ -40,12 +40,12 @@ class AdresseType extends AbstractType
                 ],
                 "error_bubbling" => true,
 
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir une Ville'
-                    ])
-                ],
-                'required' => True,
+//                'constraints' => [
+//                    new NotBlank([
+//                        'message' => 'merci de saisir une Ville'
+//                    ])
+//                ],
+                'required' => false,
 
             ])
             ->add('rue', TextType::class, [
@@ -56,12 +56,12 @@ class AdresseType extends AbstractType
                 ],
                 "error_bubbling" => true,
 
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir un nom de rue'
-                    ])
-                ],
-                'required' => True,
+//                'constraints' => [
+//                    new NotBlank([
+//                        'message' => 'merci de saisir un nom de rue'
+//                    ])
+//                ],
+                'required' => false,
 
             ])
             ->add('pays', TextType::class, [
@@ -72,12 +72,12 @@ class AdresseType extends AbstractType
                 ],
                 "error_bubbling" => true,
 
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir un pays'
-                    ])
-                ],
-                'required' => True,
+//                'constraints' => [
+//                    new NotBlank([
+//                        'message' => 'merci de saisir un pays'
+//                    ])
+//                ],
+                'required' => false,
             ]);
     }
 

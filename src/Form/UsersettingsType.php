@@ -29,11 +29,11 @@ class UsersettingsType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir une adresse email'
-                    ])
-                ],
+//                'constraints' => [
+//                    new NotBlank([
+//                        'message' => 'merci de saisir une adresse email'
+//                    ])
+//                ],
                 'required' => false,
 
             ])
