@@ -87,7 +87,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     }
 
-    public function UpdateProfilInfo(array $user, $id){
+    public function UpdateProfilInfo(array $user, $id)
+    {
         return $this->createQueryBuilder('u')
             ->update()
             ->where('u.id = :id')
@@ -109,7 +110,6 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getQuery()
             ->getOneOrNullResult();
 
-;
 
     }
 

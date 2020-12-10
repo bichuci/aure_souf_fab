@@ -24,11 +24,13 @@ class AdresseType extends AbstractType
                     'placeholder' => "Entrez votre code postal"
                 ],
                 "error_bubbling" => true,
-//                'constraints' => [
-//                    new NotBlank([
-//                        'message' => 'merci de saisir un code postale'
-//                    ])
-//                ],
+
+               'constraints' => [
+                   new NotBlank([
+                       'message' => 'merci de saisir un code postale'
+                   ])
+               ],
+
                 'required' => false,
 
             ])
@@ -40,11 +42,13 @@ class AdresseType extends AbstractType
                 ],
                 "error_bubbling" => true,
 
-//                'constraints' => [
-//                    new NotBlank([
-//                        'message' => 'merci de saisir une Ville'
-//                    ])
-//                ],
+
+                'constraints' => [
+                    new NotBlank([
+                       'message' => 'merci de saisir une Ville'
+                   ])
+                ],
+
                 'required' => false,
 
             ])
@@ -56,11 +60,13 @@ class AdresseType extends AbstractType
                 ],
                 "error_bubbling" => true,
 
-//                'constraints' => [
-//                    new NotBlank([
-//                        'message' => 'merci de saisir un nom de rue'
-//                    ])
-//                ],
+
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'merci de saisir un nom de rue'
+                    ])
+                ],
+
                 'required' => false,
 
             ])
@@ -72,11 +78,13 @@ class AdresseType extends AbstractType
                 ],
                 "error_bubbling" => true,
 
-//                'constraints' => [
-//                    new NotBlank([
-//                        'message' => 'merci de saisir un pays'
-//                    ])
-//                ],
+
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'merci de saisir un pays'
+                    ])
+                ],
+
                 'required' => false,
             ]);
     }
