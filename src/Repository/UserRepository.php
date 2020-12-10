@@ -87,7 +87,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     }
 
-    public function UpdateProfilInfo(array $user, $id){
+    public function UpdateProfilInfo(array $user, $id)
+    {
         return $this->createQueryBuilder('u')
             ->update()
             ->where('u.id = :id')
@@ -109,20 +110,21 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getQuery()
             ->getOneOrNullResult();
 
-;
 
     }
 
+    public function findOneByEmail($mail)
+    {
+        return $this->createQueryBuilder('u')
+            ->select('u')
+            ->andWhere('u.email = :email')
+            ->setParameter('email',  $mail)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 
 
-//            ->set('u.cp',':cp')
-//            ->set('u.ville',':ville')
-//            ->set('u.rue',':rue')
-//            ->set('u.pays',':pays')
-//            ->setParameter('u.cp', $user->getAdresseId()->getCp())
-//            ->setParameter('u.ville',$user->getAdresseId()->getVille())
-//            ->setParameter('u.rue', $user->getAdresseId()->getRue())
-//            ->setParameter('u.pays',$user->getAdresseId()->getPays())
 
     // /**
     //  * @return User[] Returns an array of User objects

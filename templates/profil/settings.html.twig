@@ -129,19 +129,19 @@
                             <hr>
                                 <div class="form-group">
                                     {{ form_label(form.adresse_id.cp) }}
-                                    {{ form_widget(form.adresse_id.cp, {'attr': {'value': profil.user.AdresseId.cp}} ) }}
+                                    {{ form_widget(form.adresse_id.cp, {'attr': {'value': profil.user.AdresseId.cp ?? " "}} ) }}
                                 </div>
                                 <div class="form-group">
                                     {{ form_label(form.adresse_id.ville) }}
-                                    {{ form_widget(form.adresse_id.ville, {'attr': {'value': profil.user.AdresseId.ville}} ) }}
+                                    {{ form_widget(form.adresse_id.ville, {'attr': {'value': profil.user.AdresseId.ville ?? " "}} ) }}
                                 </div>
                                 <div class="form-group">
                                     {{ form_label(form.adresse_id.rue) }}
-                                    {{ form_widget(form.adresse_id.rue, {'attr': {'value': profil.user.AdresseId.rue}} ) }}
+                                    {{ form_widget(form.adresse_id.rue, {'attr': {'value': profil.user.AdresseId.rue ?? " "}} ) }}
                                 </div>
                                 <div class="form-group">
                                     {{ form_label(form.adresse_id.pays) }}
-                                    {{ form_widget(form.adresse_id.pays, {'attr': {'value': profil.user.AdresseId.pays}} ) }}
+                                    {{ form_widget(form.adresse_id.pays, {'attr': {'value': profil.user.AdresseId.pays ?? " "}} ) }}
                                 </div>
                                 <div class="form-group">
                                     {{ form_help(form.adresse_id) }}
@@ -164,7 +164,8 @@
                             <form method="post">
                                 {{ form_start(formdp) }}
                                 <div class="form-group">
-                                    <label class="d-block">Changer de mot de passe</label>
+                                    <h5>Changer de mot de passe</h5>
+                                    <label class="d-block">Ancien mot de passe</label>
                                     <input type="text" class="form-control" placeholder="Ancien mot de passe" name="old_password">
                                     {{ form_label(formdp.password) }}
                                     {{ form_widget(formdp.password) }}

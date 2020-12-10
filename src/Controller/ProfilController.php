@@ -90,6 +90,7 @@ class ProfilController extends AbstractController
             $this->addFlash('success', 'Image ajouter');
         }
 
+
         if ($formdp->isSubmitted() && $formdp->isValid()) {
             if ($request->get('old_password')) {
                 $old_password = $request->get('old_password');
@@ -113,18 +114,17 @@ class ProfilController extends AbstractController
         }
 
         if($form->isSubmitted() && $form->isValid()){
-            $user = $form->getData();
             $tabinfo = ['nom','prenom','email','username','date_naissance','telephone','bio'];
             $tabinfo = array_flip($tabinfo);
             $tabadresse = ['cp', 'ville', 'rue','pays'];
             $tabadresse = array_flip($tabadresse);
             $keysinfo= array_keys($tabinfo);
-            $keyadresse = array_keys($tabadresse);
 
 
             for( $i = 0; $i<count($tabinfo);$i++){
                     $tabinfo[$keysinfo[$i]] = $form[$keysinfo[$i]]->getData();
             }
+
 
             $Adresse = $form['adresse_id']->getData();
             $idAdresse = $profil['user']->getAdresseId()->getId();

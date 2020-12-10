@@ -6,7 +6,11 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -21,7 +25,9 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(name="email", type="string", length=180, unique=true, nullable=false)
+     * @Assert\Email()
+     * @Assert\NotBlank
      */
     private $email;
 
@@ -92,9 +98,18 @@ class User implements UserInterface
     private $profil_image;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $bg_image;
+
+    private $reset_token;
+
 
     public function __construct()
     {
@@ -344,6 +359,7 @@ class User implements UserInterface
         return $this;
     }
 
+
     public function getProfilImage(): ?string
     {
         return $this->profil_image;
@@ -352,6 +368,16 @@ class User implements UserInterface
     public function setProfilImage(?string $profil_image): self
     {
         $this->profil_image = $profil_image;
+    }
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
 
         return $this;
     }
@@ -364,6 +390,15 @@ class User implements UserInterface
     public function setBgImage(?string $bg_image): self
     {
         $this->bg_image = $bg_image;
+    }
+    public function getResetToken(): ?string
+    {
+        return $this->reset_token;
+    }
+
+    public function setResetToken(?string $reset_token): self
+    {
+        $this->reset_token = $reset_token;
 
         return $this;
     }

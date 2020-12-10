@@ -12,11 +12,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 
-
-
 class AdresseType extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -27,12 +24,12 @@ class AdresseType extends AbstractType
                     'placeholder' => "Entrez votre code postal"
                 ],
                 "error_bubbling" => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir un code postale'
-                    ])
-                ],
-                'required' => True,
+                //'constraints' => [
+                //    new NotBlank([
+                //        'message' => 'merci de saisir un code postale'
+                //    ])
+                //],
+                'required' => false,
 
             ])
             ->add('ville', TextType::class,[
@@ -42,12 +39,14 @@ class AdresseType extends AbstractType
                     'placeholder' => "Entrez le nom de votre ville"
                 ],
                 "error_bubbling" => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir une Ville'
-                    ])
-                ],
-                'required' => True,
+
+                //'constraints' => [
+                //    new NotBlank([
+                //        'message' => 'merci de saisir une Ville'
+                //    ])
+                //],
+                'required' => false,
+
             ])
             ->add('rue', TextType::class, [
                 'label' => "Votre rue",
@@ -56,12 +55,14 @@ class AdresseType extends AbstractType
                     'placeholder' => "Le nom de votre rue"
                 ],
                 "error_bubbling" => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir un nom de rue'
-                    ])
-                ],
-                'required' => True,
+
+                //'constraints' => [
+                //    new NotBlank([
+                //        'message' => 'merci de saisir un nom de rue'
+                //    ])
+                //],
+                'required' => false,
+
             ])
             ->add('pays', TextType::class, [
                 'label' => "Votre pays",
@@ -70,15 +71,14 @@ class AdresseType extends AbstractType
                     'placeholder' => "Pays"
                 ],
                 "error_bubbling" => true,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'merci de saisir un pays'
-                    ])
-                ],
-                'required' => True,
-            ])
 
-        ;
+                //'constraints' => [
+                //    new NotBlank([
+                //        'message' => 'merci de saisir un pays'
+                //    ])
+                //],
+                'required' => false,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

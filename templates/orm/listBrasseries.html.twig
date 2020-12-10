@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ORMController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container col-10">
+    <h2 class="mt-2">La liste des brasseries</h2>
+    <div class="btn-group d-flex justify-content-end">
+        <a href="{{ path('form_brasserie') }}" class="btn btn-info ">Ajouter une brasserie</a>
+        <button class="btn btn-outline-info">Voir mes favoris</button>
+    </div>
+
+    <table class="mt-2 table table-dark table-striped" style="height:500px; overlow:auto; overflow-y:hidden;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Descripion</th>
+                <th>Site Web</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for brasserie in brasseries %}
+                <tr>
+                    <td>{{ brasserie.id ?? 'Non renseigné'}}</td>
+                    <td>{{ brasserie.nom ?? 'Non renseigné'}}</td>
+                    <td>{{ brasserie.description ?? 'Non renseigné'}}</td>
+                    <td>{{ brasserie.siteweb ?? 'Non renseigné' }}</td>
+                    <td>{{ brasserie.telephone ?? 'Non renseigné' }}</td>
+                    <td>{{ brasserie.mail ?? 'Non renseigné'}}</td>
+                    <td>{{ brasserie.adresse.ville ?? 'Non renseigné' }}</td>
+                    <td>
+                        <a href="{{ path('orm_detailBrasserie', {'id': brasserie.id})  }}" class="btn btn-info">Voir le détail</a>
+                        <a href="{{ path('orm_list_brasserie_biere', {'id' : brasserie.id }) }}" class="btn btn-outline-info">Leurs Bières</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+{% endblock %}

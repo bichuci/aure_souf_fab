@@ -25,7 +25,7 @@ class Brasserie
     private $nom;
 
     /**
-     * @ORM\OneToOne(targetEntity=adresse::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $adresse;
@@ -57,6 +57,7 @@ class Brasserie
 
     /**
      * @ORM\OneToMany(targetEntity=Biere::class, mappedBy="brasserie_id")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $bieres;
 
@@ -82,7 +83,7 @@ class Brasserie
         return $this;
     }
 
-    public function getAdresse(): ?adresse
+    public function getAdresse(): ?Adresse
     {
         return $this->adresse;
     }
