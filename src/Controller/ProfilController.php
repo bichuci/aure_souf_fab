@@ -90,6 +90,7 @@ class ProfilController extends AbstractController
             $this->addFlash('success', 'Image ajouter');
         }
 
+
         if ($formdp->isSubmitted() && $formdp->isValid()) {
             if ($request->get('old_password')) {
                 $old_password = $request->get('old_password');
@@ -124,6 +125,7 @@ class ProfilController extends AbstractController
                     $tabinfo[$keysinfo[$i]] = $form[$keysinfo[$i]]->getData();
             }
 
+
             $idAdresse = $this->getUser()->getAdresseId() ?? null;
             $Adresse = ($form['adresse_id']->getData()) ?? null;
             if($idAdresse === null )
@@ -140,6 +142,8 @@ class ProfilController extends AbstractController
                 $updateAdresse = $this->getDoctrine()->getRepository(Adresse::class);
                 $updateAdresse = $updateAdresse->UpdateProfilAdresse($tabadresse, $idAdresse);
             }
+
+
 
 
 

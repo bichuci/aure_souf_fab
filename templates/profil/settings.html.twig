@@ -167,7 +167,8 @@
                             <form method="post">
                                 {{ form_start(formdp) }}
                                 <div class="form-group">
-                                    <label class="d-block">Changer de mot de passe</label>
+                                    <h5>Changer de mot de passe</h5>
+                                    <label class="d-block">Ancien mot de passe</label>
                                     <input type="text" class="form-control" placeholder="Ancien mot de passe" name="old_password">
                                     {{ form_label(formdp.password) }}
                                     {{ form_widget(formdp.password) }}
