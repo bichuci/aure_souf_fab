@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<main class="container">
+    <h2> Bienvenue sur la page d'administration</h2>
+    <section>
+        <article>
+            <p><a href="{{ path('admin_users') }}">Voir les utilisateurs</a></p>
+        </article>
+        <article>
+            <p><a href="{{ path('admin_brasseurs') }}">Voir les brasseurs</a></p>
+        </article>
+    </section>
+</main>
+{% endblock %}
