@@ -17,9 +17,6 @@
     </head>
     <body>
 
-    <main class="container">
-        {% block body %}{% endblock %}
-    </main>
 
 
         <header>
@@ -70,9 +67,9 @@
                 </form>
             </nav>
         </header>
-
+        <main class="container">
             {% block body %}{% endblock %}
-
+        </main>
         <footer class="bg-dark mt-5" style="color:white;">
             <section>
                 <div class="container d-flex justify-content-around text-center">

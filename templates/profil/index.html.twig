@@ -24,7 +24,7 @@
         }
 
         .card-header {
-            background-image: url({{asset(profil.user.BgImage)|replace({"\\":"/"}) }}) !important;
+            background-image: url({{ asset(profil.user.BgImage ?? " ")|replace({"\\":"/"}) }}) !important;
         }
 
     </style>
@@ -136,8 +136,8 @@
                 </div>
                 <ul class="list-group list-group-flush ">
                   <li class="list-group-item"><i class="fas fa-user-clock"></i> date de naissance : {{ profil.user.dateNaissance|date('d/m/y') }}</li>
-                  <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Localisation : {{ profil.user.adresseId.ville}} </li>
-                  <li class="list-group-item"><i class="fas fa-at"></i> e-mail : {{ profil.user.email }}</li>
+                  <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Localisation : {{ profil.user.adresseId.ville ?? " "}} </li>
+                  <li class="list-group-item"><i class="fas fa-at"></i> e-mail : {{ profil.user.email ?? " " }}</li>
                   <li class="list-group-item"><i class="fas fa-phone"></i> Numero de telephone : {{ profil.user.telephone ?? " "}} </li>
                   <li class="list-group-item"><i class="fas fa-crown"></i> Biére favorite : {% for biere in profil.biere  %}{{ biere ?? " " }}{% endfor %}</li>
                 </ul>
