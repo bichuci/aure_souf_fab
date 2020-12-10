@@ -24,6 +24,7 @@ class UserType extends AbstractType
         $builder
             ->add('email',EmailType::class, [
                 'label' => 'Votre e-mail',
+                "error_bubbling" => true,
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Entrez votre e-mail'
@@ -143,6 +144,7 @@ class UserType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
+            'data_class' => User::class,
         ]);
     }
 }

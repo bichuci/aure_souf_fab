@@ -8,6 +8,9 @@
     {% endfor %}
 
     <h1>Register</h1>
+    {% if message != null %}
+    {{ message }}
+    {% endif %}
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
