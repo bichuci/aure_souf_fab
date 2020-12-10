@@ -101,6 +101,9 @@ class Adresse
 
         return $this;
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> aurelien
 }

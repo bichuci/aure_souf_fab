@@ -36,7 +36,11 @@ class Biere
 
     /**
      * @ORM\ManyToOne(targetEntity=Brasserie::class, inversedBy="bieres")
+<<<<<<< HEAD
      * @ORM\JoinColumn(nullable=false)
+=======
+     * @ORM\JoinColumn(nullable=true)
+>>>>>>> aurelien
      */
     private $brasserie_id;
 
@@ -51,7 +55,11 @@ class Biere
     private $commentaire;
 
     /**
+<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity=Categorie::class )
+=======
+     * @ORM\ManyToOne(targetEntity=Categorie::class)
+>>>>>>> aurelien
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie_id;

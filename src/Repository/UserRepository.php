@@ -36,6 +36,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+<<<<<<< HEAD
     public function findOneJoinAdresse($id)
     {
 
@@ -124,6 +125,20 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 //            ->setParameter('u.rue', $user->getAdresseId()->getRue())
 //            ->setParameter('u.pays',$user->getAdresseId()->getPays())
 
+=======
+    public function findOneByEmail($mail)
+    {
+        return $this->createQueryBuilder('u')
+            ->select('u')
+            ->andWhere('u.email = :email')
+            ->setParameter('email',  $mail)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
+
+>>>>>>> aurelien
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

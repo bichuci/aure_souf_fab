@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Adresse;
 use Symfony\Component\Form\AbstractType;
+<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,6 +18,14 @@ use Symfony\Component\Validator\Constraints\Regex;
 class AdresseType extends AbstractType
 {
 
+=======
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class AdresseType extends AbstractType
+{
+>>>>>>> aurelien
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -27,12 +36,15 @@ class AdresseType extends AbstractType
                     'placeholder' => "Entrez votre code postal"
                 ],
                 "error_bubbling" => true,
+<<<<<<< HEAD
                 'constraints' => [
                     new NotBlank([
                         'message' => 'merci de saisir un code postale'
                     ])
                 ],
                 'required' => True,
+=======
+>>>>>>> aurelien
 
             ])
             ->add('ville', TextType::class,[
@@ -42,12 +54,15 @@ class AdresseType extends AbstractType
                     'placeholder' => "Entrez le nom de votre ville"
                 ],
                 "error_bubbling" => true,
+<<<<<<< HEAD
                 'constraints' => [
                     new NotBlank([
                         'message' => 'merci de saisir une Ville'
                     ])
                 ],
                 'required' => True,
+=======
+>>>>>>> aurelien
             ])
             ->add('rue', TextType::class, [
                 'label' => "Votre rue",
@@ -56,12 +71,15 @@ class AdresseType extends AbstractType
                     'placeholder' => "Le nom de votre rue"
                 ],
                 "error_bubbling" => true,
+<<<<<<< HEAD
                 'constraints' => [
                     new NotBlank([
                         'message' => 'merci de saisir un nom de rue'
                     ])
                 ],
                 'required' => True,
+=======
+>>>>>>> aurelien
             ])
             ->add('pays', TextType::class, [
                 'label' => "Votre pays",
@@ -70,6 +88,7 @@ class AdresseType extends AbstractType
                     'placeholder' => "Pays"
                 ],
                 "error_bubbling" => true,
+<<<<<<< HEAD
                 'constraints' => [
                     new NotBlank([
                         'message' => 'merci de saisir un pays'
@@ -78,6 +97,9 @@ class AdresseType extends AbstractType
                 'required' => True,
             ])
 
+=======
+            ])
+>>>>>>> aurelien
         ;
     }
 

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ORMController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container col-10">
+    <h2>La liste des bières</h2>
+    <div class="btn-group d-flex justify-content-end">
+        <a href="{{ path('form_biere') }}" class="btn btn-info ">Ajouter une bière</a>
+        <button class="btn btn-outline-info">Voir mes favoris</button>
+    </div>
+    <div class="row  m-2">
+            {% for biere in bieres %}
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-header p-0">
+                            <img src="./img/img3.jpg" alt="Image de la bière" class="card-img-top">
+                        </div>
+                    </div>
+                    <div class="card-body bg-light p-0">
+                        <div class="p-2 text-center">
+                            <h4 class="p-2">{{biere.nom}}</h4>
+                            <h6 class="card-subtitle m-2 text-muted">Brassée par : {{ biere.brasserieId.nom }}</h6>
+                            <p class="text-center">Description de la biere : {{ biere.description }}</p>
+                        </div>
+                        <div class="mt-2 pb-2 text-center">
+                            <span class="badge badge-pill badge-warning">{{ biere.categorieId.nom }}</span>
+                            <span class="badge badge-pill badge-warning">{{ biere.brasserieId.adresse.ville }}</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div id="avis">
+                            <h5>Avis</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

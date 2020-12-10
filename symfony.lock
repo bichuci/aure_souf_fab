@@ -114,6 +114,9 @@
     "ocramius/proxy-manager": {
         "version": "2.10.0"
     },
+    "php": {
+        "version": "7.4"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
     },
@@ -149,6 +152,9 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "swiftmailer/swiftmailer": {
+        "version": "v6.2.4"
     },
     "symfony/asset": {
         "version": "v5.1.9"
@@ -427,6 +433,20 @@
     "symfony/string": {
         "version": "v5.2.0"
     },
+    "symfony/swiftmailer-bundle": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "ae4d22af30bbd484506bc1817c5a3ef72c855b93"
+        },
+        "files": [
+            "./config/packages/dev/swiftmailer.yaml",
+            "./config/packages/swiftmailer.yaml",
+            "./config/packages/test/swiftmailer.yaml"
+        ]
+    },
     "symfony/translation": {
         "version": "3.3",
         "recipe": {
@@ -498,6 +518,9 @@
     },
     "symfony/yaml": {
         "version": "v5.2.0"
+    },
+    "symfonycasts/verify-email-bundle": {
+        "version": "v1.1.0"
     },
     "twig/extra-bundle": {
         "version": "v3.1.1"
