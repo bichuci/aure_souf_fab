@@ -27,6 +27,10 @@
             background-image: url({{ asset(profil.user.BgImage ?? " ")|replace({"\\":"/"}) }}) !important;
         }
 
+        .image-upload{
+            min-height: 50px;
+        }
+
     </style>
 {% endblock %}
 {% block javascripts%}
@@ -40,6 +44,7 @@
 {% endblock %}
 
 {% block body %}
+<main class="container">
         <!-- Breadcrumb -->
       <nav aria-label="breadcrumb" class="main-breadcrumb">
         <ol class="breadcrumb">
@@ -56,7 +61,9 @@
               <img src="{{ asset(profil.user.profilImage ?? '/images/images.png') }}" alt="Profile">
             </div>
             <div class="image-upload d-flex">
+                {% if UserId  == profil.user.id %}
                 <div class="dropdown pt-2">
+
                 <button class="btn btn-outline_primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-image"></i>
                 </button>
@@ -67,6 +74,7 @@
                         {{ form_end(form) }}
                     </div>
                 </div>
+                {% endif %}
                 {% for message in app.flashes('success') %}
                     <div class="alert alert-success">
                         {{ message }}
@@ -74,11 +82,13 @@
                 {% endfor %}
 
             </div>
-            <div class="card-body">
+            <div class="card-body bio">
               <h5 class="card-title">{{ profil.user.username }}</h5>
               <p class="card-text">{{ profil.user.bio ?? " " }}</p>
               <a href="#" class="btn btn-primary">Envoyer un message</a>
+                {% if UserId  == profil.user.id %}
               <a href="{{ path( "profil_settings" , {'id' : profil.user.id}) }}" class="btn btn-primary">settings</a>
+                {% endif %}
             </div>
           </div>
           <div class="d-flex justify-content-between main">
@@ -172,5 +182,7 @@
             </div>
           </div>
         </div>
+    </div>
+</main>
 {% endblock %}
 
