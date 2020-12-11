@@ -30,7 +30,11 @@ class ProfilController extends AbstractController
     {
         $profil = $this->getDoctrine()->getRepository(User::class);
         $profil = $profil->findOneJoinAdresse($id);
-
+        $UserId ="";
+        $user = $this->getUser();
+        if($user != null){
+            $UserId = $user->getId();
+        }
         $path = "";
         $form = $this->createForm(UserbgimageType::class);
 
@@ -50,6 +54,7 @@ class ProfilController extends AbstractController
             'profil' => $profil,
             'form' => $form->createView(),
             'path' => $path,
+            'UserId' => $UserId,
         ]);
     }
 
@@ -63,6 +68,16 @@ class ProfilController extends AbstractController
         $profil = $this->getDoctrine()->getRepository(User::class);
         $profil = $profil->profilsettings($id);
 
+        if($this->getUser() != null)
+        {
+            if($this->getUser()->getId() != $id){
+                return $this->redirectToRoute('home_index');
+            }
+        }else{
+            return $this->redirectToRoute('home_index');
+        }
+
+
 
 
         $path = "";
@@ -75,6 +90,8 @@ class ProfilController extends AbstractController
         $formimg2->handleRequest($request);
         $form->handleRequest($request);
         $formdp->handleRequest($request);
+
+
 
 
         if(($formimg->isSubmitted() && $formimg->isValid()) || ($formimg2->isSubmitted() && $formimg2->isValid()) ){
