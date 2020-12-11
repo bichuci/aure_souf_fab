@@ -10,7 +10,24 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+
+    role_hierarchy:
+        ROLE_BRASSEUR : ROLE_USER
+        ROLE_CONTRIBUTEUR : ROLE_USER
+        ROLE_ADMIN: ROLE_BRASSEUR, ROLE_CONTRIBUTEUR
+        ROLE_SUPERADMIN: ROLE_ADMIN
+
     firewalls:
+        admin_area:
+            pattern: ^/
+            anonymous: true
+            form_login:
+                login_path: app_login
+                check_path: app_login
+                default_target_path: admin_index
+            logout:
+                path: app_logout
+                target: app_login
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -35,5 +52,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/profil, roles: ROLE_USER }
+        - { path: ^/formulaire, roles: ROLE_BRASSEUR }

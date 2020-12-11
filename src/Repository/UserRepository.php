@@ -113,6 +113,22 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     }
 
+    public function updateUserAdmin($id)
+    {
+        return $this->createQueryBuilder('u')
+            ->update()
+            ->where('u.id = :id')
+            ->setParameter('id', $id)
+            ->set('u.email', ':email')
+            ->set('u.roles', ':roles')
+            ->setParameter('email', ':email')
+            ->setParameter('email', ':roles')
+            ->getQuery()
+            ->getOneOrNullResult();
+
+
+    }
+
     public function findOneByEmail($mail)
     {
         return $this->createQueryBuilder('u')
@@ -124,7 +140,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ;
     }
 
-    public function showAdminEditUsers($id)
+    public function findOneById($id)
     {
         return $this->createQueryBuilder('u')
             ->select(['u'])
@@ -134,6 +150,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getOneOrNullResult()
             ;
     }
+
 
 
     // /**

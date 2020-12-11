@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\AdminEditUserType;
+use App\Form\UserType;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -34,18 +37,50 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/admin/users/edit/{id}", name="admin_edit_users")
+     * @Route("/admin/edit/user/{id}", name="admin_edit_users")
      */
-    public function adminEditUsers($id): Response
+    public function adminEditUsers($id, Request $request): Response
     {
-        /** @var UserRepository $repository */
-        $repository = $this->getDoctrine()->getRepository(User::class);
-        $user = $repository->showAdminDetailsUsers($id);
+        $user = $this->getDoctrine()->getRepository(User::class);
+        $user = $user->findOneById($id);
+
+        $form = $this->createForm(AdminEditUserType::class, $user);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+            $this->addFlash('success', 'User modified');
+        }
+
 
         return $this->render('admin/adminEditUsers.html.twig', [
-            'user' => $user
+            'form' => $form->createView(),
         ]);
     }
+
+
+    /**
+     * @Route("/admin/delete/user/{id}", name="admin_delete_users")
+     */
+    public function adminDeleteUsers($id): Response
+    {
+
+        $user = $this->getDoctrine()->getRepository(User::class);
+        $user = $user->findOneById($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($user);
+        $em->flush();
+
+        return $this->redirectToRoute("admin_users");
+    }
+
 
     /**
      * @Route("/admin/brasseurs", name="admin_brasseurs")
