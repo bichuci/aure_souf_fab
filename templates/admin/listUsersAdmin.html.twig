@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<main class="container">
+    <h2> Page d'administration des utilisateurs </h2>
+    <section>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom - Prénom</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.nom }}  {{ user.prenom }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        {% for role in user.roles %}
+                            <td>{{ role }}</td>
+                        {% endfor %}
+                        <td>
+                            <a class="btn btn-outline-info" href="{{ path('admin_edit_users', { 'id' : user.id}) }}">Modifier</a>
+                            <a class="btn btn-danger" href="">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+{% endblock %}

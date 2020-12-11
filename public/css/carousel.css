@@ -34,7 +34,7 @@ main{
     display: inline-block !important;
     text-align: center;
     height:150px;
-    width: 249px;;
+    width: 250px;;
     border: none !important;
     vertical-align:top;
     background-color: #f8f9fa;
@@ -50,9 +50,8 @@ main{
 }
 
 .card img {
-    width:100%;
+    max-width: 100%;
     box-sizing: border-box;
-    background-size:cover;
     border:none;
     height:150px;
 }
@@ -123,5 +122,5 @@ main .card:hover {
 
 .pre, .next{
     height:150px;
-    margin: 112px 0;
+    margin: 112px 0 !important;
 }

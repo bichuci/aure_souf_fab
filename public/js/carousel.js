@@ -1,3 +1,4 @@
+
 $.fn.infiniteCarousel = function(config){
     config = $.extend({
         itemsPerMove : 1,
@@ -57,32 +58,3 @@ $.fn.infiniteCarousel = function(config){
 
     return this;
 };
-
-
-// On affiche le contenu de la card
-window.addEventListener("DOMContentLoaded", function (){
-    var timer;
-    $(".card-carousel").mouseenter(function () {
-        var that = this
-        timer = setTimeout(function(){
-            $(that).children('.panel-collapse').fadeIn();
-
-        }, 500);
-
-    });
-    $(".card-carousel").mouseleave(function(){
-        clearTimeout(timer);
-        $(this).children('.panel-collapse').fadeOut();
-    });
-});
-
-
-// On ajoute l'overflow visible pour afficher le contenu des cards
-$(".card-carousel").mouseenter(function () {
-    $('.list').addClass('visibleCard');
-});
-
-
-$(".card-carousel").mouseleave(function(){
-    $('.list').removeClass('visibleCard');
-});

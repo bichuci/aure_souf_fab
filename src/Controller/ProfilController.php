@@ -143,18 +143,30 @@ class ProfilController extends AbstractController
             }
 
 
-            $Adresse = $form['adresse_id']->getData();
-            $idAdresse = $profil['user']->getAdresseId()->getId();
-            $tabadresse['cp'] = $Adresse->getCp();
-            $tabadresse['ville'] = $Adresse->getVille();
-            $tabadresse['rue'] = $Adresse->getRue();
-            $tabadresse['pays'] = $Adresse->getPays();
+            $idAdresse = $this->getUser()->getAdresseId() ?? null;
+            $Adresse = ($form['adresse_id']->getData()) ?? null;
+            if($idAdresse === null )
+            {
+
+            }
+            else
+            {
+                $tabadresse['cp'] = $Adresse->getCp() ?? null;
+                $tabadresse['ville'] = $Adresse->getVille() ?? null;
+                $tabadresse['rue'] = $Adresse->getRue() ?? null;
+                $tabadresse['pays'] = $Adresse->getPays() ?? null;
+                $idAdresse = $this->getUser()->getAdresseId()->getId() ?? null;
+                $updateAdresse = $this->getDoctrine()->getRepository(Adresse::class);
+                $updateAdresse = $updateAdresse->UpdateProfilAdresse($tabadresse, $idAdresse);
+            }
+
+
+
 
 
             $updateProfil = $this->getDoctrine()->getRepository(User::class);
             $updateProfil = $updateProfil->UpdateProfilInfo($tabinfo, $id);
-            $updateAdresse = $this->getDoctrine()->getRepository(Adresse::class);
-            $updateAdresse = $updateAdresse->UpdateProfilAdresse($tabadresse, $idAdresse);
+
 
             $this->addFlash('success', 'Modification complete complete');
 

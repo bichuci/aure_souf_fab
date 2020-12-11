@@ -108,6 +108,9 @@ class User implements UserInterface
      */
     private $bg_image;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     private $reset_token;
 
 
