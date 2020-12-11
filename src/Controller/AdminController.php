@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Brasserie;
 use App\Entity\User;
+use App\Form\AdminEditBrasseurType;
 use App\Form\AdminEditUserType;
 use App\Form\UserType;
+use App\Repository\BrasserieRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -87,11 +90,40 @@ class AdminController extends AbstractController
      */
     public function listBrasseursAdmin(): Response
     {
+        /** @var BrasserieRepository $repository */
+        $repository = $this->getDoctrine()->getRepository(Brasserie::class);
+        $brasseurs = $repository->findAll();
+
+        return $this->render('admin/listBrasseursAdmin.html.twig', [
+            'brasseurs' => $brasseurs
+        ]);
+    }
+
+    /**
+     * @Route("/admin/edit/brasseur/{id}", name="admin_edit_brasseurs")
+     */
+    public function adminEditBrasseurs($id, Request $request): Response
+    {
+        $brasseur = $this->getDoctrine()->getRepository(Brasserie::class);
+        $brasseur = $brasseur->findOneById($id);
+
+        $form = $this->createForm(AdminEditBrasseurType::class, $brasseur);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($brasseur);
+            $em->flush();
+
+            $this->addFlash('success', 'Brasseur modified');
+        }
 
 
-
-
-        return $this->render('admin/index.html.twig', [
+        return $this->render('admin/adminEditBrasseurs.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }

@@ -113,6 +113,11 @@ class User implements UserInterface
      */
     private $reset_token;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Brasserie::class, cascade={"persist", "remove"})
+     */
+    private $brasserie;
+
 
     public function __construct()
     {
@@ -402,6 +407,18 @@ class User implements UserInterface
     public function setResetToken(?string $reset_token): self
     {
         $this->reset_token = $reset_token;
+
+        return $this;
+    }
+
+    public function getBrasserie(): ?Brasserie
+    {
+        return $this->brasserie;
+    }
+
+    public function setBrasserie(?Brasserie $brasserie): self
+    {
+        $this->brasserie = $brasserie;
 
         return $this;
     }

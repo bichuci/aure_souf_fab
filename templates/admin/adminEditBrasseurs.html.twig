@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<main class="container">
+    <h2>Modifier l'utilisateur</h2>
+    {{ form_start(form) }}
+        {{ form_label(form.brasseur) }}
+        {{ form_widget(form.brasseur)  }}
+
+        <button class="btn btn-outline-info" type="submit">Modifier</button>
+    {{ form_end(form) }}
+
+</main>
+{% endblock %}
