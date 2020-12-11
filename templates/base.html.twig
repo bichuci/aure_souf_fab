@@ -50,25 +50,28 @@
                         </li>
                     </ul>
 
-                        <a class="nav-link text-info" href="{{ path('app_logout') }}" id="navbarDropdownconnect" role="button"  aria-haspopup="true" aria-expanded="false">
-                            Déconnexion
-                        </a>
+                        {% if app.user %}
+                            <li class="nav-link disabled"> Bonjour {{ app.user.username }}</li>
+                            <a class="nav-link text-info" href="{{ path('app_logout') }}" id="navbarDropdownconnect" role="button"  aria-haspopup="true" aria-expanded="false">
+                                Déconnexion
+                            </a>
 
-                        <a class="nav-link text-info" href="{{ path('app_login') }}" id="navbarDropdownconnect" role="button"  aria-haspopup="true" aria-expanded="false">
-                            Connexion
-                        </a>
+                            <a class="nav-link text-info" href="{{ path('profil_index', {'id': app.user.id}) }}" role="button">Profil</a>
+                        {% else %}
+                            <a class="nav-link text-info" href="{{ path('app_login') }}" id="navbarDropdownconnect" role="button"  aria-haspopup="true" aria-expanded="false">
+                                Connexion
+                            </a>
 
-                        <a class="nav-link text-info" href="{{ path('app_forgotten_password') }}" id="navbarDropdownconnect" role="button" aria-expanded="false">
-                            Oublie pass
-                        </a>
+                            <a class="nav-link text-info" href="{{ path('app_register') }}" id="navbarDropdownconnect" role="button" aria-expanded="false">
+                                S'inscrire
+                            </a>
+                        {% endif %}
 
-                        <a class="nav-link text-info" href="{{ path('app_register') }}" id="navbarDropdownconnect" role="button" aria-expanded="false">
-                            S'inscrire
-                        </a>
-
+                        {% if is_granted('ROLE_ADMIN') %}
                         <a class="nav-link text-info" href="{{ path('admin_index') }}" id="navbarDropdownconnect" role="button" aria-expanded="false">
                             Zone admin
                         </a>
+                        {% endif %}
 
                 <form class="form-inline my-2 my-lg-1">
                     <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
@@ -103,22 +106,28 @@
                 <h6 id="relou" class="mb-2">Réseaux sociaux</h6>
                 <div id="con" class="row">
                     <div class="d-flex justify-content-around">
-                        <a href="" class="m-1"><i class="fab fa-facebook"></i></a>
+                        <a href="" class="mr-1"><i class="fab fa-facebook"></i></a>
                         <p><a href="#">Facebook</a></p>
                     </div>
                     <div class="d-flex justify-content-around ">
-                        <a href="" class="m-1"><i class="fab fa-instagram"></i></a>
+                        <a href="" class="mr-1"><i class="fab fa-instagram"></i></a>
                         <p><a href="#">Instagram</a></p>
                     </div>
                     <div class="d-flex justify-content-around ">
-                        <a href="" class="m-1"><i class="fab fa-twitter"></i></a>
+                        <a href="" class="mr-1"><i class="fab fa-twitter"></i></a>
                         <p><a href="#">Twitter</a></p>
                     </div>
                     <div class="d-flex justify-content-around ">
-                        <a href="" class="m-1"><i class="fab fa-linkedin"></i></a>
-                        <p><a href="#">Linkedin</a></p>
+                        <a href="mr-2"><i class="fab fa-linkedin"></i></a>
+                        <p class="ml-1"><a href="#">Linkedin</a></p>
                     </div>
                 </div>
+            </div>
+            <div class="container col-lg-3 text-center mt-2">
+                <h6>Fait avec amour par :</h6>
+                <p><a href="#">Soufiane Rechia</a> &copy; DAWAN</p>
+                <p><a href="https://www.linkedin.com/in/aurelien-walter-69487717a/">Aurelien Walter &copy; DAWAN</a></p>
+                <p>Le soldat inconnu</p>
             </div>
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

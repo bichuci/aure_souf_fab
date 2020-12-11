@@ -8,7 +8,9 @@
 <div class="container col-10">
     <h2>La liste des bières</h2>
     <div class="btn-group d-flex justify-content-end">
-        <a href="{{ path('form_biere') }}" class="btn btn-info ">Ajouter une bière</a>
+        {% if is_granted('ROLE_BRASSEUR') %}
+            <a href="{{ path('form_biere') }}" class="btn btn-info ">Ajouter une bière</a>
+        {% endif %}
         <button class="btn btn-outline-info">Voir mes favoris</button>
     </div>
     <div class="row  m-2">

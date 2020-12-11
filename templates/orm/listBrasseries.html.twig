@@ -8,7 +8,9 @@
 <div class="container col-10">
     <h2 class="mt-2">La liste des brasseries</h2>
     <div class="btn-group d-flex justify-content-end">
-        <a href="{{ path('form_brasserie') }}" class="btn btn-info ">Ajouter une brasserie</a>
+        {% if is_granted('ROLE_BRASSEUR') %}
+            <a href="{{ path('form_brasserie') }}" class="btn btn-info ">Ajouter une brasserie</a>
+        {% endif %}
         <button class="btn btn-outline-info">Voir mes favoris</button>
     </div>
 
@@ -35,7 +37,7 @@
                     <td>{{ brasserie.telephone ?? 'Non renseigné' }}</td>
                     <td>{{ brasserie.mail ?? 'Non renseigné'}}</td>
                     <td>{{ brasserie.adresse.ville ?? 'Non renseigné' }}</td>
-                    <td>
+                    <td class="btn-group">
                         <a href="{{ path('orm_detailBrasserie', {'id': brasserie.id})  }}" class="btn btn-info">Voir le détail</a>
                         <a href="{{ path('orm_list_brasserie_biere', {'id' : brasserie.id }) }}" class="btn btn-outline-info">Leurs Bières</a>
                     </td>
@@ -44,6 +46,7 @@
         </tbody>
 
     </table>
+    <a href="{{ path('home_index') }}" class="btn btn-info">Retour à l'accueil</a>
 </div>
 
 {% endblock %}
