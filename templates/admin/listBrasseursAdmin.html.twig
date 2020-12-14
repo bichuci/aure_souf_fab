@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<main class="container">
+    <h2>Modifier le brasserie</h2>
+    <main class="container">
+        <h2> Page d'administration des brasseries </h2>
+        <section>
+            <table class="table table-dark table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Brasseur</th>
+                    <th>Actions</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                {% for brasseur in brasseurs %}
+                    <tr>
+                        <td>{{ brasseur.id }}</td>
+                        <td>{{ brasseur.nom }}</td>
+                        <td>{{ brasseur.mail }}</td>
+                        <td>{{ brasseur.brasseur.nom ?? null }}</td>
+                        <td>
+                            <a class="btn btn-outline-info" href="{{ path('admin_edit_brasseurs', { 'id' : brasseur.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+{% endblock %}

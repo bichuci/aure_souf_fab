@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des bières par brasserie{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="text-center mt-2">{{ data.brasserie.nom }}</h2>
+        <h4>Leurs bières :</h4>
+
+        {% for produit in data.brasserie.bieres %}
+            <ul class="list-group">
+                <li class="list-group-item">{{ produit.nom }}</li>
+            </ul>
+
+        {% else %}
+            <div class="alert alert-warning"> La brasserie " {{ data.brasserie.nom }} " n'a renseigné aucune bières</div>
+        {% endfor %}
+        <a href="{{ path('orm_brasseries') }}" class="btn btn-info">Retour vers la liste des brasseries</a>
+    </div>
+{% endblock %}

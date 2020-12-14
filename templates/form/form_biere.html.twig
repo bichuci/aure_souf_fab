@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormController!{% endblock %}
+
+{% block body %}
+    <div class="container col-lg-8 text-center">
+        <h2>Formulaire d'ajout de bières</h2>
+        <div style="height:1px; background-color:darkgoldenrod; width:100%; margin:5px;"></div>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+
+        {{ form_start(form_biere) }}
+
+        <div class="form-group">
+            {{ form_label(form_biere.nom) }}
+            {{ form_widget(form_biere.nom) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form_biere.description) }}
+            {{ form_widget(form_biere.description) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form_biere.date_creation) }}
+            {{ form_widget(form_biere.date_creation) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form_biere.brasserie_id) }}
+            {{ form_widget(form_biere.brasserie_id) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form_biere.categorie_id) }}
+            {{ form_widget(form_biere.categorie_id) }}
+        </div>
+
+    <button class="btn btn-outline-info">Ajouter</button>
+    </div>
+    {{ form_end(form_biere) }}
+{% endblock %}
