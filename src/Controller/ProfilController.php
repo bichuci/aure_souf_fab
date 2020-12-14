@@ -39,6 +39,11 @@ class ProfilController extends AbstractController
         $form = $this->createForm(UserbgimageType::class);
 
         $form->handleRequest($request);
+        if ($form->isSubmitted()){
+
+        dump($_FILES);
+        dump($form->get('bg_image')->getData());
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
 
