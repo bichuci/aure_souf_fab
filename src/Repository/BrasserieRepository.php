@@ -5,7 +5,10 @@ namespace App\Repository;
 use App\Entity\Brasserie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Response;
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
 
 /**
  * @method Brasserie|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,6 +23,7 @@ class BrasserieRepository extends ServiceEntityRepository
         parent::__construct($registry, Brasserie::class);
     }
 
+<<<<<<< HEAD
     public function findAllBrasserie()
     {
         return $this->createQueryBuilder('br')
@@ -56,6 +60,8 @@ class BrasserieRepository extends ServiceEntityRepository
             ;
     }
 
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     // /**
     //  * @return Brasserie[] Returns an array of Brasserie objects
     //  */

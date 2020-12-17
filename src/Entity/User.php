@@ -6,11 +6,15 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+<<<<<<< HEAD
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
+=======
+use Symfony\Component\Security\Core\User\UserInterface;
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -25,9 +29,13 @@ class User implements UserInterface
     private $id;
 
     /**
+<<<<<<< HEAD
      * @ORM\Column(name="email", type="string", length=180, unique=true, nullable=false)
      * @Assert\Email()
      * @Assert\NotBlank
+=======
+     * @ORM\Column(type="string", length=180, unique=true)
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
      */
     private $email;
 
@@ -58,7 +66,11 @@ class User implements UserInterface
     private $username;
 
     /**
+<<<<<<< HEAD
      * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
+=======
+     * @ORM\OneToOne(targetEntity=Adresse::class, inversedBy="user", cascade={"persist", "remove"})
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
      */
     private $adresse_id;
 
@@ -92,6 +104,7 @@ class User implements UserInterface
      */
     private $commentaireUsers;
 
+<<<<<<< HEAD
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -119,6 +132,8 @@ class User implements UserInterface
     private $brasserie;
 
 
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     public function __construct()
     {
         $this->biere_favorite = new ArrayCollection();
@@ -150,7 +165,11 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
+<<<<<<< HEAD
         return (string) $this->username;
+=======
+        return (string) $this->email;
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     }
 
     /**
@@ -366,6 +385,7 @@ class User implements UserInterface
 
         return $this;
     }
+<<<<<<< HEAD
 
 
     public function getProfilImage(): ?string
@@ -422,4 +442,6 @@ class User implements UserInterface
 
         return $this;
     }
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
 }

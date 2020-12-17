@@ -23,9 +23,12 @@
     "doctrine/common": {
         "version": "3.0.2"
     },
+<<<<<<< HEAD
     "doctrine/data-fixtures": {
         "version": "1.4.4"
     },
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     "doctrine/dbal": {
         "version": "2.12.1"
     },
@@ -44,6 +47,7 @@
             "./src/Repository/.gitignore"
         ]
     },
+<<<<<<< HEAD
     "doctrine/doctrine-fixtures-bundle": {
         "version": "3.0",
         "recipe": {
@@ -56,6 +60,8 @@
             "./src/DataFixtures/AppFixtures.php"
         ]
     },
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     "doctrine/doctrine-migrations-bundle": {
         "version": "2.2",
         "recipe": {
@@ -114,9 +120,12 @@
     "ocramius/proxy-manager": {
         "version": "2.10.0"
     },
+<<<<<<< HEAD
     "php": {
         "version": "7.4"
     },
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
     },
@@ -153,9 +162,12 @@
             "./config/packages/sensio_framework_extra.yaml"
         ]
     },
+<<<<<<< HEAD
     "swiftmailer/swiftmailer": {
         "version": "v6.2.4"
     },
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     "symfony/asset": {
         "version": "v5.1.9"
     },
@@ -433,6 +445,7 @@
     "symfony/string": {
         "version": "v5.2.0"
     },
+<<<<<<< HEAD
     "symfony/swiftmailer-bundle": {
         "version": "2.5",
         "recipe": {
@@ -447,6 +460,8 @@
             "./config/packages/test/swiftmailer.yaml"
         ]
     },
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     "symfony/translation": {
         "version": "3.3",
         "recipe": {
@@ -519,9 +534,12 @@
     "symfony/yaml": {
         "version": "v5.2.0"
     },
+<<<<<<< HEAD
     "symfonycasts/verify-email-bundle": {
         "version": "v1.1.0"
     },
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     "twig/extra-bundle": {
         "version": "v3.1.1"
     },

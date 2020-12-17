@@ -36,7 +36,11 @@ class Biere
 
     /**
      * @ORM\ManyToOne(targetEntity=Brasserie::class, inversedBy="bieres")
+<<<<<<< HEAD
      * @ORM\JoinColumn(nullable=true)
+=======
+     * @ORM\JoinColumn(nullable=false)
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
      */
     private $brasserie_id;
 
@@ -46,12 +50,20 @@ class Biere
     private $note;
 
     /**
+<<<<<<< HEAD
      * @ORM\Column(type="text", nullable=true)
+=======
+     * @ORM\Column(type="text")
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
      */
     private $commentaire;
 
     /**
+<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity=Categorie::class)
+=======
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="bieres")
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie_id;

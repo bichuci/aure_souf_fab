@@ -20,7 +20,11 @@ class NoteUser
     private $id;
 
     /**
+<<<<<<< HEAD
      * @ORM\OneToMany(targetEntity=biere::class, mappedBy="noteUser")
+=======
+     * @ORM\OneToMany(targetEntity=Biere::class, mappedBy="noteUser")
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
      */
     private $biere_id;
 

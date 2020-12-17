@@ -19,6 +19,7 @@ class BiereRepository extends ServiceEntityRepository
         parent::__construct($registry, Biere::class);
     }
 
+<<<<<<< HEAD
     public function findAllJoinBrasserie()
     {
         return $this->createQueryBuilder('b')
@@ -52,6 +53,8 @@ class BiereRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
             ;
     }
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
     // /**
     //  * @return Biere[] Returns an array of Biere objects
     //  */
