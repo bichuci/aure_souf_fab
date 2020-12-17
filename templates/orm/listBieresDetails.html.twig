@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail bière{% endblock %}
+
+{% block body %}
+
+
+    <header>
+        <main class="container">
+            <section class="row">
+                <!-- Carte du produit -->
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">{{ bieres.nom ?? 'Titre non renseigné'}} </h2>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                        <img src="./img/img1.jpg" class="card-img-bottom" alt="...">
+                    </div>
+                </div>
+                <!-- Carte utilisateur/brasseur -->
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">{{ bieres.brasserieId.nom ?? 'Nom de la brasserie non renseigné' }}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ bieres.brasserieId.adresse.rue ~" "~ bieres.brasserieId.adresse.cp ~" "~ bieres.brasserieId.adresse.ville }}</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{bieres.brasserieId.description ?? 'Description de brasserie non renseigné'}}
+                            </p>
+                            <p class="card-text">
+                            {{ bieres.description ?? 'Description non renseigné'}}
+                            </p>
+                            <p>
+                                <a href="#" class="card-link">Différents lien potentiels vers ses publications</a>
+                            </p>
+                            <p>
+                                <a href="#" class="card-link">Différents lien potentiels</a>
+                            </p>
+                            <p>
+                                <a href="#" class="card-link">Différents lien potentiels</a>
+                            </p>
+                            <div class="mt-2">
+                                <span class="badge badge-pill badge-primary">Utilisateur</span>
+                                <span class="badge badge-pill badge-secondary">Brasseur</span>
+                                <span class="badge badge-pill badge-success">Indépendant</span>
+                                <span class="badge badge-pill badge-danger">Modérateur</span>
+                            </div>
+                        </div>
+                        <div class="pb-2 text-center">
+                            <span class="badge badge-pill badge-warning">{{ bieres.categorieId.nom }}</span>
+                        </div>
+                        <div class="card-footer">
+                            <div id="avis">
+                                <h5>Avis</h5>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Carte du Produit-->
+            <section class="mt-2">
+                <!-- Card descriptif produit -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Description du produit/Caractéristiques etc..</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
+                        </p>
+                    </div>
+                    <!-- Carousel des produits phares/Similaires -->
+                    <div class="card-footer" id="carousel">
+                        <article id="carouselProduct">
+                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                <div class="carousel-inner h-100">
+                                    <div class="carousel-item active h-100">
+                                        <img src="./img/img3.jpg" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="./img/img1.jpg" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="./img/img3.jpg" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </header>
+
+{% endblock %}

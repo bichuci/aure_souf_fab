@@ -1,3 +1,10 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien

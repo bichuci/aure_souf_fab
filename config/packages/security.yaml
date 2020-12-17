@@ -10,6 +10,10 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Fabien
 
     role_hierarchy:
         ROLE_BRASSEUR : ROLE_USER
@@ -17,6 +21,7 @@ security:
         ROLE_ADMIN: ROLE_BRASSEUR, ROLE_CONTRIBUTEUR
         ROLE_SUPERADMIN: ROLE_ADMIN
 
+<<<<<<< HEAD
     firewalls:
         admin_area:
             pattern: ^/
@@ -28,6 +33,22 @@ security:
             logout:
                 path: app_logout
                 target: app_login
+=======
+    firewalls:
+        admin_area:
+            pattern: ^/
+            anonymous: true
+            form_login:
+                login_path: app_login
+                check_path: app_login
+                default_target_path: admin_index
+            logout:
+                path: app_logout
+                target: app_login
+=======
+    firewalls:
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -35,6 +56,10 @@ security:
             anonymous: true
             lazy: true
             provider: app_user_provider
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Fabien
             guard:
                 authenticators:
                     - App\Security\UsersAuthenticator
@@ -42,6 +67,11 @@ security:
                 path: app_logout
                 # where to redirect after logout
                 # target: app_any_route
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -52,6 +82,17 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+<<<<<<< HEAD
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profil, roles: ROLE_USER }
         - { path: ^/formulaire, roles: ROLE_BRASSEUR }
+=======
+<<<<<<< HEAD
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/profil, roles: ROLE_USER }
+        - { path: ^/formulaire, roles: ROLE_BRASSEUR }
+=======
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien

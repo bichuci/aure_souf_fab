@@ -6,11 +6,21 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Fabien
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
+<<<<<<< HEAD
+=======
+=======
+use Symfony\Component\Security\Core\User\UserInterface;
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -25,9 +35,19 @@ class User implements UserInterface
     private $id;
 
     /**
+<<<<<<< HEAD
      * @ORM\Column(name="email", type="string", length=180, unique=true, nullable=false)
      * @Assert\Email()
      * @Assert\NotBlank
+=======
+<<<<<<< HEAD
+     * @ORM\Column(name="email", type="string", length=180, unique=true, nullable=false)
+     * @Assert\Email()
+     * @Assert\NotBlank
+=======
+     * @ORM\Column(type="string", length=180, unique=true)
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
      */
     private $email;
 
@@ -58,7 +78,15 @@ class User implements UserInterface
     private $username;
 
     /**
+<<<<<<< HEAD
      * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
+=======
+<<<<<<< HEAD
+     * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
+=======
+     * @ORM\OneToOne(targetEntity=Adresse::class, inversedBy="user", cascade={"persist", "remove"})
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
      */
     private $adresse_id;
 
@@ -92,6 +120,10 @@ class User implements UserInterface
      */
     private $commentaireUsers;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Fabien
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -119,6 +151,11 @@ class User implements UserInterface
     private $brasserie;
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
     public function __construct()
     {
         $this->biere_favorite = new ArrayCollection();
@@ -150,7 +187,15 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
+<<<<<<< HEAD
         return (string) $this->username;
+=======
+<<<<<<< HEAD
+        return (string) $this->username;
+=======
+        return (string) $this->email;
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
     }
 
     /**
@@ -366,6 +411,10 @@ class User implements UserInterface
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Fabien
 
 
     public function getProfilImage(): ?string
@@ -422,4 +471,9 @@ class User implements UserInterface
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
 }

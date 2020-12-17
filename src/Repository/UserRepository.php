@@ -36,6 +36,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Fabien
     public function findOneJoinAdresse($id)
     {
 
@@ -153,6 +157,11 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

@@ -19,6 +19,10 @@ class AdresseRepository extends ServiceEntityRepository
         parent::__construct($registry, Adresse::class);
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Fabien
 
     public function UpdateProfilAdresse(array $adresse, $id)
     {
@@ -37,6 +41,11 @@ class AdresseRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult();
     }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 338681029460064f605f72924903f9060ededaf8
+>>>>>>> Fabien
     // /**
     //  * @return Adresse[] Returns an array of Adresse objects
     //  */
