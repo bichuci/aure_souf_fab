@@ -34,10 +34,6 @@ class UserpfimageType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-<<<<<<< HEAD
-=======
-            'data_class' => User::class,
->>>>>>> Fabien
         ]);
     }
 }

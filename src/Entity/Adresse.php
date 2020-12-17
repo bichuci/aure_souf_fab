@@ -4,14 +4,9 @@ namespace App\Entity;
 
 use App\Repository\AdresseRepository;
 use Doctrine\ORM\Mapping as ORM;
-<<<<<<< HEAD
 use Symfony\Component\Validator\Constraints as Assert;
-=======
-<<<<<<< HEAD
-use Symfony\Component\Validator\Constraints as Assert;
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
+
+
 
 /**
  * @ORM\Entity(repositoryClass=AdresseRepository::class)
@@ -27,39 +22,21 @@ class Adresse
 
     /**
      * @ORM\Column(type="string", length=255)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Fabien
      * @Assert\Regex(
      *     pattern="^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$",
      *     match=true,
      *     message="Mauvais code postale"
      * )
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
      */
     private $cp;
 
     /**
      * @ORM\Column(type="string", length=255)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Fabien
      * @Assert\Regex(
      *     pattern="'/\A[\pL\s\']*\z/m'",
      *     match=true,
      *     message="Caracthére non autorisé"
      * )
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
      */
     private $ville;
 
@@ -73,10 +50,7 @@ class Adresse
      */
     private $pays;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
     /**
      * @ORM\OneToOne(targetEntity=Brasserie::class, mappedBy="adresse", cascade={"persist", "remove"})
      */
@@ -86,8 +60,7 @@ class Adresse
      * @ORM\OneToOne(targetEntity=User::class, mappedBy="adresse_id", cascade={"persist", "remove"})
      */
     private $user;
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
+
 
     public function getId(): ?int
     {
@@ -141,10 +114,7 @@ class Adresse
 
         return $this;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
 
     public function getBrasserie(): ?Brasserie
     {
@@ -180,6 +150,5 @@ class Adresse
 
         return $this;
     }
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
+
 }

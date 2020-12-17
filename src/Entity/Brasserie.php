@@ -25,15 +25,7 @@ class Brasserie
     private $nom;
 
     /**
-<<<<<<< HEAD
      * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
-=======
-<<<<<<< HEAD
-     * @ORM\OneToOne(targetEntity=Adresse::class, cascade={"persist", "remove"})
-=======
-     * @ORM\OneToOne(targetEntity=Adresse::class, inversedBy="brasserie", cascade={"persist", "remove"})
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
      * @ORM\JoinColumn(nullable=false)
      */
     private $adresse;
@@ -65,14 +57,7 @@ class Brasserie
 
     /**
      * @ORM\OneToMany(targetEntity=Biere::class, mappedBy="brasserie_id")
-<<<<<<< HEAD
      * @ORM\JoinColumn(nullable=true)
-=======
-<<<<<<< HEAD
-     * @ORM\JoinColumn(nullable=true)
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
      */
     private $bieres;
 
@@ -98,15 +83,7 @@ class Brasserie
         return $this;
     }
 
-<<<<<<< HEAD
     public function getAdresse(): ?Adresse
-=======
-<<<<<<< HEAD
-    public function getAdresse(): ?Adresse
-=======
-    public function getAdresse(): ?adresse
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
     {
         return $this->adresse;
     }

@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
-<<<<<<< HEAD
-{% block title %}Hello ORMController!{% endblock %}
-=======
+
 {% block title %}Detail de la Brasserie{% endblock %}
->>>>>>> Fabien
+
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/carousel2.css') }}">
 {% endblock %}
@@ -29,7 +27,7 @@
                         <h6 class="card-subtitle mb-2 text-muted" style="border-bottom: none;">{{ brasserie.adresse.ville }} - {{ brasserie.adresse.cp }}</h6>
                     </div>
                     <div class="card-body">
-<<<<<<< HEAD
+
                         <p class="card-text">
                             {{brasserie.description}}
                         </p>
@@ -37,14 +35,13 @@
                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur facere, fugit iusto, magnam minus nobis non, numquam obcaecati quod reprehenderit sed similique sint voluptate! Ad commodi incidunt ipsa maiores obcaecati!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aut consectetur expedita ipsam magnam nemo provident quas repellendus. Consequuntur, debitis facilis illo iure nihil quis repellat voluptatibus. Quos sapiente, vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur deserunt harum hic, ipsa nisi quibusdam quidem quos saepe! Autem commodi consectetur fuga fugit laudantium magni nihil, perspiciatis sit ut.Cum enim itaque labore laboriosam laudantium minima nemo nulla ullam vel. Asperiores consequuntur dignissimos dolorem doloremque!Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore incidunt nisi pariatur eius magnam sed? Recusandae, esse alias assumenda optio nulla quisquam id excepturi! Reiciendis molestiae ipsam incidunt beatae deserunt!
                         </p>
                         <p>
-=======
+
                         <br class="card-text">
                             <br>
                             {{brasserie.description}}
                         </p>
                         <p>
                             <br>
->>>>>>> Fabien
                             <a class="btn btn-outline-info" href="{{ path('orm_list_brasserie_biere', {'id' : brasserie.id }) }}" class="card-link">Leurs créations</a>
                         </p>
 

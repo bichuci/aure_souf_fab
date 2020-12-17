@@ -31,39 +31,24 @@
         "symfony/security-bundle": "5.1.*",
         "symfony/serializer": "5.1.*",
         "symfony/string": "5.1.*",
-<<<<<<< HEAD
+
         "symfony/swiftmailer-bundle": "^3.5",
-=======
-<<<<<<< HEAD
-        "symfony/swiftmailer-bundle": "^3.5",
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
+
         "symfony/translation": "5.1.*",
         "symfony/twig-bundle": "^5.1",
         "symfony/validator": "5.1.*",
         "symfony/web-link": "5.1.*",
         "symfony/yaml": "5.1.*",
-<<<<<<< HEAD
+
         "symfonycasts/verify-email-bundle": "^1.1",
-=======
-<<<<<<< HEAD
-        "symfonycasts/verify-email-bundle": "^1.1",
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
+
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-<<<<<<< HEAD
+
         "doctrine/doctrine-fixtures-bundle": "^3.4",
-=======
-<<<<<<< HEAD
-        "doctrine/doctrine-fixtures-bundle": "^3.4",
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
+
         "symfony/browser-kit": "^5.1",
         "symfony/css-selector": "^5.1",
         "symfony/debug-bundle": "^5.1",

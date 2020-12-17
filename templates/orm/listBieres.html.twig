@@ -1,21 +1,19 @@
 {% extends 'base.html.twig' %}
 
-<<<<<<< HEAD
-{% block title %}Hello ORMController!{% endblock %}
-=======
+
 {% block title %}Liste des bières{% endblock %}
 
->>>>>>> Fabien
+
 
 {% block body %}
 
 
 <div class="container col-10">
-<<<<<<< HEAD
+
     <h2>La liste des bières</h2>
-=======
+
     <h2 class="text-center">La liste des bières</h2>
->>>>>>> Fabien
+
     <div class="btn-group d-flex justify-content-end">
         {% if is_granted('ROLE_BRASSEUR') %}
             <a href="{{ path('form_biere') }}" class="btn btn-info ">Ajouter une bière</a>
@@ -30,7 +28,7 @@
                             <img src="./img/img3.jpg" alt="Image de la bière" class="card-img-top">
                         </div>
                     </div>
-<<<<<<< HEAD
+
                     <div class="card-body bg-light p-0">
                         <div class="p-2 text-center">
                             <h4 class="p-2">{{biere.nom}}</h4>
@@ -41,7 +39,7 @@
                             <span class="badge badge-pill badge-warning">{{ biere.categorieId.nom }}</span>
                             <span class="badge badge-pill badge-warning">{{ biere.brasserieId.adresse.ville }}</span>
                         </div>
-=======
+
                     <div class="card-body bg-light p-0 h-50 ">
                         <div class="p-2 text-center bg-light">
                             <h4 class="p-2"><a href="{{ path('orm_bieres_details' , {'id' :biere.id} )}}">{{biere.nom}}</a></h4>
@@ -52,7 +50,7 @@
                     <div class="pb-2 text-center bg-light">
                         <span class="badge badge-pill badge-warning">{{ biere.categorieId.nom }}</span>
                         <span class="badge badge-pill badge-warning">{{ biere.brasserieId.adresse.ville }}</span>
->>>>>>> Fabien
+
                     </div>
                     <div class="card-footer">
                         <div id="avis">
