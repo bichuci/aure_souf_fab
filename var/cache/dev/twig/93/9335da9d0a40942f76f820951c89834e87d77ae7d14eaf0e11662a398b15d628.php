@@ -193,6 +193,6 @@ class __TwigTemplate_c8f3c3a1677a5b5efcd8ac7cec49365e5a0de4b816acb9ebeaa5bf14d95
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
     }
 }

@@ -15,6 +15,10 @@ body {background-color: #e2e8f0; color: #1a202c; }
     display: none;
 }
 
+.custom-file{
+    cursor: pointer;
+}
+
 .menu {
     width: 100%;
 }

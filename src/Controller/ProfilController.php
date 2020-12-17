@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Adresse;
 use App\Entity\User;
+use App\Form\Settings2Type;
 use App\Form\UpdatepasswordType;
 use App\Form\UserbgimageType;
 use App\Form\UserpfimageType;
@@ -39,14 +40,7 @@ class ProfilController extends AbstractController
         $form = $this->createForm(UserbgimageType::class);
 
         $form->handleRequest($request);
-<<<<<<< HEAD
-        if ($form->isSubmitted()){
 
-        dump($_FILES);
-        dump($form->get('bg_image')->getData());
-        }
-=======
->>>>>>> Fabien
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -73,6 +67,7 @@ class ProfilController extends AbstractController
 
     public function settings($id, Request $request, UploadFileManager $manager, UserPasswordEncoderInterface $passwordEncoder, UserPasswordEncoderInterface $encoder): Response
     {
+
         $profil = $this->getDoctrine()->getRepository(User::class);
         $profil = $profil->profilsettings($id);
 
@@ -89,14 +84,16 @@ class ProfilController extends AbstractController
 
 
         $path = "";
-        $form = $this->createForm(UsersettingsType::class);
+        $formset1 = $this->createForm(UsersettingsType::class);
+        $formset2 = $this->createForm(Settings2Type::class);
         $formimg = $this->createForm(UserpfimageType::class);
         $formimg2 = $this->createForm(UserpfimageType::class);
         $formdp = $this->createForm(UpdatepasswordType::class);
 
+        $formset2->handleRequest($request);
         $formimg->handleRequest($request);
         $formimg2->handleRequest($request);
-        $form->handleRequest($request);
+        $formset1->handleRequest($request);
         $formdp->handleRequest($request);
 
 
@@ -130,6 +127,7 @@ class ProfilController extends AbstractController
                     $em->persist($user);
                     $em->flush();
 
+
                 } else {
                     $this->addFlash('faild', 'mauvais mot de passe ! ');
                 }
@@ -138,39 +136,16 @@ class ProfilController extends AbstractController
             }
         }
 
-        if($form->isSubmitted() && $form->isValid()){
-            $tabinfo = ['nom','prenom','email','username','date_naissance','telephone','bio'];
+        if($formset1->isSubmitted() && $formset1->isValid()){
+
+            $tabinfo = ['nom','prenom','email','username','date_naissance','bio'];
             $tabinfo = array_flip($tabinfo);
-            $tabadresse = ['cp', 'ville', 'rue','pays'];
-            $tabadresse = array_flip($tabadresse);
             $keysinfo= array_keys($tabinfo);
 
 
             for( $i = 0; $i<count($tabinfo);$i++){
-                    $tabinfo[$keysinfo[$i]] = $form[$keysinfo[$i]]->getData();
+                $tabinfo[$keysinfo[$i]] = $formset1[$keysinfo[$i]]->getData();
             }
-
-
-            $idAdresse = $this->getUser()->getAdresseId() ?? null;
-            $Adresse = ($form['adresse_id']->getData()) ?? null;
-            if($idAdresse === null )
-            {
-
-            }
-            else
-            {
-                $tabadresse['cp'] = $Adresse->getCp() ?? null;
-                $tabadresse['ville'] = $Adresse->getVille() ?? null;
-                $tabadresse['rue'] = $Adresse->getRue() ?? null;
-                $tabadresse['pays'] = $Adresse->getPays() ?? null;
-                $idAdresse = $this->getUser()->getAdresseId()->getId() ?? null;
-                $updateAdresse = $this->getDoctrine()->getRepository(Adresse::class);
-                $updateAdresse = $updateAdresse->UpdateProfilAdresse($tabadresse, $idAdresse);
-            }
-
-
-
-
 
             $updateProfil = $this->getDoctrine()->getRepository(User::class);
             $updateProfil = $updateProfil->UpdateProfilInfo($tabinfo, $id);
@@ -181,9 +156,70 @@ class ProfilController extends AbstractController
             return $this->redirectToRoute('profil_settings', ['id' => $id]);
         }
 
+        if($formset2->isSubmitted() && $formset2->isValid()){
+
+
+            $tabinfo = ['biere_favorite','telephone'];
+            $tabinfo = array_flip($tabinfo);
+            $tabadresse = ['cp', 'ville', 'rue','pays'];
+            $tabadresse = array_flip($tabadresse);
+            $keysinfo= array_keys($tabinfo);
+
+            for( $i = 0; $i<count($tabinfo);$i++){
+                $tabinfo[$keysinfo[$i]] = $formset2[$keysinfo[$i]]->getData();
+            }
+
+            $idAdresse = $this->getUser()->getAdresseId() ?? null;
+            $AdresseForm = $formset2['adresse_id']->getData() ?? null;
+
+            if($idAdresse === null)
+            {
+                $idAdresse = new Adresse();
+                $idAdresse->setCp($AdresseForm->getCp());
+                $idAdresse->setVille($AdresseForm->getVille());
+                $idAdresse->setRue($AdresseForm->getRue());
+                $idAdresse->setPays($AdresseForm->getPays());
+
+                $envoie = $this->getDoctrine()->getManager();
+                $envoie->persist($idAdresse);
+                $envoie->flush();
+                $idAdresse->getId();
+                $user->setAdresseId($idAdresse);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+
+            }else{
+                $tabadresse['cp'] = $AdresseForm->getCp() ?? null;
+                $tabadresse['ville'] = $AdresseForm->getVille() ?? null;
+                $tabadresse['rue'] = $AdresseForm->getRue() ?? null;
+                $tabadresse['pays'] = $AdresseForm->getPays() ?? null;
+                $idAdresse = $this->getUser()->getAdresseId()->getId() ?? null;
+                $updateAdresse = $this->getDoctrine()->getRepository(Adresse::class);
+                $updateAdresse = $updateAdresse->UpdateProfilAdresse($tabadresse, $idAdresse);
+
+            }
+
+
+
+            foreach ($tabinfo['biere_favorite'] as $biere){
+                $user->addBiereFavorite($biere);
+            }
+            $user->setTelephone($tabinfo['telephone']);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+
+            $this->addFlash('success', 'Modification complete complete');
+
+            return $this->redirectToRoute('profil_settings', ['id' => $id]);
+        }
+
 
             return $this->render('profil/settings.html.twig', [
-                'form' => $form->createView(),
+                'formset1' => $formset1->createView(),
+                'formset2' => $formset2->createView(),
                 'profil' => $profil,
                 'formimg' => $formimg->createView(),
                 'formimg2' => $formimg2->createView(),

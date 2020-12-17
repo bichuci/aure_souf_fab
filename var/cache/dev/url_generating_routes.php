@@ -27,6 +27,7 @@ return [
     'home_index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'inscription_index' => [[], ['_controller' => 'App\\Controller\\InscriptionController::index'], [], [['text', '/inscription']], [], []],
     'mentions_legales' => [[], ['_controller' => 'App\\Controller\\MentionsLegalesController::index'], [], [['text', '/mentionsLegales']], [], []],
+    'orm_index' => [[], ['_controller' => 'App\\Controller\\ORMController::index'], [], [['text', '/orm']], [], []],
     'orm_bieres' => [[], ['_controller' => 'App\\Controller\\ORMController::listBieres'], [], [['text', '/orm/bieres']], [], []],
     'orm_bieres_details' => [['id'], ['_controller' => 'App\\Controller\\ORMController::listBieresDetails'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/orm/bieres']], [], []],
     'orm_brasseries' => [[], ['_controller' => 'App\\Controller\\ORMController::listBrasseries'], [], [['text', '/orm/brasseries']], [], []],

@@ -90,77 +90,79 @@
                         <div class="tab-pane active" id="profile">
                             <h6>Information du profile</h6>
                             <hr>
-                                {{ form_start(form) }}
+                                {{ form_start(formset1) }}
                                 <div class="form-group">
-                                    {{ form_label(form.nom) }}
-                                    {{ form_widget(form.nom, {'attr': {'value': profil.user.nom}}) }}
-                                    {{ form_help(form.nom) }}
+                                    {{ form_label(formset1.nom) }}
+                                    {{ form_widget(formset1.nom, {'attr': {'value': profil.user.nom}}) }}
+                                    {{ form_help(formset1.nom) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.prenom) }}
-                                    {{ form_widget(form.prenom, {'attr': {'value': profil.user.prenom}}) }}
-                                    {{ form_help(form.prenom) }}
+                                    {{ form_label(formset1.prenom) }}
+                                    {{ form_widget(formset1.prenom, {'attr': {'value': profil.user.prenom}}) }}
+                                    {{ form_help(formset1.prenom) }}
                                     <small id="fullNameHelp" class="form-text text-muted">Vous pouvez changez votre Nom et Prenom a tout moment.</small>
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.date_naissance) }}
-                                    {{ form_widget(form.date_naissance, {'attr' : {'value': profil.user.dateNaissance|date('Y-m-d')}}) }}
+                                    {{ form_label(formset1.date_naissance) }}
+                                    {{ form_widget(formset1.date_naissance, {'attr' : {'value': profil.user.dateNaissance|date('Y-m-d')}}) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.bio) }}
-                                    {{ form_widget(form.bio, {'attr': {'value': profil.user.bio}}) }}
-                                    {{ form_help(form.bio) }}
+                                    {{ form_label(formset1.bio) }}
+                                    {{ form_widget(formset1.bio, {'attr': {'value': profil.user.bio}}) }}
+                                    {{ form_help(formset1.bio) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.username) }}
-                                    {{ form_widget(form.username, {'attr': {'value': profil.user.username}}) }}
-                                    {{ form_help(form.username) }}
+                                    {{ form_label(formset1.username) }}
+                                    {{ form_widget(formset1.username, {'attr': {'value': profil.user.username}}) }}
+                                    {{ form_help(formset1.username) }}
                                     <small id="usernameHelp" class="form-text text-muted">Après avoir changé votre nom d'utilisateur, votre ancien nom d'utilisateur devient disponible pour toute autre personne.</small>
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.email) }}
-                                    {{ form_widget(form.email, {'attr': {'value': profil.user.email ?? ' '}}) }}
-                                    {{ form_help(form.email) }}
+                                    {{ form_label(formset1.email) }}
+                                    {{ form_widget(formset1.email, {'attr': {'value': profil.user.email ?? ' '}}) }}
+                                    {{ form_help(formset1.email) }}
                                 </div>
                                 <div class="form-group small text-muted">
                                     Tous les champs de cette page sont facultatifs et peuvent être supprimés à tout moment.En les remplissant, vous nous autorisez à partager ces données partout où votre profil d'utilisateur apparaît.
                                 </div>
                                 <button class="btn btn-primary" type="submit">Envoyez !</button>
+                            {{ form_end(formset1) }}
                         </div>
                         <div class="tab-pane" id="account">
+                            {{ form_start(formset2) }}
                             <h6>Information complémentaire</h6>
                             <hr>
                                 <div class="form-group">
-                                    {{ form_label(form.adresse_id.cp) }}
+                                    {{ form_label(formset2.adresse_id.cp) }}
 
-                                    {{ form_widget(form.adresse_id.cp, {'attr': {'value': profil.user.AdresseId.cp ?? ' '}} ) }}
+                                    {{ form_widget(formset2.adresse_id.cp, {'attr': {'value': profil.user.AdresseId.cp ?? ' '}} ) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.adresse_id.ville) }}
-                                    {{ form_widget(form.adresse_id.ville, {'attr': {'value': profil.user.AdresseId.ville ?? ' '}} ) }}
+                                    {{ form_label(formset2.adresse_id.ville) }}
+                                    {{ form_widget(formset2.adresse_id.ville, {'attr': {'value': profil.user.AdresseId.ville ?? ' '}} ) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.adresse_id.rue) }}
-                                    {{ form_widget(form.adresse_id.rue, {'attr': {'value': profil.user.AdresseId.rue ?? " "}} ) }}
+                                    {{ form_label(formset2.adresse_id.rue) }}
+                                    {{ form_widget(formset2.adresse_id.rue, {'attr': {'value': profil.user.AdresseId.rue ?? " "}} ) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.adresse_id.pays) }}
-                                    {{ form_widget(form.adresse_id.pays, {'attr': {'value': profil.user.AdresseId.pays ?? " "}} ) }}
+                                    {{ form_label(formset2.adresse_id.pays) }}
+                                    {{ form_widget(formset2.adresse_id.pays, {'attr': {'value': profil.user.AdresseId.pays ?? " "}} ) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_help(form.adresse_id) }}
+                                    {{ form_help(formset2.adresse_id) }}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.telephone) }}
-                                    {{ form_widget(form.telephone, {'attr': {'value': profil.user.telephone}})}}
+                                    {{ form_label(formset2.telephone) }}
+                                    {{ form_widget(formset2.telephone, {'attr': {'value': profil.user.telephone}})}}
                                 </div>
                                 <div class="form-group">
-                                    {{ form_label(form.biere_favorite) }}
-                                    {{ form_widget(form.biere_favorite, {'attr': {'value': profil.user.BiereFavorite|join(',')}})}}
+                                    {{ form_label(formset2.biere_favorite) }}
+                                    {{ form_widget(formset2.biere_favorite, {'attr': {'value': profil.user.BiereFavorite|join(',')}})}}
                                 </div>
 
                                 <button class="btn btn-primary" type="submit">Envoyez !</button>
-                                {{ form_end(form) }}
+                            {{ form_end(formset2) }}
                         </div>
                         <div class="tab-pane" id="security">
                             <h6>Securiter</h6>

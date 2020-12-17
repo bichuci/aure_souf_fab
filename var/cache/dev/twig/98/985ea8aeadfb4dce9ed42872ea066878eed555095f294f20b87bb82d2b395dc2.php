@@ -52,17 +52,17 @@ class __TwigTemplate_8b8bdf4d09b51809bbafe7dfdc96664d888662ce1a4dd2e0b6e98d01828
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
 
+
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">
 
         <link rel=\"stylesheet\" href=\"";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/home.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.15.1/css/all.css\" integrity=\"sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
         <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\" />
-
 
         ";
         // line 16
@@ -240,6 +240,7 @@ class __TwigTemplate_8b8bdf4d09b51809bbafe7dfdc96664d888662ce1a4dd2e0b6e98d01828
         <script src=\"https://kit.fontawesome.com/4119f93ec8.js\" crossorigin=\"anonymous\"></script>
 
     </body>
+    </head>
 </html>
 ";
         
@@ -317,7 +318,7 @@ class __TwigTemplate_8b8bdf4d09b51809bbafe7dfdc96664d888662ce1a4dd2e0b6e98d01828
 
     public function getDebugInfo()
     {
-        return array (  291 => 83,  273 => 16,  254 => 5,  186 => 91,  177 => 84,  175 => 83,  165 => 75,  157 => 71,  155 => 70,  152 => 69,  145 => 65,  137 => 61,  132 => 59,  125 => 55,  120 => 54,  118 => 53,  97 => 35,  91 => 32,  85 => 29,  71 => 17,  69 => 16,  59 => 9,  52 => 5,  46 => 1,);
+        return array (  292 => 83,  274 => 16,  255 => 5,  186 => 91,  177 => 84,  175 => 83,  165 => 75,  157 => 71,  155 => 70,  152 => 69,  145 => 65,  137 => 61,  132 => 59,  125 => 55,  120 => 54,  118 => 53,  97 => 35,  91 => 32,  85 => 29,  71 => 17,  69 => 16,  60 => 10,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -328,6 +329,7 @@ class __TwigTemplate_8b8bdf4d09b51809bbafe7dfdc96664d888662ce1a4dd2e0b6e98d01828
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
 
+
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">
 
         <link rel=\"stylesheet\" href=\"{{ asset('css/home.css') }}\">
@@ -335,7 +337,6 @@ class __TwigTemplate_8b8bdf4d09b51809bbafe7dfdc96664d888662ce1a4dd2e0b6e98d01828
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
         <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\" />
-
 
         {% block stylesheets %}{% endblock %}
     </head>
@@ -468,7 +469,8 @@ class __TwigTemplate_8b8bdf4d09b51809bbafe7dfdc96664d888662ce1a4dd2e0b6e98d01828
         <script src=\"https://kit.fontawesome.com/4119f93ec8.js\" crossorigin=\"anonymous\"></script>
 
     </body>
+    </head>
 </html>
-", "base.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\templates\\base.html.twig");
     }
 }

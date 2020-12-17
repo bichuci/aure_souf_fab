@@ -579,6 +579,6 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
         </script>
     {% endblock %}
 {% endblock %}
-", "home/index.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\templates\\home\\index.html.twig");
     }
 }

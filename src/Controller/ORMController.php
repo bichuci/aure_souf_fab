@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ORMController extends AbstractController
 {
-<<<<<<< HEAD
+
     /**
      * @Route("/orm", name="orm_index")
      */
@@ -20,7 +20,8 @@ class ORMController extends AbstractController
     {
         return $this->render('orm/index.html.twig', [
 
-=======
+            ]);
+    }
 
     /**
      * @Route("/orm/bieres", name="orm_bieres")
@@ -33,23 +34,10 @@ class ORMController extends AbstractController
 
         return $this->render('orm/listBieres.html.twig', [
             'bieres' => $bieres
->>>>>>> Fabien
         ]);
     }
 
     /**
-<<<<<<< HEAD
-     * @Route("/orm/bieres", name="orm_bieres")
-     */
-    public function listBieres(): Response
-    {
-        /** @var BiereRepository $repository */
-        $repository = $this->getDoctrine()->getRepository(Biere::class);
-        $bieres = $repository->findAllJoinBrasserie();
-
-        return $this->render('orm/listBieres.html.twig', [
-            'bieres' => $bieres
-=======
      * @Route("/orm/bieres/{id}", name="orm_bieres_details")
      */
     public function listBieresDetails($id): Response
@@ -60,7 +48,7 @@ class ORMController extends AbstractController
 
         return $this->render('orm/listBieresDetails.html.twig', [
             'bieres' => $bieres,
->>>>>>> Fabien
+
         ]);
     }
 

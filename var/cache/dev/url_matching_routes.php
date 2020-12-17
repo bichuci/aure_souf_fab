@@ -22,6 +22,7 @@ return [
         '/' => [[['_route' => 'home_index', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'inscription_index', '_controller' => 'App\\Controller\\InscriptionController::index'], null, null, null, false, false, null]],
         '/mentionsLegales' => [[['_route' => 'mentions_legales', '_controller' => 'App\\Controller\\MentionsLegalesController::index'], null, null, null, false, false, null]],
+        '/orm' => [[['_route' => 'orm_index', '_controller' => 'App\\Controller\\ORMController::index'], null, null, null, false, false, null]],
         '/orm/bieres' => [[['_route' => 'orm_bieres', '_controller' => 'App\\Controller\\ORMController::listBieres'], null, null, null, false, false, null]],
         '/orm/brasseries' => [[['_route' => 'orm_brasseries', '_controller' => 'App\\Controller\\ORMController::listBrasseries'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],

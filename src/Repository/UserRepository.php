@@ -36,10 +36,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Fabien
+
     public function findOneJoinAdresse($id)
     {
 
@@ -102,14 +99,12 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->set('u.email', ':email')
             ->set('u.username', ':username')
             ->set('u.date_naissance', ':date_naissance')
-            ->set('u.telephone', ':telephone')
             ->set('u.bio', ':bio')
             ->setParameter('nom', $user['nom'])
             ->setParameter('prenom', $user['prenom'])
             ->setParameter('email', $user['email'])
             ->setParameter('username', $user['username'])
             ->setParameter('date_naissance', $user['date_naissance'])
-            ->setParameter('telephone', $user['telephone'])
             ->setParameter('bio', $user['bio'])
             ->getQuery()
             ->getOneOrNullResult();
@@ -155,13 +150,22 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ;
     }
 
+    public function updateTelephoneBiereFavorite(array $user, $id){
+        return $this->createQueryBuilder('u')
+            ->update()
+            ->where('u.id = :id')
+            ->setParameter('id', $id)
+            ->set('u.telephone', ':telephone')
+            ->set('u.biere_favorite', ':biere_favorite')
+            ->setParameter('telephone', $user['telephone'])
+            ->setParameter('biere_favorite', [$user['biere_favorite']])
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
+
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

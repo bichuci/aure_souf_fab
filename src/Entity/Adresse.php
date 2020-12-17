@@ -23,7 +23,7 @@ class Adresse
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Regex(
-     *     pattern="^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$",
+     *     pattern="#^(F-)?((2[A|B])|[0-9]{2})[0-9]{3}$#",
      *     match=true,
      *     message="Mauvais code postale"
      * )
@@ -32,10 +32,6 @@ class Adresse
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Regex(
-     *     pattern="'/\A[\pL\s\']*\z/m'",
-     *     match=true,
-     *     message="Caracthére non autorisé"
      * )
      */
     private $ville;

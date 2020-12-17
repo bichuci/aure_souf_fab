@@ -66,10 +66,10 @@ class Adresse extends \App\Entity\Adresse implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'cp', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'pays'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'cp', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'pays', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'brasserie', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'user'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'cp', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'pays'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'cp', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'pays', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'brasserie', '' . "\0" . 'App\\Entity\\Adresse' . "\0" . 'user'];
     }
 
     /**
@@ -277,6 +277,50 @@ class Adresse extends \App\Entity\Adresse implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPays', [$pays]);
 
         return parent::setPays($pays);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBrasserie(): ?\App\Entity\Brasserie
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBrasserie', []);
+
+        return parent::getBrasserie();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setBrasserie(\App\Entity\Brasserie $brasserie): \App\Entity\Adresse
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBrasserie', [$brasserie]);
+
+        return parent::setBrasserie($brasserie);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUser(): ?\App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', []);
+
+        return parent::getUser();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUser(?\App\Entity\User $user): \App\Entity\Adresse
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUser', [$user]);
+
+        return parent::setUser($user);
     }
 
 }
