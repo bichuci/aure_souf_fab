@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Adresse;
 use App\Entity\User;
+use App\Form\DelteUserType;
 use App\Form\Settings2Type;
 use App\Form\UpdatepasswordType;
 use App\Form\UserbgimageType;
@@ -89,12 +90,14 @@ class ProfilController extends AbstractController
         $formimg = $this->createForm(UserpfimageType::class);
         $formimg2 = $this->createForm(UserpfimageType::class);
         $formdp = $this->createForm(UpdatepasswordType::class);
+        $formdelte = $this->createForm(DelteUserType::class);
 
         $formset2->handleRequest($request);
         $formimg->handleRequest($request);
         $formimg2->handleRequest($request);
         $formset1->handleRequest($request);
         $formdp->handleRequest($request);
+        $formdelte->handleRequest($request);
 
 
 
@@ -217,6 +220,8 @@ class ProfilController extends AbstractController
         }
 
 
+
+
             return $this->render('profil/settings.html.twig', [
                 'formset1' => $formset1->createView(),
                 'formset2' => $formset2->createView(),
@@ -224,6 +229,7 @@ class ProfilController extends AbstractController
                 'formimg' => $formimg->createView(),
                 'formimg2' => $formimg2->createView(),
                 'formdp' => $formdp->createView(),
+                'formdelte' => $formdelte->createView(),
             ]);
 
     }

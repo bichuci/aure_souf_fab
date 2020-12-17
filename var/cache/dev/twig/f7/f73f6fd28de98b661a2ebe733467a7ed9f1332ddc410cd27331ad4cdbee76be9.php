@@ -55,7 +55,7 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
 
     }
 
-    // line 3
+    // line 4
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,7 +74,7 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
 
     }
 
-    // line 6
+    // line 8
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,66 +84,98 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
+        // line 9
         echo "
 
 <div class=\"container col-10\">
+
+    <h2>La liste des bières</h2>
+
     <h2 class=\"text-center\">La liste des bières</h2>
+
     <div class=\"btn-group d-flex justify-content-end\">
         ";
-        // line 12
+        // line 18
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_BRASSEUR")) {
-            // line 13
+            // line 19
             echo "            <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("form_biere");
             echo "\" class=\"btn btn-info \">Ajouter une bière</a>
         ";
         }
-        // line 15
+        // line 21
         echo "        <button class=\"btn btn-outline-info\">Voir mes favoris</button>
     </div>
     <div class=\"row  m-2\">
             ";
-        // line 18
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["biere"]) {
-            // line 19
+            // line 25
             echo "                <div class=\"col-lg-3\">
                     <div class=\"card\">
                         <div class=\"card-header p-0\">
                             <img src=\"./img/img3.jpg\" alt=\"Image de la bière\" class=\"card-img-top\">
                         </div>
                     </div>
+
+                    <div class=\"card-body bg-light p-0\">
+                        <div class=\"p-2 text-center\">
+                            <h4 class=\"p-2\">";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "nom", [], "any", false, false, false, 34), "html", null, true);
+            echo "</h4>
+                            <h6 class=\"card-subtitle m-2 text-muted\">Brassée par : ";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 35), "nom", [], "any", false, false, false, 35), "html", null, true);
+            echo "</h6>
+                            <p class=\"text-center\">Description de la biere : ";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "description", [], "any", false, false, false, 36), "html", null, true);
+            echo "</p>
+                        </div>
+                        <div class=\"mt-2 pb-2 text-center\">
+                            <span class=\"badge badge-pill badge-warning\">";
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "categorieId", [], "any", false, false, false, 39), "nom", [], "any", false, false, false, 39), "html", null, true);
+            echo "</span>
+                            <span class=\"badge badge-pill badge-warning\">";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 40), "adresse", [], "any", false, false, false, 40), "ville", [], "any", false, false, false, 40), "html", null, true);
+            echo "</span>
+                        </div>
+
                     <div class=\"card-body bg-light p-0 h-50 \">
                         <div class=\"p-2 text-center bg-light\">
                             <h4 class=\"p-2\"><a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_bieres_details", ["id" => twig_get_attribute($this->env, $this->source, $context["biere"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_bieres_details", ["id" => twig_get_attribute($this->env, $this->source, $context["biere"], "id", [], "any", false, false, false, 45)]), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "nom", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "nom", [], "any", false, false, false, 45), "html", null, true);
             echo "</a></h4>
                             <h6 class=\"card-subtitle m-2 text-muted\"><a href=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_detailBrasserie", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 28), "id", [], "any", false, false, false, 28)]), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_detailBrasserie", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 46), "id", [], "any", false, false, false, 46)]), "html", null, true);
             echo "\">Brassée par : ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 28), "nom", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 46), "nom", [], "any", false, false, false, 46), "html", null, true);
             echo "</a></h6>
                             <p class=\"text-center\">Description de la biere : ";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "description", [], "any", false, false, false, 29), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "description", [], "any", false, false, false, 47), "html", null, true);
             echo "</p>
                         </div>
                     </div>
                     <div class=\"pb-2 text-center bg-light\">
                         <span class=\"badge badge-pill badge-warning\">";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "categorieId", [], "any", false, false, false, 33), "nom", [], "any", false, false, false, 33), "html", null, true);
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "categorieId", [], "any", false, false, false, 51), "nom", [], "any", false, false, false, 51), "html", null, true);
             echo "</span>
                         <span class=\"badge badge-pill badge-warning\">";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 34), "adresse", [], "any", false, false, false, 34), "ville", [], "any", false, false, false, 34), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 52), "adresse", [], "any", false, false, false, 52), "ville", [], "any", false, false, false, 52), "html", null, true);
             echo "</span>
+
                     </div>
                     <div class=\"card-footer\">
                         <div id=\"avis\">
@@ -161,7 +193,7 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['biere'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 67
         echo "
     </div>
 </div>
@@ -187,21 +219,27 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
 
     public function getDebugInfo()
     {
-        return array (  165 => 48,  145 => 34,  141 => 33,  134 => 29,  128 => 28,  122 => 27,  112 => 19,  108 => 18,  103 => 15,  97 => 13,  95 => 12,  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
+        return array (  197 => 67,  176 => 52,  172 => 51,  165 => 47,  159 => 46,  153 => 45,  145 => 40,  141 => 39,  135 => 36,  131 => 35,  127 => 34,  116 => 25,  112 => 24,  107 => 21,  101 => 19,  99 => 18,  88 => 9,  78 => 8,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
+
 {% block title %}Liste des bières{% endblock %}
+
 
 
 {% block body %}
 
 
 <div class=\"container col-10\">
+
+    <h2>La liste des bières</h2>
+
     <h2 class=\"text-center\">La liste des bières</h2>
+
     <div class=\"btn-group d-flex justify-content-end\">
         {% if is_granted('ROLE_BRASSEUR') %}
             <a href=\"{{ path('form_biere') }}\" class=\"btn btn-info \">Ajouter une bière</a>
@@ -216,6 +254,18 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
                             <img src=\"./img/img3.jpg\" alt=\"Image de la bière\" class=\"card-img-top\">
                         </div>
                     </div>
+
+                    <div class=\"card-body bg-light p-0\">
+                        <div class=\"p-2 text-center\">
+                            <h4 class=\"p-2\">{{biere.nom}}</h4>
+                            <h6 class=\"card-subtitle m-2 text-muted\">Brassée par : {{ biere.brasserieId.nom }}</h6>
+                            <p class=\"text-center\">Description de la biere : {{ biere.description }}</p>
+                        </div>
+                        <div class=\"mt-2 pb-2 text-center\">
+                            <span class=\"badge badge-pill badge-warning\">{{ biere.categorieId.nom }}</span>
+                            <span class=\"badge badge-pill badge-warning\">{{ biere.brasserieId.adresse.ville }}</span>
+                        </div>
+
                     <div class=\"card-body bg-light p-0 h-50 \">
                         <div class=\"p-2 text-center bg-light\">
                             <h4 class=\"p-2\"><a href=\"{{ path('orm_bieres_details' , {'id' :biere.id} )}}\">{{biere.nom}}</a></h4>
@@ -226,6 +276,7 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
                     <div class=\"pb-2 text-center bg-light\">
                         <span class=\"badge badge-pill badge-warning\">{{ biere.categorieId.nom }}</span>
                         <span class=\"badge badge-pill badge-warning\">{{ biere.brasserieId.adresse.ville }}</span>
+
                     </div>
                     <div class=\"card-footer\">
                         <div id=\"avis\">
@@ -243,7 +294,6 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
     </div>
 </div>
 
-{% endblock %}
-", "orm/listBieres.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\orm\\listBieres.html.twig");
+{% endblock %}", "orm/listBieres.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\templates\\orm\\listBieres.html.twig");
     }
 }

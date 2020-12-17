@@ -39,6 +39,17 @@ class AdresseRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
+    public function DelteAdresse($id){
+
+        return $this->createQueryBuilder('u')
+            ->delete()
+            ->where('u.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Adresse[] Returns an array of Adresse objects
     //  */
