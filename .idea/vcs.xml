@@ -2,13 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-<<<<<<< HEAD
-    <mapping directory="$PROJECT_DIR$/aure_souf_fab" vcs="Git" />
-=======
-<<<<<<< HEAD
-    <mapping directory="$PROJECT_DIR$/aure_souf_fab" vcs="Git" />
-=======
->>>>>>> 338681029460064f605f72924903f9060ededaf8
->>>>>>> Fabien
   </component>
 </project>
