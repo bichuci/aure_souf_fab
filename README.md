@@ -19,6 +19,21 @@ On se rend dans le dossier cible
 cd aure_souf_fab
 ```
 
+On récupere les branches dans notre cas 
+```
+git fetch
+```
+
+On switch de branche dans notre cas
+```
+git checkout test
+```
+
+On check sait on jamais
+```
+git branch
+```
+
 On update composer (c'est très très long)
 ```
 composer update
