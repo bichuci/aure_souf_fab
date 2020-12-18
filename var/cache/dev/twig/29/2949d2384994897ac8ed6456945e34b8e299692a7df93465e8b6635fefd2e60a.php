@@ -173,7 +173,7 @@ class __TwigTemplate_310ba0acd77d77d71e5d84fd8c87010ee8a7deece8fef79f4825d402f94
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 51
-        echo "<div class=\"container\" style=\"height:150vh !important;\">
+        echo "<div class=\"container first-container\">
         <!-- Breadcrumb -->
       <nav aria-label=\"breadcrumb\" class=\"main-breadcrumb\">
         <ol class=\"breadcrumb\">
@@ -261,7 +261,7 @@ class __TwigTemplate_310ba0acd77d77d71e5d84fd8c87010ee8a7deece8fef79f4825d402f94
         // line 95
         echo "            </div>
           </div>
-          <div class=\"d-flex justify-content-between main\">
+          <div class=\"d-flex justify-content-between main-card\">
           <div class=\"col-lg-4\">
             <div class=\"feedback ombre\">
               <div class=\"panel\">
@@ -458,7 +458,7 @@ class __TwigTemplate_310ba0acd77d77d71e5d84fd8c87010ee8a7deece8fef79f4825d402f94
 {% endblock %}
 
 {% block body %}
-<div class=\"container\" style=\"height:150vh !important;\">
+<div class=\"container first-container\">
         <!-- Breadcrumb -->
       <nav aria-label=\"breadcrumb\" class=\"main-breadcrumb\">
         <ol class=\"breadcrumb\">
@@ -504,7 +504,7 @@ class __TwigTemplate_310ba0acd77d77d71e5d84fd8c87010ee8a7deece8fef79f4825d402f94
                 {% endif %}
             </div>
           </div>
-          <div class=\"d-flex justify-content-between main\">
+          <div class=\"d-flex justify-content-between main-card\">
           <div class=\"col-lg-4\">
             <div class=\"feedback ombre\">
               <div class=\"panel\">

@@ -85,28 +85,38 @@ class __TwigTemplate_0d099527644f9c85fdf8df785405affe6e301cf7c0d600a03cb01fb48b0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<main class=\"container\">
-    <h2>Modifier l'utilisateur</h2>
-    ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'form_start');
-        echo "
-        ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), "brasseur", [], "any", false, false, false, 9), 'label');
-        echo "
-        ";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), "brasseur", [], "any", false, false, false, 10), 'widget');
-        echo "
+        echo "<div class=\"container col-lg-8 text-center\">
+    <div class=\"card\" style=\"margin-top: 50px;\">
+        <h1>Modifier le brasseur</h1>
+        <div style=\"height:1px; background-color:darkgoldenrod; width:80%; margin:0 auto;\"></div>
 
-        <button class=\"btn btn-outline-info\" type=\"submit\">Modifier</button>
-    ";
-        // line 13
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form_end');
+        <div style=\"width:70%; margin: 0 auto; padding: 15px;\">
+        ";
+        // line 12
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start');
         echo "
-
-</main>
+            <div class=\"form-group m-2\">
+                ";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), "brasseur", [], "any", false, false, false, 14), 'label');
+        echo "
+                ";
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "brasseur", [], "any", false, false, false, 15), 'widget');
+        echo "
+            </div>
+            <button class=\"btn btn-outline-info mt-2\" type=\"submit\">Modifier</button>
+            ";
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
+        echo "
+        </div>
+    </div>
+        <a href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_brasseurs");
+        echo "\" class=\"mt-3 btn btn-outline-secondary\">Retour aux brasseurs</a>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -128,7 +138,7 @@ class __TwigTemplate_0d099527644f9c85fdf8df785405affe6e301cf7c0d600a03cb01fb48b0
 
     public function getDebugInfo()
     {
-        return array (  106 => 13,  100 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  117 => 21,  111 => 18,  105 => 15,  101 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -138,16 +148,23 @@ class __TwigTemplate_0d099527644f9c85fdf8df785405affe6e301cf7c0d600a03cb01fb48b0
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-<main class=\"container\">
-    <h2>Modifier l'utilisateur</h2>
-    {{ form_start(form) }}
-        {{ form_label(form.brasseur) }}
-        {{ form_widget(form.brasseur)  }}
+<div class=\"container col-lg-8 text-center\">
+    <div class=\"card\" style=\"margin-top: 50px;\">
+        <h1>Modifier le brasseur</h1>
+        <div style=\"height:1px; background-color:darkgoldenrod; width:80%; margin:0 auto;\"></div>
 
-        <button class=\"btn btn-outline-info\" type=\"submit\">Modifier</button>
-    {{ form_end(form) }}
-
-</main>
+        <div style=\"width:70%; margin: 0 auto; padding: 15px;\">
+        {{ form_start(form) }}
+            <div class=\"form-group m-2\">
+                {{ form_label(form.brasseur) }}
+                {{ form_widget(form.brasseur)  }}
+            </div>
+            <button class=\"btn btn-outline-info mt-2\" type=\"submit\">Modifier</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+        <a href=\"{{ path('admin_brasseurs') }}\" class=\"mt-3 btn btn-outline-secondary\">Retour aux brasseurs</a>
+</div>
 {% endblock %}
 ", "admin/adminEditBrasseurs.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\admin\\adminEditBrasseurs.html.twig");
     }

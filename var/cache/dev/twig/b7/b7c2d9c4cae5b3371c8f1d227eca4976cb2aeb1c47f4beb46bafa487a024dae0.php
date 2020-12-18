@@ -86,17 +86,15 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
 
         // line 6
         echo "
-
-    <header>
-        <main class=\"container\">
+        <div class=\"container\">
             <section class=\"row\">
                 <!-- Carte du produit -->
                 <div class=\"col-lg-8\">
                     <div class=\"card\">
                         <div class=\"card-header\">
                             <h2 class=\"card-title\">";
-        // line 15
-        (((twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "nom", [], "any", true, true, false, 15) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "nom", [], "any", false, false, false, 15)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "nom", [], "any", false, false, false, 15), "html", null, true))) : (print ("Titre non renseigné")));
+        // line 13
+        (((twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "nom", [], "any", true, true, false, 13) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "nom", [], "any", false, false, false, 13)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "nom", [], "any", false, false, false, 13), "html", null, true))) : (print ("Titre non renseigné")));
         echo " </h2>
                         </div>
                         <div class=\"card-body bg-light\">
@@ -110,25 +108,25 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                     <div class=\"card\">
                         <div class=\"card-header\">
                             <h4 class=\"card-title\">";
-        // line 27
-        (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 27), "nom", [], "any", true, true, false, 27) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 27), "nom", [], "any", false, false, false, 27)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 27), "nom", [], "any", false, false, false, 27), "html", null, true))) : (print ("Nom de la brasserie non renseigné")));
+        // line 25
+        (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 25), "nom", [], "any", true, true, false, 25) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 25), "nom", [], "any", false, false, false, 25)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 25), "nom", [], "any", false, false, false, 25), "html", null, true))) : (print ("Nom de la brasserie non renseigné")));
         echo "</h4>
                             <h6 class=\"card-subtitle mb-2 text-muted\">";
-        // line 28
-        echo twig_escape_filter($this->env, ((((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 28, $this->source); })()), "brasserieId", [], "any", false, false, false, 28), "adresse", [], "any", false, false, false, 28), "rue", [], "any", false, false, false, 28) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 28, $this->source); })()), "brasserieId", [], "any", false, false, false, 28), "adresse", [], "any", false, false, false, 28), "cp", [], "any", false, false, false, 28)) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 28, $this->source); })()), "brasserieId", [], "any", false, false, false, 28), "adresse", [], "any", false, false, false, 28), "ville", [], "any", false, false, false, 28)), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, ((((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 26, $this->source); })()), "brasserieId", [], "any", false, false, false, 26), "adresse", [], "any", false, false, false, 26), "rue", [], "any", false, false, false, 26) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 26, $this->source); })()), "brasserieId", [], "any", false, false, false, 26), "adresse", [], "any", false, false, false, 26), "cp", [], "any", false, false, false, 26)) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 26, $this->source); })()), "brasserieId", [], "any", false, false, false, 26), "adresse", [], "any", false, false, false, 26), "ville", [], "any", false, false, false, 26)), "html", null, true);
         echo "</h6>
                         </div>
                         <div class=\"card-body\">
                             <p class=\"card-text\">
                                 ";
-        // line 32
-        (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 32), "description", [], "any", true, true, false, 32) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 32), "description", [], "any", false, false, false, 32)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 32), "description", [], "any", false, false, false, 32), "html", null, true))) : (print ("Description de brasserie non renseigné")));
+        // line 30
+        (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 30), "description", [], "any", true, true, false, 30) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 30), "description", [], "any", false, false, false, 30)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "brasserieId", [], "any", false, true, false, 30), "description", [], "any", false, false, false, 30), "html", null, true))) : (print ("Description de brasserie non renseigné")));
         echo "
                             </p>
                             <p class=\"card-text\">
                             ";
-        // line 35
-        (((twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "description", [], "any", true, true, false, 35) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "description", [], "any", false, false, false, 35)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "description", [], "any", false, false, false, 35), "html", null, true))) : (print ("Description non renseigné")));
+        // line 33
+        (((twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "description", [], "any", true, true, false, 33) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "description", [], "any", false, false, false, 33)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["bieres"] ?? null), "description", [], "any", false, false, false, 33), "html", null, true))) : (print ("Description non renseigné")));
         echo "
                             </p>
                             <p>
@@ -149,8 +147,8 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                         </div>
                         <div class=\"pb-2 text-center\">
                             <span class=\"badge badge-pill badge-warning\">";
-        // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 54, $this->source); })()), "categorieId", [], "any", false, false, false, 54), "nom", [], "any", false, false, false, 54), "html", null, true);
+        // line 52
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 52, $this->source); })()), "categorieId", [], "any", false, false, false, 52), "nom", [], "any", false, false, false, 52), "html", null, true);
         echo "</span>
                         </div>
                         <div class=\"card-footer\">
@@ -186,15 +184,15 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                     <div class=\"card-footer\" id=\"carousel\">
                         <article id=\"carouselProduct\">
                             <div id=\"carouselExampleFade\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">
-                                <div class=\"carousel-inner h-100\">
-                                    <div class=\"carousel-item active h-100\">
-                                        <img src=\"./img/img3.jpg\" class=\"d-block w-100\" alt=\"...\">
+                                <div class=\"carousel-inner\">
+                                    <div class=\"carousel-item active\">
+                                        <img src=\"./img/img3.jpg\" class=\"d-block\" alt=\"...\">
                                     </div>
-                                    <div class=\"carousel-item h-100\">
-                                        <img src=\"./img/img1.jpg\" class=\"d-block w-100\" alt=\"...\">
+                                    <div class=\"carousel-item \">
+                                        <img src=\"./img/img1.jpg\" class=\"d-block\" alt=\"...\">
                                     </div>
-                                    <div class=\"carousel-item h-100\">
-                                        <img src=\"./img/img3.jpg\" class=\"d-block w-100\" alt=\"...\">
+                                    <div class=\"carousel-item\">
+                                        <img src=\"./img/img3.jpg\" class=\"d-block\" alt=\"...\">
                                     </div>
                                 </div>
                                 <a class=\"carousel-control-prev\" href=\"#carouselExampleFade\" role=\"button\" data-slide=\"prev\">
@@ -210,8 +208,8 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                     </div>
                 </div>
             </section>
-        </main>
-    </header>
+        </div>
+
 
 ";
         
@@ -234,7 +232,7 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
 
     public function getDebugInfo()
     {
-        return array (  153 => 54,  131 => 35,  125 => 32,  118 => 28,  114 => 27,  99 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  151 => 52,  129 => 33,  123 => 30,  116 => 26,  112 => 25,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -245,9 +243,7 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
 
 {% block body %}
 
-
-    <header>
-        <main class=\"container\">
+        <div class=\"container\">
             <section class=\"row\">
                 <!-- Carte du produit -->
                 <div class=\"col-lg-8\">
@@ -327,15 +323,15 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                     <div class=\"card-footer\" id=\"carousel\">
                         <article id=\"carouselProduct\">
                             <div id=\"carouselExampleFade\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">
-                                <div class=\"carousel-inner h-100\">
-                                    <div class=\"carousel-item active h-100\">
-                                        <img src=\"./img/img3.jpg\" class=\"d-block w-100\" alt=\"...\">
+                                <div class=\"carousel-inner\">
+                                    <div class=\"carousel-item active\">
+                                        <img src=\"./img/img3.jpg\" class=\"d-block\" alt=\"...\">
                                     </div>
-                                    <div class=\"carousel-item h-100\">
-                                        <img src=\"./img/img1.jpg\" class=\"d-block w-100\" alt=\"...\">
+                                    <div class=\"carousel-item \">
+                                        <img src=\"./img/img1.jpg\" class=\"d-block\" alt=\"...\">
                                     </div>
-                                    <div class=\"carousel-item h-100\">
-                                        <img src=\"./img/img3.jpg\" class=\"d-block w-100\" alt=\"...\">
+                                    <div class=\"carousel-item\">
+                                        <img src=\"./img/img3.jpg\" class=\"d-block\" alt=\"...\">
                                     </div>
                                 </div>
                                 <a class=\"carousel-control-prev\" href=\"#carouselExampleFade\" role=\"button\" data-slide=\"prev\">
@@ -351,8 +347,8 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                     </div>
                 </div>
             </section>
-        </main>
-    </header>
+        </div>
+
 
 {% endblock %}
 ", "orm/listBieresDetails.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\orm\\listBieresDetails.html.twig");

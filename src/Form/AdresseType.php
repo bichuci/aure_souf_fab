@@ -20,7 +20,7 @@ class AdresseType extends AbstractType
             ->add('cp', TextType::class, [
                 'label' => "Code postal",
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control text-center',
                     'placeholder' => "Entrez votre code postal"
                 ],
                 "error_bubbling" => true,
@@ -37,7 +37,7 @@ class AdresseType extends AbstractType
             ->add('ville', TextType::class,[
                 'label' => "Ville",
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control text-center',
                     'placeholder' => "Entrez le nom de votre ville"
                 ],
                 "error_bubbling" => true,
@@ -55,7 +55,7 @@ class AdresseType extends AbstractType
             ->add('rue', TextType::class, [
                 'label' => "Votre rue",
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control text-center',
                     'placeholder' => "Le nom de votre rue"
                 ],
                 "error_bubbling" => true,
@@ -73,7 +73,7 @@ class AdresseType extends AbstractType
             ->add('pays', TextType::class, [
                 'label' => "Votre pays",
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control text-center',
                     'placeholder' => "Pays"
                 ],
                 "error_bubbling" => true,

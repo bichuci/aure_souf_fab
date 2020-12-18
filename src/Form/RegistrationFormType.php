@@ -45,8 +45,15 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Pseudo',
             ])
             ->add('date_naissance', DateType::class, [
+                'widget' => 'single_text',
                 'attr' => [
-                    'class' => 'form-control'
+                'class' => 'form-control'
+            ],
+                "error_bubbling" => true,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'merci de saisir une date de naissance'
+                    ])
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [

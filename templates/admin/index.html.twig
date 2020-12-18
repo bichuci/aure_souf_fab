@@ -3,16 +3,19 @@
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-<main class="container">
-    <h2 style="margin-top: 50px;"> Bienvenue sur la page d'administration</h2>
-    <section class="m-auto">
-        <article>
-            <p class="list-group-item"><a href="{{ path('admin_users') }}">Voir les utilisateurs</a></p>
-        </article>
-        <article>
-            <p class="list-group-item"><a href="{{ path('admin_brasseurs') }}">Voir les brasseurs</a></p>
-        </article>
-    </section>
-    <a class="btn btn-outline-secondary mt-2" href="{{ path('home_index') }}">Retour à l'accueil du site</a>
-</main>
+<div class="container col-lg-8 text-center">
+    <div class="card" style="margin-top: 50px;">
+        <h1 class="p-2"> Bienvenue sur la page d'administration</h1>
+        <div style="height:1px; background-color:darkgoldenrod; width:80%; margin:0 auto;"></div>
+        <section class="m-auto" style="width:70%; margin: 0 auto; padding: 15px;">
+            <article>
+                <p class="list-group-item"><a href="{{ path('admin_users') }}">Voir les utilisateurs</a></p>
+            </article>
+            <article>
+                <p class="list-group-item"><a href="{{ path('admin_brasseurs') }}">Voir les brasseurs</a></p>
+            </article>
+        </section>
+    </div>
+        <a class="btn btn-outline-secondary mt-2" href="{{ path('home_index') }}">Retour à l'accueil du site</a>
+</div>
 {% endblock %}

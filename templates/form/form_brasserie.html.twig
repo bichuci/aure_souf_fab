@@ -4,45 +4,52 @@
 
 {% block body %}
     <div class="container col-lg-8 text-center">
-        <h2>Formulaire d'ajout de votre brasserie</h2>
-        <div style="height:1px; background-color:darkgoldenrod; width:100%; margin:5px;"></div>
         {% for message in app.flashes('success') %}
             <div class="alert alert-success">{{ message }}</div>
         {% endfor %}
+        <div class="card" style="margin-top: 50px;">
 
-        {{ form_start(form_brasserie) }}
+            <h1 class="p-2">Formulaire d'ajout de votre brasserie</h1>
+            <div style="height:1px; background-color:darkgoldenrod; width:80%; margin:0 auto;"></div>
 
-        <div class="form-group">
-            {{ form_label(form_brasserie.nom) }}
-            {{ form_widget(form_brasserie.nom) }}
+            <div style="width:70%; margin: 0 auto; padding: 15px;">
+                {{ form_start(form_brasserie) }}
+
+                <div class="form-group m-2">
+                    {{ form_label(form_brasserie.nom) }}
+                    {{ form_widget(form_brasserie.nom) }}
+                </div>
+
+                <div class="form-group m-2">
+                    {{ form_label(form_brasserie.description) }}
+                    {{ form_widget(form_brasserie.description) }}
+                </div>
+
+                <div class="form-group m-2">
+                    {{ form_label(form_brasserie.siteweb) }}
+                    {{ form_widget(form_brasserie.siteweb) }}
+                </div>
+
+                <div class="form-group m-2">
+                    {{ form_label(form_brasserie.telephone) }}
+                    {{ form_widget(form_brasserie.telephone) }}
+                </div>
+
+                <div class="form-group m-2">
+                    {{ form_label(form_brasserie.mail) }}
+                    {{ form_widget(form_brasserie.mail) }}
+                </div>
+
+                <div class="form-group m-2">
+                    {{ form_label(form_brasserie.adresse) }}
+                    {{ form_widget(form_brasserie.adresse) }}
+                </div>
+
+                <button class="btn btn-outline-info">Ajouter</button>
+                {{ form_end(form_brasserie) }}
+            </div>
         </div>
-
-        <div class="form-group">
-            {{ form_label(form_brasserie.description) }}
-            {{ form_widget(form_brasserie.description) }}
-        </div>
-
-        <div class="form-group">
-            {{ form_label(form_brasserie.siteweb) }}
-            {{ form_widget(form_brasserie.siteweb) }}
-        </div>
-
-        <div class="form-group">
-            {{ form_label(form_brasserie.telephone) }}
-            {{ form_widget(form_brasserie.telephone) }}
-        </div>
-
-        <div class="form-group">
-            {{ form_label(form_brasserie.mail) }}
-            {{ form_widget(form_brasserie.mail) }}
-        </div>
-
-        <div class="form-group">
-            {{ form_label(form_brasserie.adresse) }}
-            {{ form_widget(form_brasserie.adresse) }}
-        </div>
-
-    <button class="btn btn-outline-info">Ajouter</button>
+        <a class="btn btn-outline-secondary mt-3" href="{{ path('orm_brasseries') }}">Retour à la liste des brasseries</a>
     </div>
-    {{ form_end(form_brasserie) }}
+
 {% endblock %}
