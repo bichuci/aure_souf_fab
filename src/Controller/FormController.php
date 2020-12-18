@@ -40,7 +40,7 @@ class FormController extends AbstractController
 
             $this->addFlash('success', 'Votre bière à bien été ajouté');
 
-            return $this->redirectToRoute('orm_index');
+            return $this->redirectToRoute('orm_bieres');
         }
 
         return $this->render('form/form_biere.html.twig', [

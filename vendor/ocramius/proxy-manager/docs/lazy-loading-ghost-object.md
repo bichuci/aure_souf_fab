@@ -308,12 +308,9 @@ $unserialized = unserialize(serialize($ghostObject));
 A method like following would never trigger lazy loading, in the context of a ghost object:
 
 ```php
-class Hello
+public function sayHello() : string
 {
-    public function sayHello() : string
-    {
-        return 'Look ma! No property accessed!';
-    }
+    return 'Look ma! No property accessed!';
 }
 ```
 
@@ -369,10 +366,10 @@ $initializer = function (
     $initializer = null;
 
     // note that `getId` won't initialize our proxy here
-    $properties["\0MyApp\\User\0username"]     = $db->fetchField('users', 'username', $ghostObject->getId());
-    $properties["\0MyApp\\User\0passwordHash"] = $db->fetchField('users', 'passwordHash', $ghostObject->getId());
-    $properties["\0MyApp\\User\0email"]        = $db->fetchField('users', 'email', $ghostObject->getId());
-    $properties["\0MyApp\\User\0address"]      = $db->fetchField('users', 'address', $ghostObject->getId());
+    $properties["\0MyApp\\User\0username"]     = $db->fetchField('users', 'username', $ghostObject->getId();
+    $properties["\0MyApp\\User\0passwordHash"] = $db->fetchField('users', 'passwordHash', $ghostObject->getId();
+    $properties["\0MyApp\\User\0email"]        = $db->fetchField('users', 'email', $ghostObject->getId();
+    $properties["\0MyApp\\User\0address"]      = $db->fetchField('users', 'address', $ghostObject->getId();
 
     return true;
 };

@@ -86,21 +86,25 @@ class __TwigTemplate_2643d369bab1a0e381613213bef138615f718044a448239a4ecb058561a
 
         // line 6
         echo "<main class=\"container\">
-    <h2> Bienvenue sur la page d'administration</h2>
-    <section>
+    <h2 style=\"margin-top: 50px;\"> Bienvenue sur la page d'administration</h2>
+    <section class=\"m-auto\">
         <article>
-            <p><a href=\"";
+            <p class=\"list-group-item\"><a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users");
         echo "\">Voir les utilisateurs</a></p>
         </article>
         <article>
-            <p><a href=\"";
+            <p class=\"list-group-item\"><a href=\"";
         // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_brasseurs");
         echo "\">Voir les brasseurs</a></p>
         </article>
     </section>
+    <a class=\"btn btn-outline-secondary mt-2\" href=\"";
+        // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home_index");
+        echo "\">Retour à l'accueil du site</a>
 </main>
 ";
         
@@ -123,7 +127,7 @@ class __TwigTemplate_2643d369bab1a0e381613213bef138615f718044a448239a4ecb058561a
 
     public function getDebugInfo()
     {
-        return array (  100 => 13,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  106 => 16,  100 => 13,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -134,17 +138,18 @@ class __TwigTemplate_2643d369bab1a0e381613213bef138615f718044a448239a4ecb058561a
 
 {% block body %}
 <main class=\"container\">
-    <h2> Bienvenue sur la page d'administration</h2>
-    <section>
+    <h2 style=\"margin-top: 50px;\"> Bienvenue sur la page d'administration</h2>
+    <section class=\"m-auto\">
         <article>
-            <p><a href=\"{{ path('admin_users') }}\">Voir les utilisateurs</a></p>
+            <p class=\"list-group-item\"><a href=\"{{ path('admin_users') }}\">Voir les utilisateurs</a></p>
         </article>
         <article>
-            <p><a href=\"{{ path('admin_brasseurs') }}\">Voir les brasseurs</a></p>
+            <p class=\"list-group-item\"><a href=\"{{ path('admin_brasseurs') }}\">Voir les brasseurs</a></p>
         </article>
     </section>
+    <a class=\"btn btn-outline-secondary mt-2\" href=\"{{ path('home_index') }}\">Retour à l'accueil du site</a>
 </main>
 {% endblock %}
-", "admin/index.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\admin\\index.html.twig");
+", "admin/index.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\admin\\index.html.twig");
     }
 }

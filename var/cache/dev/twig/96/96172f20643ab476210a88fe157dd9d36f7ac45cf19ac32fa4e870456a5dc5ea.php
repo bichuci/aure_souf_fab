@@ -112,7 +112,7 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
         // line 8
         echo "    <!-- CAROUSEL -->
     <section class=\"infinite-carousel\">
-        <article class=\"viewport \">
+        <article class=\"viewport mt-0\">
             <div class=\"list\">
 
                 <!-- SLIDE -->
@@ -277,18 +277,17 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
         </a>
     </section>
 
-    <!--TITRE SITE-->
-    <section id=\"img-bg\">
-        <section id=\"titrelocation\">
-            <div id=\"titresite\">
-                <div id=\"titleglobal1\" class=\" titleglobal\">
-                    <h1 class=\"title1 text-center \">bienvenue sur fbi</h1>
-                    <h1 class=\"title2 text-center \">find biere indicator</h1>
-                    <h5 class=\"title3 text-center \"> Le site communautaire de la bière</h5>
-                </div>
+";
+        // line 160
+        echo "
+    <section class=\"container\" style=\"height: 200px;\">
+        <article style=\"display:flex; justify-content: center\">
+            <div class=\"reveal\">
+                <h1>Where's my beer?!</h1>
             </div>
-        </section>
+        </article>
     </section>
+
 
     <!-- CARTE -->
     <div id=\"maplocation\">
@@ -300,7 +299,7 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
 
 
     ";
-        // line 170
+        // line 179
         $this->displayBlock('javascripts', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -319,12 +318,12 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 171
+        // line 180
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/carouselHover.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 172
+        // line 181
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/carousel.js"), "html", null, true);
         echo "\"></script>
 
@@ -374,7 +373,7 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
 
     public function getDebugInfo()
     {
-        return array (  328 => 172,  323 => 171,  304 => 170,  253 => 122,  237 => 109,  221 => 96,  205 => 83,  189 => 70,  173 => 57,  157 => 44,  141 => 31,  123 => 16,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  327 => 181,  322 => 180,  303 => 179,  282 => 160,  253 => 122,  237 => 109,  221 => 96,  205 => 83,  189 => 70,  173 => 57,  157 => 44,  141 => 31,  123 => 16,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -388,7 +387,7 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
 {% block body %}
     <!-- CAROUSEL -->
     <section class=\"infinite-carousel\">
-        <article class=\"viewport \">
+        <article class=\"viewport mt-0\">
             <div class=\"list\">
 
                 <!-- SLIDE -->
@@ -526,18 +525,27 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
         </a>
     </section>
 
-    <!--TITRE SITE-->
-    <section id=\"img-bg\">
-        <section id=\"titrelocation\">
-            <div id=\"titresite\">
-                <div id=\"titleglobal1\" class=\" titleglobal\">
-                    <h1 class=\"title1 text-center \">bienvenue sur fbi</h1>
-                    <h1 class=\"title2 text-center \">find biere indicator</h1>
-                    <h5 class=\"title3 text-center \"> Le site communautaire de la bière</h5>
-                </div>
+{#    <!--TITRE SITE-->#}
+{#    <section id=\"img-bg\">#}
+{#        <section id=\"titrelocation\">#}
+{#            <div id=\"titresite\">#}
+{#                <div id=\"titleglobal1\" class=\" titleglobal\">#}
+{#                    <h1 class=\"title1 text-center \">bienvenue sur fbi</h1>#}
+{#                    <h1 class=\"title2 text-center \">find biere indicator</h1>#}
+{#                    <h5 class=\"title3 text-center \"> Le site communautaire de la bière</h5>#}
+{#                </div>#}
+{#            </div>#}
+{#        </section>#}
+{#    </section>#}
+
+    <section class=\"container\" style=\"height: 200px;\">
+        <article style=\"display:flex; justify-content: center\">
+            <div class=\"reveal\">
+                <h1>Where's my beer?!</h1>
             </div>
-        </section>
+        </article>
     </section>
+
 
     <!-- CARTE -->
     <div id=\"maplocation\">
@@ -579,6 +587,6 @@ class __TwigTemplate_141172f19bc3f63d579549e0b2030489504c5b23893a2367427303f8b8e
         </script>
     {% endblock %}
 {% endblock %}
-", "home/index.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\home\\index.html.twig");
     }
 }

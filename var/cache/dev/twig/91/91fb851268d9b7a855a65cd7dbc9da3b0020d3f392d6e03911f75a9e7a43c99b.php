@@ -710,6 +710,6 @@ class __TwigTemplate_0e6b4f586fb63fbc86f5b41a559a03207b15aed91b4550ccb426727b4be
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
     }
 }

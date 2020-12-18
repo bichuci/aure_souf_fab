@@ -9,7 +9,10 @@ namespace ProxyManager\Factory\RemoteObject\Adapter;
  */
 class Soap extends BaseAdapter
 {
-    protected function getServiceName(string $wrappedClass, string $method): string
+    /**
+     * {@inheritDoc}
+     */
+    protected function getServiceName(string $wrappedClass, string $method) : string
     {
         return $method;
     }

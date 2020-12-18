@@ -482,6 +482,6 @@ class __TwigTemplate_e17026c7217ba251363a736d7e5cac10e69fb96425addc4305c5ea6c435
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
     }
 }

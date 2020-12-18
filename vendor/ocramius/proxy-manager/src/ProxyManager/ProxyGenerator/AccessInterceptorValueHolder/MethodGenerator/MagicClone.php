@@ -7,7 +7,6 @@ namespace ProxyManager\ProxyGenerator\AccessInterceptorValueHolder\MethodGenerat
 use Laminas\Code\Generator\PropertyGenerator;
 use ProxyManager\Generator\MagicMethodGenerator;
 use ReflectionClass;
-
 use function array_keys;
 use function str_replace;
 

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ProxyManager\Generator;
 
 use ReflectionClass;
-
 use function strtolower;
 
 /**

@@ -147,7 +147,7 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                                 <span class=\"badge badge-pill badge-danger\">Modérateur</span>
                             </div>
                         </div>
-                        <div class=\"pb-2 text-center bg-light\">
+                        <div class=\"pb-2 text-center\">
                             <span class=\"badge badge-pill badge-warning\">";
         // line 54
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["bieres"]) || array_key_exists("bieres", $context) ? $context["bieres"] : (function () { throw new RuntimeError('Variable "bieres" does not exist.', 54, $this->source); })()), "categorieId", [], "any", false, false, false, 54), "nom", [], "any", false, false, false, 54), "html", null, true);
@@ -291,7 +291,7 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
                                 <span class=\"badge badge-pill badge-danger\">Modérateur</span>
                             </div>
                         </div>
-                        <div class=\"pb-2 text-center bg-light\">
+                        <div class=\"pb-2 text-center\">
                             <span class=\"badge badge-pill badge-warning\">{{ bieres.categorieId.nom }}</span>
                         </div>
                         <div class=\"card-footer\">
@@ -355,6 +355,6 @@ class __TwigTemplate_a8ca8b6db638fa75ea07f74142ccf9d30796a3eaec08aaa58e9f34bc50c
     </header>
 
 {% endblock %}
-", "orm/listBieresDetails.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\orm\\listBieresDetails.html.twig");
+", "orm/listBieresDetails.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\orm\\listBieresDetails.html.twig");
     }
 }

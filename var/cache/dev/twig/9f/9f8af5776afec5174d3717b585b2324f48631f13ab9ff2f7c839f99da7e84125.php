@@ -170,6 +170,6 @@ class __TwigTemplate_824c3f43279c05108a701d06202a641600dd4f01a202e3fd4c9d9f67a00
         <a href=\"{{ path('orm_brasseries') }}\" class=\"btn btn-info\">Retour vers la liste des brasseries</a>
     </div>
 {% endblock %}
-", "orm/listBrasserieBiere.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\orm\\listBrasserieBiere.html.twig");
+", "orm/listBrasserieBiere.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\orm\\listBrasserieBiere.html.twig");
     }
 }

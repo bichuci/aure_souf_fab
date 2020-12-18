@@ -102,6 +102,6 @@ class __TwigTemplate_96662e89b91e76087774feea64261f9d6f9a0647b3e28f31e54f5ed0d95
     {% if link|default(false) %}</a>{% endif %}
         <div class=\"sf-toolbar-info\">{{ text|default('') }}</div>
 </div>
-", "@WebProfiler/Profiler/toolbar_item.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar_item.html.twig");
+", "@WebProfiler/Profiler/toolbar_item.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar_item.html.twig");
     }
 }

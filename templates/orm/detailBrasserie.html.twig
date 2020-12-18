@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/carousel2.css') }}">
 {% endblock %}
 {% block body %}
-    <div class="container">
+    <div class="container mt-2">
         <section class="row">
             <div class="col-lg-8" style="height:100%;">
                 <div class="card-header card-header-main">
@@ -31,7 +31,7 @@
                         <p class="card-text">
                             {{brasserie.description}}
                         </p>
-                        <p class="card-text" style="overflow:auto; height:150px; padding:5px; overflow-y:hidden;">
+                        <p class="card-text" style="overflow:auto; height:100px; padding:5px; overflow-y:hidden;">
                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur facere, fugit iusto, magnam minus nobis non, numquam obcaecati quod reprehenderit sed similique sint voluptate! Ad commodi incidunt ipsa maiores obcaecati!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aut consectetur expedita ipsam magnam nemo provident quas repellendus. Consequuntur, debitis facilis illo iure nihil quis repellat voluptatibus. Quos sapiente, vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur deserunt harum hic, ipsa nisi quibusdam quidem quos saepe! Autem commodi consectetur fuga fugit laudantium magni nihil, perspiciatis sit ut.Cum enim itaque labore laboriosam laudantium minima nemo nulla ullam vel. Asperiores consequuntur dignissimos dolorem doloremque!Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore incidunt nisi pariatur eius magnam sed? Recusandae, esse alias assumenda optio nulla quisquam id excepturi! Reiciendis molestiae ipsam incidunt beatae deserunt!
                         </p>
                         <p>
@@ -54,7 +54,6 @@
                     </div>
                     <div class="card-footer">
                         <p>
-                            <p>Site web:</p>
                             <a href="{{ brasserie.siteweb }}" class="card-link">{{ brasserie.siteweb }}</a>
                         </p>
                     </div>
@@ -69,9 +68,6 @@
                     <h3>Description du produit/Caractéristiques etc..</h3>
                 </div>
                 <div class="card-body" style="border-bottom: none;">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
-                    </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
                     </p>
@@ -164,7 +160,7 @@
                 </div>
 
             </div>
-            <a href="{{ path('orm_brasseries') }}" class="btn btn-info">Retour vers la liste des brasseries</a>
+            <a href="{{ path('orm_brasseries') }}" class="mt-1 btn btn-outline-secondary">Retour vers la liste des brasseries</a>
         </section>
     </div>
     {%  block javascripts %}

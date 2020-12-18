@@ -86,9 +86,7 @@ class __TwigTemplate_3dfcce3d9ac1f18b4dcf2240576e3c41dc190980269f17a91e205772d5a
 
         // line 6
         echo "<main class=\"container\">
-    <h2>Modifier le brasserie</h2>
-    <main class=\"container\">
-        <h2> Page d'administration des brasseries </h2>
+        <h2 style=\"margin-top: 50px\"> Page d'administration des brasseries </h2>
         <section>
             <table class=\"table table-dark table-striped\">
                 <thead>
@@ -103,32 +101,32 @@ class __TwigTemplate_3dfcce3d9ac1f18b4dcf2240576e3c41dc190980269f17a91e205772d5a
                 </thead>
                 <tbody>
                 ";
-        // line 23
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["brasseurs"]) || array_key_exists("brasseurs", $context) ? $context["brasseurs"] : (function () { throw new RuntimeError('Variable "brasseurs" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["brasseurs"]) || array_key_exists("brasseurs", $context) ? $context["brasseurs"] : (function () { throw new RuntimeError('Variable "brasseurs" does not exist.', 21, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["brasseur"]) {
-            // line 24
+            // line 22
             echo "                    <tr>
                         <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brasseur"], "id", [], "any", false, false, false, 23), "html", null, true);
+            echo "</td>
+                        <td>";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brasseur"], "nom", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                        <td>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brasseur"], "id", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brasseur"], "mail", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                         <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brasseur"], "nom", [], "any", false, false, false, 26), "html", null, true);
-            echo "</td>
-                        <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brasseur"], "mail", [], "any", false, false, false, 27), "html", null, true);
-            echo "</td>
-                        <td>";
-            // line 28
-            (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["brasseur"], "brasseur", [], "any", false, true, false, 28), "nom", [], "any", true, true, false, 28) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["brasseur"], "brasseur", [], "any", false, true, false, 28), "nom", [], "any", false, false, false, 28)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["brasseur"], "brasseur", [], "any", false, true, false, 28), "nom", [], "any", false, false, false, 28), "html", null, true))) : (print (null)));
+            (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["brasseur"], "brasseur", [], "any", false, true, false, 26), "nom", [], "any", true, true, false, 26) &&  !(null === twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["brasseur"], "brasseur", [], "any", false, true, false, 26), "nom", [], "any", false, false, false, 26)))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["brasseur"], "brasseur", [], "any", false, true, false, 26), "nom", [], "any", false, false, false, 26), "html", null, true))) : (print (null)));
             echo "</td>
                         <td>
                             <a class=\"btn btn-outline-info\" href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_edit_brasseurs", ["id" => twig_get_attribute($this->env, $this->source, $context["brasseur"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_edit_brasseurs", ["id" => twig_get_attribute($this->env, $this->source, $context["brasseur"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\">Modifier</a>
                         </td>
                     </tr>
@@ -137,10 +135,14 @@ class __TwigTemplate_3dfcce3d9ac1f18b4dcf2240576e3c41dc190980269f17a91e205772d5a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['brasseur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 32
         echo "                </tbody>
             </table>
         </section>
+        <a class=\"btn btn-outline-secondary\" href=\"";
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_index");
+        echo "\">Retour à l'index admin</a>
     </main>
 ";
         
@@ -163,7 +165,7 @@ class __TwigTemplate_3dfcce3d9ac1f18b4dcf2240576e3c41dc190980269f17a91e205772d5a
 
     public function getDebugInfo()
     {
-        return array (  141 => 34,  131 => 30,  126 => 28,  122 => 27,  118 => 26,  114 => 25,  111 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  144 => 35,  139 => 32,  129 => 28,  124 => 26,  120 => 25,  116 => 24,  112 => 23,  109 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -174,9 +176,7 @@ class __TwigTemplate_3dfcce3d9ac1f18b4dcf2240576e3c41dc190980269f17a91e205772d5a
 
 {% block body %}
 <main class=\"container\">
-    <h2>Modifier le brasserie</h2>
-    <main class=\"container\">
-        <h2> Page d'administration des brasseries </h2>
+        <h2 style=\"margin-top: 50px\"> Page d'administration des brasseries </h2>
         <section>
             <table class=\"table table-dark table-striped\">
                 <thead>
@@ -204,8 +204,9 @@ class __TwigTemplate_3dfcce3d9ac1f18b4dcf2240576e3c41dc190980269f17a91e205772d5a
                 </tbody>
             </table>
         </section>
+        <a class=\"btn btn-outline-secondary\" href=\"{{ path('admin_index') }}\">Retour à l'index admin</a>
     </main>
 {% endblock %}
-", "admin/listBrasseursAdmin.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\admin\\listBrasseursAdmin.html.twig");
+", "admin/listBrasseursAdmin.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\admin\\listBrasseursAdmin.html.twig");
     }
 }

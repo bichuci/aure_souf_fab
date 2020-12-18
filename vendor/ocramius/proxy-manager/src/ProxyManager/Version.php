@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace ProxyManager;
 
-use Composer\InstalledVersions;
 use OutOfBoundsException;
+use PackageVersions\Versions;
 
 /**
  * Version class
@@ -28,13 +28,9 @@ final class Version
      * @throws OutOfBoundsException
      *
      * @psalm-pure
-     *
-     * @psalm-suppress MixedOperand `composer-runtime-api:^2` has rough if no type declarations at all - we'll live with it
-     * @psalm-suppress ImpureMethodCall `composer-runtime-api:^2` has rough if no type declarations at all - we'll live with it
      */
-    public static function getVersion(): string
+    public static function getVersion() : string
     {
-        return InstalledVersions::getPrettyVersion('ocramius/proxy-manager')
-            . '@' . InstalledVersions::getReference('ocramius/proxy-manager');
+        return Versions::getVersion('ocramius/proxy-manager');
     }
 }

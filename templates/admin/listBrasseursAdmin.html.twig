@@ -4,9 +4,7 @@
 
 {% block body %}
 <main class="container">
-    <h2>Modifier le brasserie</h2>
-    <main class="container">
-        <h2> Page d'administration des brasseries </h2>
+        <h2 style="margin-top: 50px"> Page d'administration des brasseries </h2>
         <section>
             <table class="table table-dark table-striped">
                 <thead>
@@ -34,5 +32,6 @@
                 </tbody>
             </table>
         </section>
+        <a class="btn btn-outline-secondary" href="{{ path('admin_index') }}">Retour à l'index admin</a>
     </main>
 {% endblock %}

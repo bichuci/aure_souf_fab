@@ -28,7 +28,10 @@ class LazyLoadingGhostFactory extends AbstractBaseFactory
         $this->generator = new LazyLoadingGhostGenerator();
     }
 
-    protected function getGenerator(): ProxyGeneratorInterface
+    /**
+     * {@inheritDoc}
+     */
+    protected function getGenerator() : ProxyGeneratorInterface
     {
         return $this->generator;
     }
@@ -93,7 +96,7 @@ class LazyLoadingGhostFactory extends AbstractBaseFactory
         string $className,
         Closure $initializer,
         array $proxyOptions = []
-    ): GhostObjectInterface {
+    ) : GhostObjectInterface {
         $proxyClassName = $this->generateProxy($className, $proxyOptions);
 
         /**

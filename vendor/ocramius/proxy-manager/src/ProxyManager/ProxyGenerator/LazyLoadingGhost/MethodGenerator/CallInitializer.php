@@ -10,7 +10,6 @@ use ProxyManager\Generator\MethodGenerator;
 use ProxyManager\Generator\Util\IdentifierSuffixer;
 use ProxyManager\ProxyGenerator\Util\Properties;
 use ReflectionProperty;
-
 use function array_map;
 use function implode;
 use function sprintf;
@@ -82,7 +81,7 @@ PHP;
         ));
     }
 
-    private function propertiesInitializationCode(Properties $properties): string
+    private function propertiesInitializationCode(Properties $properties) : string
     {
         $assignments = [];
 
@@ -96,7 +95,7 @@ PHP;
         foreach ($properties->getGroupedPrivateProperties() as $className => $privateProperties) {
             $cacheKey      = 'cache' . str_replace('\\', '_', $className);
             $assignments[] = 'static $' . $cacheKey . ";\n\n"
-                . '$' . $cacheKey . ' ?? $' . $cacheKey . " = \\Closure::bind(static function (\$instance) {\n"
+                . '$' . $cacheKey . ' ?: $' . $cacheKey . " = \\Closure::bind(static function (\$instance) {\n"
                 . $this->getPropertyDefaultsAssignments($privateProperties) . "\n"
                 . '}, null, ' . var_export($className, true) . ");\n\n"
                 . '$' . $cacheKey . "(\$this);\n\n";
@@ -108,12 +107,12 @@ PHP;
     /**
      * @param ReflectionProperty[] $properties
      */
-    private function getPropertyDefaultsAssignments(array $properties): string
+    private function getPropertyDefaultsAssignments(array $properties) : string
     {
         return implode(
             "\n",
             array_map(
-                function (ReflectionProperty $property): string {
+                function (ReflectionProperty $property) : string {
                     return '    $instance->' . $property->getName()
                         . ' = ' . $this->getExportedPropertyDefaultValue($property) . ';';
                 },
@@ -122,7 +121,7 @@ PHP;
         );
     }
 
-    private function propertiesReferenceArrayCode(Properties $properties): string
+    private function propertiesReferenceArrayCode(Properties $properties) : string
     {
         $assignments = [];
 
@@ -139,7 +138,7 @@ PHP;
             $cacheKey = 'cacheFetch' . str_replace('\\', '_', $className);
 
             $code .= 'static $' . $cacheKey . ";\n\n"
-                . '$' . $cacheKey . ' ?? $' . $cacheKey
+                . '$' . $cacheKey . ' ?: $' . $cacheKey
                 . " = \\Closure::bind(function (\$instance, array & \$properties) {\n"
                 . $this->generatePrivatePropertiesAssignmentsCode($classPrivateProperties)
                 . '}, $this, ' . var_export($className, true) . ");\n\n"
@@ -152,7 +151,7 @@ PHP;
     /**
      * @param array<string, ReflectionProperty> $properties indexed by internal name
      */
-    private function generatePrivatePropertiesAssignmentsCode(array $properties): string
+    private function generatePrivatePropertiesAssignmentsCode(array $properties) : string
     {
         $code = '';
 
@@ -165,7 +164,7 @@ PHP;
         return $code;
     }
 
-    private function getExportedPropertyDefaultValue(ReflectionProperty $property): string
+    private function getExportedPropertyDefaultValue(ReflectionProperty $property) : string
     {
         $name     = $property->getName();
         $defaults = $property->getDeclaringClass()->getDefaultProperties();

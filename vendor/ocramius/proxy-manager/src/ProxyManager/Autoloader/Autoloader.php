@@ -6,10 +6,12 @@ namespace ProxyManager\Autoloader;
 
 use ProxyManager\FileLocator\FileLocatorInterface;
 use ProxyManager\Inflector\ClassNameInflectorInterface;
-
 use function class_exists;
 use function file_exists;
 
+/**
+ * {@inheritDoc}
+ */
 class Autoloader implements AutoloaderInterface
 {
     protected FileLocatorInterface $fileLocator;
@@ -21,7 +23,10 @@ class Autoloader implements AutoloaderInterface
         $this->classNameInflector = $classNameInflector;
     }
 
-    public function __invoke(string $className): bool
+    /**
+     * {@inheritDoc}
+     */
+    public function __invoke(string $className) : bool
     {
         if (class_exists($className, false) || ! $this->classNameInflector->isProxyClassName($className)) {
             return false;

@@ -57,7 +57,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
 
     }
 
-    // line 3
+    // line 4
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -76,7 +76,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
 
     }
 
-    // line 4
+    // line 6
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,7 +86,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 5
+        // line 7
         echo "    <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/carousel2.css"), "html", null, true);
         echo "\">
@@ -99,7 +99,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
 
     }
 
-    // line 7
+    // line 9
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -109,21 +109,21 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 8
-        echo "    <div class=\"container\">
+        // line 10
+        echo "    <div class=\"container mt-2\">
         <section class=\"row\">
             <div class=\"col-lg-8\" style=\"height:100%;\">
                 <div class=\"card-header card-header-main\">
                     <h2>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 12, $this->source); })()), "nom", [], "any", false, false, false, 12), "html", null, true);
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 14, $this->source); })()), "nom", [], "any", false, false, false, 14), "html", null, true);
         echo "</h2>
                 </div>
                 <div class=\"card-body bg-light\">
                     <p class=\"card-text\"><small class=\"text-muted\">Last updated 3mins ago</small></p>
                 </div>
                 <img src=\"";
-        // line 17
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/skyrimmap.jpg"), "html", null, true);
         echo "\" class=\"card-img-bottom\">
             </div>
@@ -133,31 +133,43 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                 <div class=\"card\" style=\"height:100%;\">
                     <div class=\"card-header card-header-main\">
                         <h4 class=\"card-title\"><a href=\"";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 24, $this->source); })()), "siteweb", [], "any", false, false, false, 24), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 26, $this->source); })()), "siteweb", [], "any", false, false, false, 26), "html", null, true);
         echo "\" target=\"_blank\">";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 24, $this->source); })()), "nom", [], "any", false, false, false, 24), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 26, $this->source); })()), "nom", [], "any", false, false, false, 26), "html", null, true);
         echo "</a></h4>
                         <h6 class=\"card-subtitle mb-2 text-muted\" style=\"border-bottom: none;\">";
-        // line 25
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 25, $this->source); })()), "adresse", [], "any", false, false, false, 25), "ville", [], "any", false, false, false, 25), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 27, $this->source); })()), "adresse", [], "any", false, false, false, 27), "ville", [], "any", false, false, false, 27), "html", null, true);
         echo " - ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 25, $this->source); })()), "adresse", [], "any", false, false, false, 25), "cp", [], "any", false, false, false, 25), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 27, $this->source); })()), "adresse", [], "any", false, false, false, 27), "cp", [], "any", false, false, false, 27), "html", null, true);
         echo "</h6>
                     </div>
                     <div class=\"card-body\">
+
+                        <p class=\"card-text\">
+                            ";
+        // line 32
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 32, $this->source); })()), "description", [], "any", false, false, false, 32), "html", null, true);
+        echo "
+                        </p>
+                        <p class=\"card-text\" style=\"overflow:auto; height:100px; padding:5px; overflow-y:hidden;\">
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur facere, fugit iusto, magnam minus nobis non, numquam obcaecati quod reprehenderit sed similique sint voluptate! Ad commodi incidunt ipsa maiores obcaecati!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aut consectetur expedita ipsam magnam nemo provident quas repellendus. Consequuntur, debitis facilis illo iure nihil quis repellat voluptatibus. Quos sapiente, vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur deserunt harum hic, ipsa nisi quibusdam quidem quos saepe! Autem commodi consectetur fuga fugit laudantium magni nihil, perspiciatis sit ut.Cum enim itaque labore laboriosam laudantium minima nemo nulla ullam vel. Asperiores consequuntur dignissimos dolorem doloremque!Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore incidunt nisi pariatur eius magnam sed? Recusandae, esse alias assumenda optio nulla quisquam id excepturi! Reiciendis molestiae ipsam incidunt beatae deserunt!
+                        </p>
+                        <p>
+
                         <br class=\"card-text\">
                             <br>
                             ";
-        // line 30
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 30, $this->source); })()), "description", [], "any", false, false, false, 30), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 41, $this->source); })()), "description", [], "any", false, false, false, 41), "html", null, true);
         echo "
                         </p>
                         <p>
                             <br>
                             <a class=\"btn btn-outline-info\" href=\"";
-        // line 34
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_list_brasserie_biere", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 34, $this->source); })()), "id", [], "any", false, false, false, 34)]), "html", null, true);
+        // line 45
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_list_brasserie_biere", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 45, $this->source); })()), "id", [], "any", false, false, false, 45)]), "html", null, true);
         echo "\" class=\"card-link\">Leurs créations</a>
                         </p>
 
@@ -170,12 +182,11 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                     </div>
                     <div class=\"card-footer\">
                         <p>
-                            <p>Site web:</p>
                             <a href=\"";
-        // line 47
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 47, $this->source); })()), "siteweb", [], "any", false, false, false, 47), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 57, $this->source); })()), "siteweb", [], "any", false, false, false, 57), "html", null, true);
         echo "\" class=\"card-link\">";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 47, $this->source); })()), "siteweb", [], "any", false, false, false, 47), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brasserie"]) || array_key_exists("brasserie", $context) ? $context["brasserie"] : (function () { throw new RuntimeError('Variable "brasserie" does not exist.', 57, $this->source); })()), "siteweb", [], "any", false, false, false, 57), "html", null, true);
         echo "</a>
                         </p>
                     </div>
@@ -193,9 +204,6 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
                     </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
-                    </p>
                 </div>
                 <!-- Carousel des produits phares/Similaires -->
                 <div class=\"card-footer carousel-footer\" id=\"carousel\">
@@ -208,18 +216,8 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                                     <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
                                         <div class=\"card-header card-header-carousel\">
                                             <img src=\"";
-        // line 78
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/karadock.jpg"), "html", null, true);
-        echo "\">
-                                        </div>
-                                    </div>
-
-                                    <!-- SLIDE -->
-                                    <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
-                                        <div class=\"card-header card-header-carousel\">
-                                            <img src=\"";
         // line 85
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/perckara.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/karadock.jpg"), "html", null, true);
         echo "\">
                                         </div>
                                     </div>
@@ -229,7 +227,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                                         <div class=\"card-header card-header-carousel\">
                                             <img src=\"";
         // line 92
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/skyrimmap.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/perckara.jpg"), "html", null, true);
         echo "\">
                                         </div>
                                     </div>
@@ -239,26 +237,6 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                                         <div class=\"card-header card-header-carousel\">
                                             <img src=\"";
         // line 99
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/karadock.jpg"), "html", null, true);
-        echo "\">
-                                        </div>
-                                    </div>
-
-                                    <!-- SLIDE -->
-                                    <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
-                                        <div class=\"card-header card-header-carousel\">
-                                            <img src=\"";
-        // line 106
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/perckara.jpg"), "html", null, true);
-        echo "\">
-                                        </div>
-                                    </div>
-
-                                    <!-- SLIDE -->
-                                    <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
-                                        <div class=\"card-header card-header-carousel\">
-                                            <img src=\"";
-        // line 113
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/skyrimmap.jpg"), "html", null, true);
         echo "\">
                                         </div>
@@ -268,7 +246,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                                     <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
                                         <div class=\"card-header card-header-carousel\">
                                             <img src=\"";
-        // line 120
+        // line 106
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/karadock.jpg"), "html", null, true);
         echo "\">
                                         </div>
@@ -278,7 +256,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                                     <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
                                         <div class=\"card-header card-header-carousel\">
                                             <img src=\"";
-        // line 127
+        // line 113
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/perckara.jpg"), "html", null, true);
         echo "\">
                                         </div>
@@ -288,7 +266,37 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                                     <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
                                         <div class=\"card-header card-header-carousel\">
                                             <img src=\"";
+        // line 120
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/skyrimmap.jpg"), "html", null, true);
+        echo "\">
+                                        </div>
+                                    </div>
+
+                                    <!-- SLIDE -->
+                                    <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
+                                        <div class=\"card-header card-header-carousel\">
+                                            <img src=\"";
+        // line 127
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/karadock.jpg"), "html", null, true);
+        echo "\">
+                                        </div>
+                                    </div>
+
+                                    <!-- SLIDE -->
+                                    <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
+                                        <div class=\"card-header card-header-carousel\">
+                                            <img src=\"";
         // line 134
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/perckara.jpg"), "html", null, true);
+        echo "\">
+                                        </div>
+                                    </div>
+
+                                    <!-- SLIDE -->
+                                    <div class=\"card item\" id=\"card-carousel\" style=\"cursor:pointer;\">
+                                        <div class=\"card-header card-header-carousel\">
+                                            <img src=\"";
+        // line 141
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("image/skyrimmap.jpg"), "html", null, true);
         echo "\">
                                         </div>
@@ -313,15 +321,15 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
 
             </div>
             <a href=\"";
-        // line 156
+        // line 163
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_brasseries");
-        echo "\" class=\"btn btn-info\">Retour vers la liste des brasseries</a>
+        echo "\" class=\"mt-1 btn btn-outline-secondary\">Retour vers la liste des brasseries</a>
         </section>
     </div>
     ";
-        // line 159
+        // line 166
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 190
+        // line 197
         echo "
 ";
         
@@ -332,7 +340,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
 
     }
 
-    // line 159
+    // line 166
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -342,11 +350,11 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 160
+        // line 167
         echo "
         <!-- Script js carousel -->
         <script src=\"";
-        // line 162
+        // line 169
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/carousel.js"), "html", null, true);
         echo "\"></script>
 
@@ -396,19 +404,21 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
 
     public function getDebugInfo()
     {
-        return array (  350 => 162,  346 => 160,  336 => 159,  325 => 190,  323 => 159,  317 => 156,  292 => 134,  282 => 127,  272 => 120,  262 => 113,  252 => 106,  242 => 99,  232 => 92,  222 => 85,  212 => 78,  176 => 47,  160 => 34,  153 => 30,  143 => 25,  137 => 24,  127 => 17,  119 => 12,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  358 => 169,  354 => 167,  344 => 166,  333 => 197,  331 => 166,  325 => 163,  300 => 141,  290 => 134,  280 => 127,  270 => 120,  260 => 113,  250 => 106,  240 => 99,  230 => 92,  220 => 85,  187 => 57,  172 => 45,  165 => 41,  153 => 32,  143 => 27,  137 => 26,  127 => 19,  119 => 14,  113 => 10,  103 => 9,  90 => 7,  80 => 6,  61 => 4,  38 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
+
 {% block title %}Detail de la Brasserie{% endblock %}
+
 {% block stylesheets %}
     <link rel=\"stylesheet\" href=\"{{ asset('css/carousel2.css') }}\">
 {% endblock %}
 {% block body %}
-    <div class=\"container\">
+    <div class=\"container mt-2\">
         <section class=\"row\">
             <div class=\"col-lg-8\" style=\"height:100%;\">
                 <div class=\"card-header card-header-main\">
@@ -428,6 +438,15 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                         <h6 class=\"card-subtitle mb-2 text-muted\" style=\"border-bottom: none;\">{{ brasserie.adresse.ville }} - {{ brasserie.adresse.cp }}</h6>
                     </div>
                     <div class=\"card-body\">
+
+                        <p class=\"card-text\">
+                            {{brasserie.description}}
+                        </p>
+                        <p class=\"card-text\" style=\"overflow:auto; height:100px; padding:5px; overflow-y:hidden;\">
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur facere, fugit iusto, magnam minus nobis non, numquam obcaecati quod reprehenderit sed similique sint voluptate! Ad commodi incidunt ipsa maiores obcaecati!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aut consectetur expedita ipsam magnam nemo provident quas repellendus. Consequuntur, debitis facilis illo iure nihil quis repellat voluptatibus. Quos sapiente, vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur deserunt harum hic, ipsa nisi quibusdam quidem quos saepe! Autem commodi consectetur fuga fugit laudantium magni nihil, perspiciatis sit ut.Cum enim itaque labore laboriosam laudantium minima nemo nulla ullam vel. Asperiores consequuntur dignissimos dolorem doloremque!Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore incidunt nisi pariatur eius magnam sed? Recusandae, esse alias assumenda optio nulla quisquam id excepturi! Reiciendis molestiae ipsam incidunt beatae deserunt!
+                        </p>
+                        <p>
+
                         <br class=\"card-text\">
                             <br>
                             {{brasserie.description}}
@@ -446,7 +465,6 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                     </div>
                     <div class=\"card-footer\">
                         <p>
-                            <p>Site web:</p>
                             <a href=\"{{ brasserie.siteweb }}\" class=\"card-link\">{{ brasserie.siteweb }}</a>
                         </p>
                     </div>
@@ -461,9 +479,6 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                     <h3>Description du produit/Caractéristiques etc..</h3>
                 </div>
                 <div class=\"card-body\" style=\"border-bottom: none;\">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
-                    </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ut quam minima tenetur voluptatem fugiat expedita maxime, quis voluptatibus officiis dolores atque fugit ratione libero est perspiciatis rem minus deleniti?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente. Possimus mollitia eveniet doloremque doloribus, officiis optio quos aut ad vero ipsa a pariatur, magnam eos autem ullam deleniti illo?
                     </p>
@@ -556,7 +571,7 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
                 </div>
 
             </div>
-            <a href=\"{{ path('orm_brasseries') }}\" class=\"btn btn-info\">Retour vers la liste des brasseries</a>
+            <a href=\"{{ path('orm_brasseries') }}\" class=\"mt-1 btn btn-outline-secondary\">Retour vers la liste des brasseries</a>
         </section>
     </div>
     {%  block javascripts %}
@@ -592,6 +607,6 @@ class __TwigTemplate_f338ac5ed9b7977166dfb15a9d6cfa39cbd36bc487f99399aa1211cd6c2
     {% endblock %}
 
 {% endblock %}
-", "orm/detailBrasserie.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\orm\\detailBrasserie.html.twig");
+", "orm/detailBrasserie.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\orm\\detailBrasserie.html.twig");
     }
 }

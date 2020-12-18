@@ -122,5 +122,6 @@ main .card:hover {
 
 .pre, .next{
     height:150px;
-    margin: 112px 0 !important;
+    margin: 62px 0;
 }
+

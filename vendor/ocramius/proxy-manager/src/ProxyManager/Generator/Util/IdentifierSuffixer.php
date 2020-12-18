@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace ProxyManager\Generator\Util;
 
-use Composer\InstalledVersions;
-
+use PackageVersions\Versions;
 use function preg_match;
 use function serialize;
 use function sha1;
@@ -31,12 +30,12 @@ abstract class IdentifierSuffixer
      * Generates a valid unique identifier from the given name,
      * with a suffix attached to it
      */
-    public static function getIdentifier(string $name): string
+    public static function getIdentifier(string $name) : string
     {
         /** @var string|null $salt */
         static $salt;
 
-        $salt ??= self::loadBaseHashSalt();
+        $salt   = $salt ?? $salt = self::loadBaseHashSalt();
         $suffix = substr(sha1($name . $salt), 0, 5);
 
         if (! preg_match(self::VALID_IDENTIFIER_FORMAT, $name)) {
@@ -46,8 +45,8 @@ abstract class IdentifierSuffixer
         return $name . $suffix;
     }
 
-    private static function loadBaseHashSalt(): string
+    private static function loadBaseHashSalt() : string
     {
-        return sha1(serialize(InstalledVersions::getRawData()));
+        return sha1(serialize(Versions::VERSIONS));
     }
 }

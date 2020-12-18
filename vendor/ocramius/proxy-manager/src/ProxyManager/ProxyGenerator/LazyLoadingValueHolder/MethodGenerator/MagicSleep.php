@@ -7,7 +7,6 @@ namespace ProxyManager\ProxyGenerator\LazyLoadingValueHolder\MethodGenerator;
 use Laminas\Code\Generator\PropertyGenerator;
 use ProxyManager\Generator\MagicMethodGenerator;
 use ReflectionClass;
-
 use function var_export;
 
 /**

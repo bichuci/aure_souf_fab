@@ -30,27 +30,15 @@
                     </div>
 
                     <div class="card-body bg-light p-0">
-                        <div class="p-2 text-center">
-                            <h4 class="p-2">{{biere.nom}}</h4>
-                            <h6 class="card-subtitle m-2 text-muted">Brassée par : {{ biere.brasserieId.nom }}</h6>
-                            <p class="text-center">Description de la biere : {{ biere.description }}</p>
-                        </div>
-                        <div class="mt-2 pb-2 text-center">
-                            <span class="badge badge-pill badge-warning">{{ biere.categorieId.nom }}</span>
-                            <span class="badge badge-pill badge-warning">{{ biere.brasserieId.adresse.ville }}</span>
-                        </div>
-
-                    <div class="card-body bg-light p-0 h-50 ">
                         <div class="p-2 text-center bg-light">
                             <h4 class="p-2"><a href="{{ path('orm_bieres_details' , {'id' :biere.id} )}}">{{biere.nom}}</a></h4>
                             <h6 class="card-subtitle m-2 text-muted"><a href="{{ path('orm_detailBrasserie', {'id': biere.brasserieId.id})  }}">Brassée par : {{ biere.brasserieId.nom }}</a></h6>
                             <p class="text-center">Description de la biere : {{ biere.description }}</p>
                         </div>
-                    </div>
-                    <div class="pb-2 text-center bg-light">
-                        <span class="badge badge-pill badge-warning">{{ biere.categorieId.nom }}</span>
-                        <span class="badge badge-pill badge-warning">{{ biere.brasserieId.adresse.ville }}</span>
-
+                        <div class="pb-2 text-center bg-light">
+                            <span class="badge badge-pill badge-warning">{{ biere.categorieId.nom }}</span>
+                            <span class="badge badge-pill badge-warning">{{ biere.brasserieId.adresse.ville }}</span>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <div id="avis">
@@ -64,7 +52,6 @@
                     </div>
                 </div>
             {% endfor %}
-
     </div>
 </div>
 

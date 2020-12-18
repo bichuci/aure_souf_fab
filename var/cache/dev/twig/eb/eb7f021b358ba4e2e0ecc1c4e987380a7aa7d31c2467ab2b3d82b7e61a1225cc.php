@@ -86,8 +86,8 @@ class __TwigTemplate_f26b66521e3a0752ff2505f0e0a41d0a5ec9063d9d311bb0eee5e9df557
 
         // line 6
         echo "<main class=\"container\">
-    <h2> Page d'administration des utilisateurs </h2>
-    <section>
+    <h2 style=\"margin-top: 50px;\"> Page d'administration des utilisateurs </h2>
+    <section class=\"mt-5\">
         <table class=\"table table-dark table-striped\">
             <thead>
                 <tr>
@@ -126,29 +126,31 @@ class __TwigTemplate_f26b66521e3a0752ff2505f0e0a41d0a5ec9063d9d311bb0eee5e9df557
             // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
+                        <td>
                         ";
-            // line 28
+            // line 29
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 28));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 29));
             foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-                // line 29
-                echo "                            <td>";
+                // line 30
+                echo "                            ";
                 echo twig_escape_filter($this->env, $context["role"], "html", null, true);
-                echo "</td>
+                echo "
                         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 31
-            echo "                        <td>
-                            <a class=\"btn btn-outline-info\" href=\"";
             // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_edit_users", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo "                        </td>
+                        <td>
+                            <a class=\"btn btn-outline-info\" href=\"";
+            // line 34
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_edit_users", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             echo "\">Modifier</a>
                             <a class=\"btn btn-danger\" href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_delete_users", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 33)]), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_delete_users", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 35)]), "html", null, true);
             echo "\">Supprimer</a>
                         </td>
                     </tr>
@@ -157,9 +159,13 @@ class __TwigTemplate_f26b66521e3a0752ff2505f0e0a41d0a5ec9063d9d311bb0eee5e9df557
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 39
         echo "            </tbody>
         </table>
+        <a class=\"btn btn-outline-secondary\" href=\"";
+        // line 41
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_index");
+        echo "\">Retour à l'index admin</a>
     </section>
 </main>
 ";
@@ -183,7 +189,7 @@ class __TwigTemplate_f26b66521e3a0752ff2505f0e0a41d0a5ec9063d9d311bb0eee5e9df557
 
     public function getDebugInfo()
     {
-        return array (  161 => 37,  151 => 33,  147 => 32,  144 => 31,  135 => 29,  131 => 28,  127 => 27,  123 => 26,  117 => 25,  113 => 24,  110 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  167 => 41,  163 => 39,  153 => 35,  149 => 34,  145 => 32,  136 => 30,  132 => 29,  127 => 27,  123 => 26,  117 => 25,  113 => 24,  110 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -194,8 +200,8 @@ class __TwigTemplate_f26b66521e3a0752ff2505f0e0a41d0a5ec9063d9d311bb0eee5e9df557
 
 {% block body %}
 <main class=\"container\">
-    <h2> Page d'administration des utilisateurs </h2>
-    <section>
+    <h2 style=\"margin-top: 50px;\"> Page d'administration des utilisateurs </h2>
+    <section class=\"mt-5\">
         <table class=\"table table-dark table-striped\">
             <thead>
                 <tr>
@@ -215,9 +221,11 @@ class __TwigTemplate_f26b66521e3a0752ff2505f0e0a41d0a5ec9063d9d311bb0eee5e9df557
                         <td>{{ user.nom }}  {{ user.prenom }}</td>
                         <td>{{ user.username }}</td>
                         <td>{{ user.email }}</td>
+                        <td>
                         {% for role in user.roles %}
-                            <td>{{ role }}</td>
+                            {{ role }}
                         {% endfor %}
+                        </td>
                         <td>
                             <a class=\"btn btn-outline-info\" href=\"{{ path('admin_edit_users', { 'id' : user.id}) }}\">Modifier</a>
                             <a class=\"btn btn-danger\" href=\"{{ path('admin_delete_users', {'id' :user.id }) }}\">Supprimer</a>
@@ -226,9 +234,10 @@ class __TwigTemplate_f26b66521e3a0752ff2505f0e0a41d0a5ec9063d9d311bb0eee5e9df557
                 {% endfor %}
             </tbody>
         </table>
+        <a class=\"btn btn-outline-secondary\" href=\"{{ path('admin_index') }}\">Retour à l'index admin</a>
     </section>
 </main>
 {% endblock %}
-", "admin/listUsersAdmin.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\admin\\listUsersAdmin.html.twig");
+", "admin/listUsersAdmin.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\admin\\listUsersAdmin.html.twig");
     }
 }

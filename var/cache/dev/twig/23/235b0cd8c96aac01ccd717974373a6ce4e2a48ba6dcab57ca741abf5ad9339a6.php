@@ -353,6 +353,6 @@ class __TwigTemplate_336c17753bf7f465c352988edc91a4510398b1ea60348a43b6b47eede9a
 </p>
     </div>
 {% endblock %}
-", "mentions_legales/MentionsLegales.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\templates\\mentions_legales\\MentionsLegales.html.twig");
+", "mentions_legales/MentionsLegales.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\mentions_legales\\MentionsLegales.html.twig");
     }
 }

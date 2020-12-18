@@ -4,14 +4,15 @@
 
 {% block body %}
 <main class="container">
-    <h2> Bienvenue sur la page d'administration</h2>
-    <section>
+    <h2 style="margin-top: 50px;"> Bienvenue sur la page d'administration</h2>
+    <section class="m-auto">
         <article>
-            <p><a href="{{ path('admin_users') }}">Voir les utilisateurs</a></p>
+            <p class="list-group-item"><a href="{{ path('admin_users') }}">Voir les utilisateurs</a></p>
         </article>
         <article>
-            <p><a href="{{ path('admin_brasseurs') }}">Voir les brasseurs</a></p>
+            <p class="list-group-item"><a href="{{ path('admin_brasseurs') }}">Voir les brasseurs</a></p>
         </article>
     </section>
+    <a class="btn btn-outline-secondary mt-2" href="{{ path('home_index') }}">Retour à l'accueil du site</a>
 </main>
 {% endblock %}

@@ -94,6 +94,6 @@ class __TwigTemplate_0f9a139f150b7b6349e1f390fb826368611b4299f951b83c5e0786f60dc
 <p>
     Cheers!
 </p>
-", "registration/confirmation_email.html.twig", "C:\\Users\\Stagiaire\\Desktop\\git test\\templates\\registration\\confirmation_email.html.twig");
+", "registration/confirmation_email.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\registration\\confirmation_email.html.twig");
     }
 }

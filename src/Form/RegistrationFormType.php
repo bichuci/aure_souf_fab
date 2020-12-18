@@ -24,21 +24,25 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control'
                 ],
+                'label' => 'Email',
             ])
             ->add('nom', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
                 ],
+                'label' => 'Nom',
             ])
             ->add('prenom', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
                 ],
+                'label' => 'Prénom',
             ])
             ->add('username', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
                 ],
+                'label' => 'Pseudo',
             ])
             ->add('date_naissance', DateType::class, [
                 'attr' => [
@@ -47,9 +51,6 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
-                'attr' => [
-                    'class' => 'form-control'
-                ],
                 'constraints' => [
                     new IsTrue([
                         'message' => 'Vous devez accepter les conditions d\'utilisations',
@@ -74,6 +75,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+                'label' => 'Mot de passe',
             ])
         ;
     }
