@@ -48,7 +48,7 @@
 {% endblock %}
 
 {% block body %}
-<main class="container">
+<div class="container" style="height:150vh !important;">
         <!-- Breadcrumb -->
       <nav aria-label="breadcrumb" class="main-breadcrumb">
         <ol class="breadcrumb">
@@ -58,7 +58,6 @@
         </ol>
       </nav>
       <!-- /Breadcrumb -->
-    </div>
     <div class="container">
         <div class="card text-center card-top ombre">
             <div class="card-header bg-imge">
@@ -68,10 +67,10 @@
                 {% if UserId  == profil.user.id %}
                 <div class="dropdown pt-2">
 
-                <button class="btn btn-outline_primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-image"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                    <button class="btn btn-outline_primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-image"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         <button class="btn btn-primary" type="submit">Envoyez !</button>
@@ -187,6 +186,6 @@
           </div>
         </div>
     </div>
-</main>
+</div>
 {% endblock %}
 

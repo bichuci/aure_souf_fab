@@ -455,6 +455,9 @@
     <service id="App\Form\BrasserieType" class="App\Form\BrasserieType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\DelteUserType" class="App\Form\DelteUserType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -976,6 +979,7 @@
         <argument>App\Form\AdresseType</argument>
         <argument>App\Form\BiereType</argument>
         <argument>App\Form\BrasserieType</argument>
+        <argument>App\Form\DelteUserType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPassType</argument>
         <argument>App\Form\Settings2Type</argument>
@@ -1325,7 +1329,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.vW_Qi9o"/>
+      <argument type="service" id=".service_locator.yh7f1y_"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5468,6 +5472,8 @@
     <service id=".abstract.instanceof.App\Form\BiereType" class="App\Form\BiereType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BrasserieType" class="App\Form\BrasserieType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\BrasserieType" class="App\Form\BrasserieType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DelteUserType" class="App\Form\DelteUserType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\DelteUserType" class="App\Form\DelteUserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPassType" class="App\Form\ResetPassType" autowire="true" abstract="true"/>
@@ -5880,7 +5886,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.vW_Qi9o" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.yh7f1y_" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AdminEditBrasseurType" type="service" id="App\Form\AdminEditBrasseurType"/>
@@ -5888,6 +5894,7 @@
         <argument key="App\Form\AdresseType" type="service" id="App\Form\AdresseType"/>
         <argument key="App\Form\BiereType" type="service" id="App\Form\BiereType"/>
         <argument key="App\Form\BrasserieType" type="service" id="App\Form\BrasserieType"/>
+        <argument key="App\Form\DelteUserType" type="service" id="App\Form\DelteUserType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPassType" type="service" id="App\Form\ResetPassType"/>
         <argument key="App\Form\Settings2Type" type="service" id="App\Form\Settings2Type"/>
