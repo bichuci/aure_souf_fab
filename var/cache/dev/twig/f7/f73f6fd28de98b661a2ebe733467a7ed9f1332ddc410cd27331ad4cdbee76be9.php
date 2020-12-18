@@ -121,6 +121,7 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
                     </div>
 
                     <div class=\"card-body bg-light p-0\">
+<<<<<<< HEAD
                         <div class=\"p-2 text-center bg-light\">
                             <h4 class=\"p-2\"><a href=\"";
             // line 34
@@ -149,6 +150,63 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 40), "adresse", [], "any", false, false, false, 40), "ville", [], "any", false, false, false, 40), "html", null, true);
             echo "</span>
                         </div>
+=======
+                        <div class=\"p-2 text-center\">
+                            <h4 class=\"p-2\">";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "nom", [], "any", false, false, false, 34), "html", null, true);
+            echo "</h4>
+                            <h6 class=\"card-subtitle m-2 text-muted\">Brassée par : ";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 35), "nom", [], "any", false, false, false, 35), "html", null, true);
+            echo "</h6>
+                            <p class=\"text-center\">Description de la biere : ";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "description", [], "any", false, false, false, 36), "html", null, true);
+            echo "</p>
+                        </div>
+                        <div class=\"mt-2 pb-2 text-center\">
+                            <span class=\"badge badge-pill badge-warning\">";
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "categorieId", [], "any", false, false, false, 39), "nom", [], "any", false, false, false, 39), "html", null, true);
+            echo "</span>
+                            <span class=\"badge badge-pill badge-warning\">";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 40), "adresse", [], "any", false, false, false, 40), "ville", [], "any", false, false, false, 40), "html", null, true);
+            echo "</span>
+                        </div>
+
+                    <div class=\"card-body bg-light p-0 h-50 \">
+                        <div class=\"p-2 text-center bg-light\">
+                            <h4 class=\"p-2\"><a href=\"";
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_bieres_details", ["id" => twig_get_attribute($this->env, $this->source, $context["biere"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "nom", [], "any", false, false, false, 45), "html", null, true);
+            echo "</a></h4>
+                            <h6 class=\"card-subtitle m-2 text-muted\"><a href=\"";
+            // line 46
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orm_detailBrasserie", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 46), "id", [], "any", false, false, false, 46)]), "html", null, true);
+            echo "\">Brassée par : ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 46), "nom", [], "any", false, false, false, 46), "html", null, true);
+            echo "</a></h6>
+                            <p class=\"text-center\">Description de la biere : ";
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["biere"], "description", [], "any", false, false, false, 47), "html", null, true);
+            echo "</p>
+                        </div>
+                    </div>
+                    <div class=\"pb-2 text-center bg-light\">
+                        <span class=\"badge badge-pill badge-warning\">";
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "categorieId", [], "any", false, false, false, 51), "nom", [], "any", false, false, false, 51), "html", null, true);
+            echo "</span>
+                        <span class=\"badge badge-pill badge-warning\">";
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["biere"], "brasserieId", [], "any", false, false, false, 52), "adresse", [], "any", false, false, false, 52), "ville", [], "any", false, false, false, 52), "html", null, true);
+            echo "</span>
+
+>>>>>>> da3246866834fa9c46a8599a380c298cd7a4d55d
                     </div>
                     <div class=\"card-footer\">
                         <div id=\"avis\">
@@ -166,8 +224,14 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['biere'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+<<<<<<< HEAD
         // line 55
         echo "    </div>
+=======
+        // line 67
+        echo "
+    </div>
+>>>>>>> da3246866834fa9c46a8599a380c298cd7a4d55d
 </div>
 
 ";
@@ -191,7 +255,11 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  170 => 55,  149 => 40,  145 => 39,  139 => 36,  133 => 35,  127 => 34,  116 => 25,  112 => 24,  107 => 21,  101 => 19,  99 => 18,  88 => 9,  78 => 8,  59 => 4,  36 => 1,);
+=======
+        return array (  197 => 67,  176 => 52,  172 => 51,  165 => 47,  159 => 46,  153 => 45,  145 => 40,  141 => 39,  135 => 36,  131 => 35,  127 => 34,  116 => 25,  112 => 24,  107 => 21,  101 => 19,  99 => 18,  88 => 9,  78 => 8,  59 => 4,  36 => 1,);
+>>>>>>> da3246866834fa9c46a8599a380c298cd7a4d55d
     }
 
     public function getSourceContext()
@@ -228,15 +296,37 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
                     </div>
 
                     <div class=\"card-body bg-light p-0\">
+<<<<<<< HEAD
+=======
+                        <div class=\"p-2 text-center\">
+                            <h4 class=\"p-2\">{{biere.nom}}</h4>
+                            <h6 class=\"card-subtitle m-2 text-muted\">Brassée par : {{ biere.brasserieId.nom }}</h6>
+                            <p class=\"text-center\">Description de la biere : {{ biere.description }}</p>
+                        </div>
+                        <div class=\"mt-2 pb-2 text-center\">
+                            <span class=\"badge badge-pill badge-warning\">{{ biere.categorieId.nom }}</span>
+                            <span class=\"badge badge-pill badge-warning\">{{ biere.brasserieId.adresse.ville }}</span>
+                        </div>
+
+                    <div class=\"card-body bg-light p-0 h-50 \">
+>>>>>>> da3246866834fa9c46a8599a380c298cd7a4d55d
                         <div class=\"p-2 text-center bg-light\">
                             <h4 class=\"p-2\"><a href=\"{{ path('orm_bieres_details' , {'id' :biere.id} )}}\">{{biere.nom}}</a></h4>
                             <h6 class=\"card-subtitle m-2 text-muted\"><a href=\"{{ path('orm_detailBrasserie', {'id': biere.brasserieId.id})  }}\">Brassée par : {{ biere.brasserieId.nom }}</a></h6>
                             <p class=\"text-center\">Description de la biere : {{ biere.description }}</p>
                         </div>
+<<<<<<< HEAD
                         <div class=\"pb-2 text-center bg-light\">
                             <span class=\"badge badge-pill badge-warning\">{{ biere.categorieId.nom }}</span>
                             <span class=\"badge badge-pill badge-warning\">{{ biere.brasserieId.adresse.ville }}</span>
                         </div>
+=======
+                    </div>
+                    <div class=\"pb-2 text-center bg-light\">
+                        <span class=\"badge badge-pill badge-warning\">{{ biere.categorieId.nom }}</span>
+                        <span class=\"badge badge-pill badge-warning\">{{ biere.brasserieId.adresse.ville }}</span>
+
+>>>>>>> da3246866834fa9c46a8599a380c298cd7a4d55d
                     </div>
                     <div class=\"card-footer\">
                         <div id=\"avis\">
@@ -253,6 +343,10 @@ class __TwigTemplate_8b16afb29a733b581e419f5453f76dab34f1badef022a3aa4efe02a0e2d
     </div>
 </div>
 
+<<<<<<< HEAD
 {% endblock %}", "orm/listBieres.html.twig", "C:\\Users\\aurel\\Desktop\\test projet biere\\aure_souf_fab\\templates\\orm\\listBieres.html.twig");
+=======
+{% endblock %}", "orm/listBieres.html.twig", "C:\\Users\\Rechia\\Desktop\\Projet\\templates\\orm\\listBieres.html.twig");
+>>>>>>> da3246866834fa9c46a8599a380c298cd7a4d55d
     }
 }

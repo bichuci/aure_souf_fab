@@ -150,19 +150,16 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ;
     }
 
-    public function updateTelephoneBiereFavorite(array $user, $id){
+    public function DelteUser($id){
+
         return $this->createQueryBuilder('u')
-            ->update()
+            ->delete()
             ->where('u.id = :id')
             ->setParameter('id', $id)
-            ->set('u.telephone', ':telephone')
-            ->set('u.biere_favorite', ':biere_favorite')
-            ->setParameter('telephone', $user['telephone'])
-            ->setParameter('biere_favorite', [$user['biere_favorite']])
             ->getQuery()
-            ->getOneOrNullResult();
+            ->getResult()
+            ;
     }
-
 
 
 
